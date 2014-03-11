@@ -1,19 +1,136 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IE</title>
-  <%= stylesheet_link_tag    "bootstrap.min", "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "bootstrap.min", "application", "data-turbolinks-track" => true %>
+  <title>Charge</title>
+  <%= stylesheet_link_tag    "bootstrap.min", "font-awesome.min", "charge", "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "jquery.min", "bootstrap.min", "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <% if notice %>
-  <p class="alert alert-notice"><%= notice %></p>
+  <!-- <p class="alert alert-notice"><%= notice %></p> -->
 <% end %>
 <% if alert %>
-  <p class="alert alert-error"><%= alert %></p>
+  <!-- <p class="alert alert-error"><%= alert %></p> -->
 <% end %>
+
+<header>
+	<div class="header1">
+		<div class="row">
+			<div class="container">
+				<div class="header1-body">
+					<ul class="top-ul">
+						<% if user_signed_in? %>
+						<li class="top-li dropdown cursor-pointer"><i class="fa fa-envelope"></i>
+							<a class="dropdown-toggle primary" data-toggle="dropdown" id="messageDropdown">Messages <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="messageDropdown">
+								<li><a href="">Message 1</a></li>
+								<li class="divider"></li>
+								<li><a href="">Message 2</a></li>
+								<li class="divider"></li>
+								<li><a href="">Message 3</a></li>
+							</ul>
+						</li>
+						&nbsp;
+						&nbsp;
+						<!-- <li><button class="btn btn-primary" data-toggle="modal" data-target="#userSettingsDialog">User Setttings</button></li>
+						<li><a class="primary" data-toggle="modal" data-target="#userSettingsDialog">Hello Reza Ghorbani <i class="caret"></i></a></li> -->
+						<li class="top-li dropdown cursor-pointer">
+							<a class="dropdown-toggle primary" data-toggle="dropdown" id="settingsDropdown"><i class="fa fa-user"></i> Hello Reza Ghorbani <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="settingsDropdown">
+								<li><a data-toggle="modal" data-target="#userSettingsDialog">Settings</a></li>
+								<li class="divider"></li>
+								<!-- <li><a href="/user/sign_out"><i class="fa fa-off"></i> Logout</a></li> -->
+								<li><i class="fa fa-off"></i><%= link_to 'Sign out', destroy_user_session_path, :method => :delete, :confirm => "Are you sure?" %></li>
+							</ul>
+						</li>
+						&nbsp;
+						&nbsp;
+						<li class="top-li"><%= Time.now.in_time_zone('Tehran').to_date %></li>
+						&nbsp;
+						&nbsp;
+						<li class="top-li">Remaining Subscription: 90</li>
+						&nbsp;
+						<% else %>
+						<li class="top-li"><a href="/">Home</a></li>
+						&nbsp;
+						&nbsp;
+						&nbsp;
+						<li class="top-li"><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+						&nbsp;
+						&nbsp;
+						&nbsp;
+						<li class="top-li"><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<div class="modal fade" id="userSettingsDialog" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				User Settings
+			</div>
+			<div class="modal-body">
+				<ul id="userSettings" class="nav nav-tabs">
+					<li class="active">
+						<a href="#settings" data-toggle="tab" data-original-title="">Settings</a>
+					</li>
+					<li class="">
+						<a href="#password" data-toggle="tab" data-original-title="">Password</a>
+					</li>
+				</ul>
+				<br>
+				<div id="userSettingsContent" class="tab-content">
+					<div class="tab-pane fade active in" id="settings">
+						<form id="changeSettings">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+								<input type="text" class="form-control" Placeholder="First Name">
+							</div>
+							&nbsp;
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+								<input type="text" class="form-control" Placeholder="Last Name">
+							</div>
+							&nbsp;
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+								<input type="email" class="form-control" Placeholder="Email">
+							</div>
+							&nbsp;
+							<div class="input-group">
+								<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+							</div>
+						</form>
+					</div>
+					<div class="tab-pane fade" id="password">
+						<form id="changePassword">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+								<input type="password" class="form-control" Placeholder="Password">
+							</div>
+							&nbsp;
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+								<input type="password" class="form-control" Placeholder="Confirm Password">
+							</div>
+							&nbsp;
+							<div class="input-group">
+								<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer"></div>
+		</div>
+	</div>
+</div>
 
 <%= yield %>
 

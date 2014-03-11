@@ -1,0 +1,42 @@
+<div class="row">
+	<div class="col-md-offset-4 col-md-4">
+		<div id="index-form" class="panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<!-- <h2>Sign in</h2> -->
+
+					<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :class=>'form', :role=>'form') do |f| %>
+					  
+            <div class="form-group">
+              <%= f.label :email, :class=>'col-md-2 form-label' %>
+              <div class="col-md-8 input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <%= f.email_field :email, :placeholder=>'Email', :class=>'form-control', :autofocus => true %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :password, :class=>'col-md-2 form-label' %>
+  					  <div class="col-md-8 input-group">
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>     
+                <%= f.password_field :password, :placeholder=>'Password', :class=>'form-control' %>
+              </div>
+            </div>
+
+					  <% if devise_mapping.rememberable? -%>
+					    <div class="form-group">
+                <div class="container input-group">
+                  <%= f.check_box :remember_me %>&nbsp;<%= f.label :remember_me, :class=>'form-label' %>
+                </div>
+              </div>
+					  <% end -%>
+
+					  <%= f.submit "Sign in", :class=>'col-md-offset-5 col-md-2 btn btn-primary btn-lg' %>
+					<% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "devise/shared/links" %>

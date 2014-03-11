@@ -35,8 +35,11 @@ end
 # User Management
 gem 'devise'
 
+# User Permissions
+gem 'cancan'
+
 # Use ActiveModel has_secure_password
-# gem 'bcrypt'
+gem 'bcrypt'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -45,4 +48,4 @@ gem 'devise'
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
