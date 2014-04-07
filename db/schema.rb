@@ -11,7 +11,101 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140309155853) do
+ActiveRecord::Schema.define(version: 20140407185731) do
+
+  create_table "bills", force: true do |t|
+    t.integer  "manager_id"
+    t.integer  "price"
+    t.text     "description"
+    t.datetime "deadline"
+    t.boolean  "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "buildings", force: true do |t|
+    t.integer  "floor_cnt"
+    t.integer  "units_cnt"
+    t.integer  "manager_id"
+    t.text     "general_info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.text     "title"
+    t.datetime "event_time"
+    t.text     "description"
+    t.boolean  "need_to_send_mail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "expenses", force: true do |t|
+    t.integer  "manager_id"
+    t.integer  "price"
+    t.text     "description"
+    t.datetime "deadline"
+    t.integer  "plan"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "news", force: true do |t|
+    t.integer  "user_id"
+    t.text     "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payments", force: true do |t|
+    t.integer  "building_id"
+    t.integer  "payer_id"
+    t.integer  "trace_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "plans", force: true do |t|
+    t.integer  "building_id"
+    t.integer  "formula"
+    t.integer  "unit_id"
+    t.integer  "rate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", force: true do |t|
+    t.integer  "user_id"
+    t.text     "first_name"
+    t.text     "last_name"
+    t.boolean  "gender"
+    t.integer  "family_size"
+    t.text     "cardnumber"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+  add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "units", force: true do |t|
+    t.integer  "building_id"
+    t.integer  "floor"
+    t.integer  "resident_id"
+    t.integer  "area"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,5 +124,12 @@ ActiveRecord::Schema.define(version: 20140309155853) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "users_roles", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+  end
+
+  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
 
 end

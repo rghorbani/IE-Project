@@ -37,6 +37,8 @@ gem 'devise'
 
 # User Permissions
 gem 'cancan'
+gem 'role_model'
+gem 'protected_attributes'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt'

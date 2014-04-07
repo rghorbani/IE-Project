@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Floor cnt:</strong>
+  <%= @building.floor_cnt %>
+</p>
+
+<p>
+  <strong>Units cnt:</strong>
+  <%= @building.units_cnt %>
+</p>
+
+<p>
+  <strong>Manager:</strong>
+  <%= @building.manager_id %>
+</p>
+
+<p>
+  <strong>General info:</strong>
+  <%= @building.general_info %>
+</p>
+
+<%= link_to 'Edit', edit_building_path(@building) %> |
+<%= link_to 'Back', buildings_path %>

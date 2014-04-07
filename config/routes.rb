@@ -1,4 +1,22 @@
 IE::Application.routes.draw do
+  resources :profiles
+
+  resources :expenses
+
+  resources :payments
+
+  resources :bills
+
+  resources :units
+
+  resources :events
+
+  resources :buildings
+
+  resources :news
+
+  resources :plans
+
   get "home/contact"
   get "building/settings"
   # get "users/sign_out"
