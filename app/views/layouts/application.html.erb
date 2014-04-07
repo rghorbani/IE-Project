@@ -3,7 +3,6 @@
 <head>
   <title>Charge</title>
   <%= stylesheet_link_tag    "bootstrap.min", "font-awesome.min", "charge", "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "jquery.min", "bootstrap.min", "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -39,10 +38,9 @@
 						<li class="top-li dropdown cursor-pointer">
 							<a class="dropdown-toggle primary" data-toggle="dropdown" id="settingsDropdown"><i class="fa fa-user"></i> Hello Reza Ghorbani <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="settingsDropdown">
-								<li><a data-toggle="modal" data-target="#userSettingsDialog">Settings</a></li>
+								<li><a data-toggle="modal" data-target="#userSettingsDialog"><i class="fa fa-cogs"></i> Settings</a></li>
 								<li class="divider"></li>
-								<!-- <li><a href="/user/sign_out"><i class="fa fa-off"></i> Logout</a></li> -->
-								<li><i class="fa fa-off"></i><%= link_to 'Sign out', destroy_user_session_path, :method => :delete, :confirm => "Are you sure?" %></li>
+								<li><%= link_to '  Sign out', destroy_user_session_path, :method => :delete, :confirm => "Are you sure?", class: "fa fa-power-off" %></li>
 							</ul>
 						</li>
 						&nbsp;
@@ -134,5 +132,12 @@
 
 <%= yield %>
 
+<footer>
+	<div class="row">
+		<p><h3><a href="http://rghorbani.ir">&copy; RGF Designs</a></h3></p>
+	</div>
+</footer>
+<%= javascript_include_tag "jquery.min", "bootstrap.min", "application", "data-turbolinks-track" => true %>
+<a id="back-to-top" href="#top"><i class="fa fa-chevron-up"></i></a>
 </body>
 </html>
