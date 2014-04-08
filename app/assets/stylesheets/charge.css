@@ -37,9 +37,8 @@ header .top-ul {
 }
 
 header ul.top-ul li.top-li {
-	list-style: none;
+	/*list-style: none;*/
 	display: inline;
-	/*cursor: pointer;*/
 }
 
 .cursor-pointer {
@@ -153,7 +152,7 @@ footer {
 	background-origin: padding-box;
 	background-image: none;
 	color: rgb(0, 136, 204);
-	display: block;
+	display: table;
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
@@ -171,6 +170,6 @@ footer {
 #back-to-top i {
 	color: rgb(255, 255, 255);
 	vertical-align: baseline;
-	display: inline;
+	display: table-cell;
 	cursor: pointer;
 }

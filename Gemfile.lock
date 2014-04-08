@@ -130,7 +130,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   cancan
-  coffee-rails (~> 4.0.0)
   debugger
   devise
   jbuilder (~> 1.2)
