@@ -1,42 +1,42 @@
-<div class="row">
-	<div class="col-md-offset-4 col-md-4">
-		<div id="index-form" class="panel panel-default">
-			<div class="panel-body">
-				<div class="row">
+<div class="container" style="margin-top:90px;">
+<div style="width:350px; margin-left:auto; margin-right:auto;">
+<div class="widget_login"><div class="page-header">
 					<!-- <h2>Sign in</h2> -->
+          <h3>
+  Login
+    <small>into your account</small>
+  </h3>
 
 					<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :class=>'form', :role=>'form') do |f| %>
 					  
-            <div class="form-group">
-              <%= f.label :email, :class=>'col-md-2 form-label' %>
-              <div class="col-md-8 input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                <%= f.email_field :email, :placeholder=>'Email', :class=>'form-control', :autofocus => true %>
+            <div class="control-group">
+              <%= f.label :email, :class=>'control-label' %>
+              <div class="controls">
+                <%= f.email_field :email, :placeholder=>'Email', :class=>'input-xlarge', :autofocus => true %>
               </div>
             </div>
 
-            <div class="form-group">
-              <%= f.label :password, :class=>'col-md-2 form-label' %>
-  					  <div class="col-md-8 input-group">
-                <span class="input-group-addon"><i class="fa fa-key"></i></span>     
-                <%= f.password_field :password, :placeholder=>'Password', :class=>'form-control' %>
+            <div class="control-group">
+              <%= f.label :password, :class=>'control-label' %>
+  					  <div class="controls">
+                <%= f.password_field :password, :placeholder=>'Password', :class=>'input-xlarge' %>
               </div>
             </div>
 
 					  <% if devise_mapping.rememberable? -%>
-					    <div class="form-group">
-                <div class="container input-group">
-                  <%= f.check_box :remember_me %>&nbsp;<%= f.label :remember_me, :class=>'form-label' %>
+					    <div class="control-group">
+                <div class="controls">
+                  <%= f.check_box :remember_me %>&nbsp;<%= f.label :remember_me, :class=>'control-label' %>
                 </div>
               </div>
 					  <% end -%>
 
-					  <%= f.submit "Sign in", :class=>'col-md-offset-5 col-md-2 btn btn-primary btn-lg' %>
+					  <%= f.submit "Login", :class=>'large green button radius' %>
 					<% end %>
-        </div>
-      </div>
+          <hr>
+          <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>
+</div>
 
-<%= render "devise/shared/links" %>

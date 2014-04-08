@@ -4,7 +4,7 @@ rails g scaffold news user_id:integer title:text content:text
 rails g scaffold building floor_cnt:integer units_cnt:integer manager_id:integer general_info:text
 rails g scaffold events title:text event_time:datetime description:text need_to_send_mail:boolean
 rails g scaffold unit building_id:integer floor:integer resident_id:integer area:integer
-raisl g scaffold bill manager_id:integer price:integer description:text deadline:datetime state:boolean
+rails g scaffold bill manager_id:integer price:integer description:text deadline:datetime state:boolean
 rails g scaffold payment building_id:integer payer_id:integer trace_id:integer
 rails g scaffold plan building_id:integer formula:integer unit_id:integer rate:integer
-raisl g scaffold expense manager_id:integer price:integer description:text deadline:datetime plan:integer
+rails g scaffold expense manager_id:integer price:integer description:text deadline:datetime plan:integer
