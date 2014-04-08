@@ -2,7 +2,7 @@ require 'role_model'
 
 class User < ActiveRecord::Base
 
-  has_one :user
+  has_one :profile
   has_many :news
   has_many :building
   # Include default devise modules. Others available are:
@@ -21,5 +21,5 @@ class User < ActiveRecord::Base
  
   # declare the valid roles -- do not change the order if you add more
   # roles later, always append them at the end!
-  roles :admin, :manager, :user, :guest
+  roles :admin, :manager, :member, :guest
 end
