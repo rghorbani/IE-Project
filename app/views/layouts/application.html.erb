@@ -37,7 +37,10 @@
         <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <div class="btn-group" style="margin-top:7px;">  <a class="medium twitter button radius" style="text-decoration:none;"><i style="fon   t-  size:14px; padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-envelope-alt"></i>(5) Messages</a> <a href="/users/sign_out" rel="nofollow" class="medium twitter button radius" style="text-decoration:none;"><i style="padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-off"></i>Sign out</a> </div>
+            <div class="btn-group" style="margin-top:7px;">
+              <a class="medium twitter button radius" style="text-decoration:none;"><i style="fon   t-  size:14px; padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-envelope-alt"></i>(5) Messages</a>
+              <a href="/users/sign_out" rel="nofollow" class="medium twitter button radius" style="text-decoration:none;"><i style="padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-off"></i>Sign out</a>
+            </div>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -80,6 +83,65 @@
       </div><!--/.nav-collapse -->
     </div>
 </nav>
+
+<% if user_signed_in? %>
+<nav class="subnav subnav-fixed navbar" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sub-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <a class="navbar-brand" href="#">Brand</a> -->
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="sub-menu collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#"><i class="glyphicon glyphicon-dashboard icon-large"></i> Dashboard</a></li>
+        <li><a href="#">Building</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-bar-chart icon-large"></i> Reports</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!--
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul> -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<% end %>
 
 <%= yield %>
 

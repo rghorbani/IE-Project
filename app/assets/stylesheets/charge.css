@@ -294,6 +294,12 @@ footer {
   /*margin-bottom: 0;*/
 }
 
+.mainnav .nav > li > a,
+.mainnav .nav > li > a:link,
+.mainnav .nav > li > a:active,
+.mainnav .nav > li > a:visited {
+  background: rgba(255, 255, 255, 0);
+}
 .mainnav .nav > li > ul {
   margin-top: 1px;
   background-color: #363636;
@@ -304,6 +310,7 @@ footer {
 .mainnav .nav > li > ul > li.divider {
   background-color: #4DB848;
 }
+
 .mainnav .nav > li > ul > li > a {
   color: white;
 }
