@@ -1,55 +1,117 @@
 <!--START SUB-NAVBAR -->
 
-<div class="subnav subnav-fixed">
-  <ul class="nav nav-pills">
-    <li class="active">
-      <a href="#labels">
-        <i style="margin-top:7px;" class="icon-dashboard icon-large"></i> Dashboard
-      </a>
-    </li>
-    <li>
-      <a href="pages.htm"><i style="margin-top:7px;" class="icon-th icon-large"></i>Pages</a>
-    </li>
-    <li>
-      <a href="pages.htm"><i style="margin-top:7px;" class=" icon-file icon-large"></i>Articles</a>
-    </li>
-    <li>
-      <a href="pages.htm"><i style="margin-top:7px;" class="icon-picture icon-large"></i>Media</a>
-    </li>
-    <li>
-      <a href="pages.htm"><i style="margin-top:7px;" class="icon-bar-chart icon-large"></i>Reports</a>
-    </li>
-    <li>
-      <a href="pages.htm"><i style="margin-top:7px;" class="icon-tasks icon-large"></i>Widgets</a>
-    </li>
-    <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="pages.htm">
-        <i style="margin-top:7px;" class="icon-cog icon-large"></i>Settings
-        <b class="caret"></b>
-      </a>
-      <ul class="dropdown-menu">
-        <li>
-          <a href="#">Server Status</a>
-        </li>
-        <li>
-          <a href="pages.htm">Security</a>
-        </li>
-        <li>
-          <a href="pages.htm">Cache</a>
-        </li>
-        <li>
-          <a href="pages.htm">Templates</a>
+<nav class="subnav subnav-fixed navbar" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sub-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <a class="navbar-brand" href="#">Brand</a> -->
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="sub-menu collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#"><i class="glyphicon glyphicon-dashboard icon-large"></i> Dashboard</a></li>
+        <li><a href="#">Building</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-bar-chart icon-large"></i> Reports</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
         </li>
       </ul>
-    </li>
-    <li>
-      <form style="padding:5px;" class="navbar-search pull-left" action="">
-        <input type="text" class="search-query span3" placeholder="Search">
+      <!--
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
       </form>
-    </li>
-  </ul>
-</div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul> -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
+<!--
+<div class="subnav subnav-fixed">
+  <div class="container">
+    <ul class="nav navbar-nav nav-pills">
+      <li class="active">
+        <a href="#labels">
+          <i style="margin-top:7px;" class="glyphicon glyphicon-dashboard icon-large"></i> Dashboard
+        </a>
+      </li>
+      <li>
+        <a href="pages.htm"><i style="margin-top:7px;" class="glyphicon glyphicon-th icon-large"></i>Pages</a>
+      </li>
+      <li>
+        <a href="pages.htm"><i style="margin-top:7px;" class=" glyphicon glyphicon-file icon-large"></i>Articles</a>
+      </li>
+      <li>
+        <a href="pages.htm"><i style="margin-top:7px;" class="glyphicon glyphicon-picture icon-large"></i>Media</a>
+      </li>
+      <li>
+        <a href="pages.htm"><i style="margin-top:7px;" class="glyphicon glyphicon-bar-chart icon-large"></i>Reports</a>
+      </li>
+      <li>
+        <a href="pages.htm"><i style="margin-top:7px;" class="glyphicon glyphicon-tasks icon-large"></i>Widgets</a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="pages.htm">
+          <i style="margin-top:7px;" class="glyphicon glyphicon-cog icon-large"></i>Settings
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="#">Server Status</a>
+          </li>
+          <li>
+            <a href="pages.htm">Security</a>
+          </li>
+          <li>
+            <a href="pages.htm">Cache</a>
+          </li>
+          <li>
+            <a href="pages.htm">Templates</a>
+          </li>
+        </ul>
+      </li>
+      <!--
+      <li>
+        <form style="padding:5px;" class="navbar-search pull-left" action="">
+          <input type="text" class="search-query col-md-3" placeholder="Search">
+        </form>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+-->
  <!--END NAVBAR -->
 
  <!--START MAIN-CONTENT -->
@@ -59,50 +121,58 @@
   <!--START STATS-WIDGET -->
 
   <div class="row">
-    <div class="span7">
-      <div class="widget_heading">
-        <h4>Statistics</h4>
-      </div>
-      <div class="widget_container">
-        <ul id="sortable" class="unstyled ui-sortable" style="padding-left:20px;">
-          <li class="span2 ui-state-default">
-            <div class="infoblock shadow">
-              <h1 style="color:#4DB848;">$2565</h1>
-              <p>Todays Earnings</p>
+    <div class="col-md-7">
+      <div class="panel panel-success">
+        <div class="panel-heading clearfix">
+          <h4>Statistics</h4>
+        </div>
+        <div class="panel-body">
+          <ul id="sortable" class="unstyled ui-sortable" style="padding-left:20px;">
+            <div class="col-md-4">
+            <li class=" ui-state-default">
+              <div class="infoblock shadow">
+                <h1 style="color:#4DB848;">$2565</h1>
+                <p>Todays Earnings</p>
+              </div>
+            </li>
+            <li class=" ui-state-default">
+              <div class="infoblock shadow">
+                <h1 style="color:#0099FF;">10,789</h1>
+                <p>Unique Visitors</p>
+              </div>
+            </li>
             </div>
-          </li>
-          <li class="span2 ui-state-default">
-            <div class="infoblock shadow">
-              <h1 style="color:#0099FF;">10,789</h1>
-              <p>Unique Visitors</p>
-            </div>
-          </li>
-          <li class="span2 ui-state-default">
-            <div class="infoblock shadow">
-              <h1 style="color:#ff4056;">500,467</h1>
-              <p>Total Visitors</p>
-            </div>
-          </li>
+            <div class="col-md-4">
+            <li class="ui-state-default">
+              <div class="infoblock shadow">
+                <h1 style="color:#ff4056;">500,467</h1>
+                <p>Total Visitors</p>
+              </div>
+            </li>
 
-          <li class="span2 ui-state-default">
-            <div class="infoblock shadow">
-              <h1 style="color:#ff9900;">1,486</h1>
-              <p>Registered Users</p>
+            <li class=" ui-state-default">
+              <div class="infoblock shadow">
+                <h1 style="color:#ff9900;">1,486</h1>
+                <p>Registered Users</p>
+              </div>
+            </li>
             </div>
-          </li>
-          <li class="span2 ui-state-default">
-            <div class="infoblock shadow">
-              <h1 style="color:#FF6320;">564</h1>
-              <p>Published Articles</p>
+            <div class="col-md-4">
+            <li class=" ui-state-default">
+              <div class="infoblock shadow">
+                <h1 style="color:#FF6320;">564</h1>
+                <p>Published Articles</p>
+              </div>
+            </li>
+            <li class="ui-state-default">
+              <div class="infoblock shadow ">
+                <h1 style="color:#6148B3;">4,587</h1>
+                <p>Todays Visitors</p>
+              </div>
+            </li>
             </div>
-          </li>
-          <li class="span2 ui-state-default">
-            <div class="infoblock shadow ">
-              <h1 style="color:#6148B3;">4,587</h1>
-              <p>Todays Visitors</p>
-            </div>
-          </li>
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -110,141 +180,15 @@
 
     <!--START -RECENT-POSTS-WIDGET -->
 
-    <div class="span5">
-      <div class="widget_heading">
-        <h4>Recent Posts</h4>
-      </div>
-      <div class="widget_container">
-        <ul class="unstyled">
-          <li class="widget_recent_posts">
-            <div class="widget_rp_img">
-              <a href=""> <img src="/assets/thumb_d_1.jpg" alt="froggy 1"> </a>
-            </div>
-            <div class="widget_rp_des">
-              <h4><a href="/">Ipsum is simply dummy</a><span>1 day ago</span></h4>
-              <p> Lorem Ipsum is simply dummy text of the is text printing...</p>
-            </div>
-          </li>
-          <li class="widget_recent_posts">
-            <div class="widget_rp_img">
-              <a href="">  <img src="/assets/thumb_d_2.jpg" alt="froggy 2"> </a>
-            </div>
-            <div class="widget_rp_des">
-              <h4><a href="#">Ipsum is simply dummy</a><span>2 hours ago</span></h4>
-              <p> Lorem Ipsum is simply dummy text of the is text printing...</p>
-            </div>
-          </li>
-          <li class="widget_recent_posts">
-            <div class="widget_rp_img">
-              <a href="#">  <img src="/assets/thumb_d_3.jpg" alt="froggy 3">  </a>
-            </div>
-
-            <div class="widget_rp_des">
-              <h4><a href="#">Ipsum is simply dummy</a><span>30 min ago</span></h4>
-              <p> Lorem Ipsum is simply dummy text of the is text printing...</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  
-  <!--END-RECENT-POSTS-WIDGET -->
-
-  <!--START-DAILY REPORT-WIDGET -->
-
-  <div class="row">
-    <div class="span6">
-      <div class="widget_heading">
-        <h4>Daily Report</h4>
-      </div>
-      <div class="widget_container"><!-- Begin demo markup -->
-
-        <!--START-LINE GRAPH -->
-
-      <div id="wijlinechartDefault" class="ui-widget ui-widget-content ui-corner-all wijmo-wijlinechart" style="width: 540px; height: 248px; background: white; border:0px; "><svg height="248" version="1.1" width="540" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.0.1</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><path fill="none" stroke="#999999" d="M61,151.2156904701875L515,151.2156904701875" stroke-width="0.5" class="wijchart-axis" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="#000000" stroke="#7f7f7f" d="M61,151.2156904701875V159.2156904701875" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="61" y="188.10784523509375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" class="wijchart-axis-label" transform="matrix(0.7071,-0.7071,0.7071,0.7071,-115.1525,104.9438)" font-size="11px" font-weight="bold" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4.006282735093748" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">January</tspan></text><path fill="#000000" stroke="#7f7f7f" d="M102.27272727272728,151.2156904701875V159.2156904701875" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="102.27272727272728" y="188.10784523509375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" class="wijchart-axis-label" transform="matrix(0.7071,-0.7071,0.7071,0.7071,-103.0637,132.0127)" font-size="11px" font-weight="bold" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4.006282735093748" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">February</tspan></text><path fill="#000000" stroke="#7f7f7f" d="M143.54545454545456,151.2156904701875V159.2156904701875" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="143.54545454545456" y="188.10784523509375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" class="wijchart-axis-label" transform="matrix(0.7071,-0.7071,0.7071,0.7071,-90.9773,166.4952)" font-size="11px" font-weight="bold" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4.006282735093748" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">March</tspan></text><path fill="#000000" stroke="#7f7f7f" d="M184.8181818181818,151.2156904701875V159.2156904701875" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="184.8181818181818" y="188.10784523509375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" class="wijchart-axis-label" transform="matrix(0.7071,-0.7071,0.7071,0.7071,-78.8863,198.5139)" font-size="11px" font-weight="bold" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4.006282735093748" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">April</tspan></text><path fill="#000000" stroke="#7f7f7f" d="M226.0909090909091,151.2156904701875V159.2156904701875" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="226.0909090909091" y="188.10784523509375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" class="wijchart-axis-label" transform="matrix(0.7071,-0.7071,0.7071,0.7071,-66.7999,229.1073)" font-size="11px" font-weight="bold" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4.006282735093748" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">May</tspan></text><path fill="#000000" stroke="#7f7f7f" d="M267.3636363636364,151.2156904701875V159.2156904701875" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="267.3636363636364" y="188.10784523509375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" class="wijchart-axis-label" transform="matrix(0.7071,-0.7071,0.7071,0.7071,-54.7089,256.5298)" font-size="11px" font-weight="bold" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4.006282735093748" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">June</tspan></text><path fill="#000000" stroke="#7f7f7f" d="M308.6363636363636,151.2156904701875V159.2156904701875" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="308.6363636363636" y="188.10784523509375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" class="wijchart-axis-label" transform="matrix(0.7071,-0.7071,0.7071,0.7071,-42.6225,287.4767)" font-size="11px" font-weight="bold" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4.006282735093748" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">July</tspan></text><path fill="#000000" stroke="#7f7f7f" d="M349.9090909090909,151.2156904701875V159.2156904701875" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="349.9090909090909" y="188.10784523509375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" class="wijchart-axis-label" transform="matrix(0.7071,-0.7071,0.7071,0.7071,-30.5315,310.303)" font-size="11px" font-weight="bold" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4.006282735093748" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">August</tspan></text><path fill="#000000" stroke="#7f7f7f" d="M391.1818181818182,151.2156904701875V159.2156904701875" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="391.1818181818182" y="188.10784523509375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" class="wijchart-axis-label" transform="matrix(0.7071,-0.7071,0.7071,0.7071,-18.4451,331.7041)" font-size="11px" font-weight="bold" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4.006282735093748" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">September</tspan></text><path fill="#000000" stroke="#7f7f7f" d="M432.4545454545455,151.2156904701875V159.2156904701875" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="432.4545454545455" y="188.10784523509375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" class="wijchart-axis-label" transform="matrix(0.7071,-0.7071,0.7071,0.7071,-6.3541,367.2583)" font-size="11px" font-weight="bold" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4.006282735093748" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">October</tspan></text><path fill="#000000" stroke="#7f7f7f" d="M473.7272727272727,151.2156904701875V159.2156904701875" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="473.7272727272727" y="188.10784523509375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" class="wijchart-axis-label" transform="matrix(0.7071,-0.7071,0.7071,0.7071,5.7324,391.8413)" font-size="11px" font-weight="bold" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4.006282735093748" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">November</tspan></text><path fill="#000000" stroke="#7f7f7f" d="M515,151.2156904701875V159.2156904701875" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="515" y="188.10784523509375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" class="wijchart-axis-label" transform="matrix(0.7071,-0.7071,0.7071,0.7071,17.8211,421.0205)" font-size="11px" font-weight="bold" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4.006282735093748" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">December</tspan></text><text x="288" y="224" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="15px" font-weight="bold" class="wijchart-axis-text" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 15px; line-height: normal; font-family: Arial;"><tspan dy="5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Month of the Year</tspan></text><path fill="#000000" stroke="#4bb446" d="M53,151.2156904701875H61" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="42" y="151.2156904701875" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" font-size="11px" font-weight="bold" class="wijchart-axis-label" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4.004752970187496" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><path fill="none" stroke="#4bb446" d="M61,125.97255237614999H515" stroke-width="0.5" stroke-dasharray="2,1.5" class="wijchart-axis-gridline" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="#000000" stroke="#4bb446" d="M53,125.97255237614999H61" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="42" y="125.97255237614999" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" font-size="11px" font-weight="bold" class="wijchart-axis-label" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="3.9959898761499915" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">20</tspan></text><path fill="none" stroke="#4bb446" d="M61,100.72941428211249H515" stroke-width="0.5" stroke-dasharray="2,1.5" class="wijchart-axis-gridline" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="#000000" stroke="#4bb446" d="M53,100.72941428211249H61" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="42" y="100.72941428211249" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" font-size="11px" font-weight="bold" class="wijchart-axis-label" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4.0028517821124865" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">40</tspan></text><path fill="none" stroke="#4bb446" d="M61,75.486276188075H515" stroke-width="0.5" stroke-dasharray="2,1.5" class="wijchart-axis-gridline" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="#000000" stroke="#4bb446" d="M53,75.486276188075H61" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="42" y="75.486276188075" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" font-size="11px" font-weight="bold" class="wijchart-axis-label" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="3.9940886880749957" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">60</tspan></text><path fill="none" stroke="#4bb446" d="M61,50.24313809403749H515" stroke-width="0.5" stroke-dasharray="2,1.5" class="wijchart-axis-gridline" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="#000000" stroke="#4bb446" d="M53,50.24313809403749H61" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="42" y="50.24313809403749" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" font-size="11px" font-weight="bold" class="wijchart-axis-label" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4.000950594037491" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">80</tspan></text><path fill="none" stroke="#4bb446" d="M61,25H515" stroke-width="0.5" stroke-dasharray="2,1.5" class="wijchart-axis-gridline" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="#000000" stroke="#4bb446" d="M53,25H61" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="42" y="25" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#4bb446" font-size="11px" font-weight="bold" class="wijchart-axis-label" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-family: Arial;"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">100</tspan></text><path fill="#000000" stroke="#4bb446" d="M55,138.59412142316876H61" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="#000000" stroke="#4bb446" d="M55,113.35098332913125H61" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="#000000" stroke="#4bb446" d="M55,88.10784523509375H61" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="#000000" stroke="#4bb446" d="M55,62.86470714105626H61" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="#000000" stroke="#4bb446" d="M55,37.62156904701875H61" stroke-width="2" class="wijchart-axis-tick" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="26" y="88.10784523509375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="15px" font-weight="bold" class="wijchart-axis-text" transform="matrix(0,-1,1,0,-62.1172,114.1172)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: bold; font-size: 15px; line-height: normal; font-family: Arial;"><tspan dy="5.006282735093748" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Number of Hits</tspan></text><path fill="none" stroke="#4bb446" d="M61,41.40803976112437L102.27272727272728,55.29176571284499L143.54545454545456,146.16706285138L184.8181818181818,96.94294356800687L226.0909090909091,35.09725523761499L267.3636363636364,30.0486276188075L308.6363636363636,95.68078666330499L349.90909090909093,89.37000213979562L391.1818181818182,81.79706071158436L432.45454545454544,107.04019880562187L473.72727272727275,103.25372809151625L515,31.31078452350937" opacity="0.9" stroke-linejoin="round" stroke-linecap="round" stroke-width="3" class="wijchart-canvas-object wijlinechart" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0.9; stroke-linejoin: round; stroke-linecap: round;"></path><path fill="none" stroke="#c0c0c0" d="M61,41.40803976112437L102.27272727272728,55.29176571284499L143.54545454545456,146.16706285138L184.8181818181818,96.94294356800687L226.0909090909091,35.09725523761499L267.3636363636364,30.0486276188075L308.6363636363636,95.68078666330499L349.90909090909093,89.37000213979562L391.1818181818182,81.79706071158436L432.45454545454544,107.04019880562187L473.72727272727275,103.25372809151625L515,31.31078452350937" stroke-width="13" opacity="0.01" class="wijchart-canvas-object wijlinechart linetracker" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0.01;"></path></svg>
-
-      </div>
-
-      <!--END-LINE GRAPH -->
-
-
-    </div>
-  </div>
-
-  <!--END-DAILY REPORT-WIDGET -->
-
-
-  <!--START-QUICK-POST-WIDGET -->
-
-  <div class="span6">
-    <div class="widget_heading">
-      <h4>Quick Post</h4>
-    </div>
-    <div class="widget_container">
-      <div class="control-group">
-        <label class="control-label" for="input01">Title</label>
-        <div class="controls">
-          <input type="text" class="input-xlarge span5">
+    <div class="col-md-5">
+      <div class="panel panel-success">
+        <div class="panel-heading clearfix">
+          <h4>Recent Posts</h4>
         </div>
-        <label class="control-label" for="input01">Description</label>
-        <textarea class="input-xlarge span5" id="textarea" rows="4"></textarea>
-    
-            <div class="insert-actions">
-    
-              <div class="btn-toolbar">
-    
-                <div class="btn-group">
-                  <a class="btn" href="/#">
-                    <i class="icon-film"></i>
-                  </a>
-                  <a class="btn" href="/#">
-                    <i class="icon-music"></i>
-                  </a>
-                  <a class="btn" href="#">
-                    <i class=" icon-picture"></i>
-                  </a>
-                  <a class="btn" href="#">
-                    <i class="icon-align-justify"></i>
-                  </a>
-                </div>
-                <p class="pull-right">
-                <button class="btn btn-medium btn-primary">Publish</button></p>
-                
-              </div>
+        <div class="panel-body">
+          <p>fjahsfjhdsflkhdskjfhskdh</p>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<!--END-QUICK-POST-WIDGET -->
-
-
-<!--START-STATIC TEXT-WIDGETS -->
-
-
-<div class="row">
-  <div class="span6">
-    <div class="widget_heading">
-      <h4>6 Column</h4>
-    </div>
-    <div class="widget_container">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non quam sit amet lacus pellentesque gravida eu vel ante. Suspendisse tellus massa, lobortis eu placerat eu, lacinia ut eros. Nam fermentum aliquet molestie. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque vestibulum egestas suscipit. Donec suscipit sagittis enim at auctor. Quisque molestie felis eget ligula rhoncus suscipit.
-
- Quisque iaculis ligula nec tellus consequat dignissim. Suspendisse volutpat nulla erat, vitae lobortis nunc. Integer sed tempus arcu. Sed varius aliquet sem, sit amet laoreet mauris rhoncus non. Curabitur eget urna turpis, eu ultricies mauris. Sed hendrerit ante non nisl sodales luctus   In varius ultricies neque ut porttitor. Praesent sapien metus, adipiscing eget placerat sed, porttitor sed metus. Phasellus quis ipsum sapien. Mauris ut sem ut erat placerat ultricies vitae venenatis odio. Fusce varius tortor sed ipsum dapibus gravida faucibus nunc vehicula. Nulla faucibus tortor vitae ligula volutpat</p>
-    </div>
-  </div>
-  <div class="span6">
-    <div class="widget_heading">
-      <h4>6 Column</h4>
-    </div>
-    <div class="widget_container">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non quam sit amet lacus  sit amet, consectetur adipiscing elit. Morbi non quam sit amet lacus   sit amet, consectetur adipiscing elit. Morbi non quam sit amet lacus   sit amet, consectetur adipiscing elit. Morbi non quam sit amet lacus   sit amet, consectetur adipiscing elit. Morbi non quam sit amet lacus   sit amet, consectetur adipiscing elit. Morbi non quam sit amet lacus pellentesque gravida eu vel ante. Suspendisse tellus massa, lobortis eu placerat eu, lacinia ut eros. Nam fermentum aliquet molestie. Cum sociis natoque penatibus et magnis dis.  Morbi non quam sit amet lacus pellentesque gravida eu vel ante. Suspendisse tellus massa, lobortis eu placerat eu, lacinia ut eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non quam sit amet lacus pellentesque gravida eu vel ante. Suspendisse tellus massa, lobortis eu placerat eu, lacinia ut eros. Nam fermentum aliquet molestie. Cum sociis natoque penatibus et magnis dis parturient montes, nasce</p>
-
-    </div>
-  </div>
-</div>
-</div>
-
-<!--END-STATIC TEXT-WIDGETS -->

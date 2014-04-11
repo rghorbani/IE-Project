@@ -12,4 +12,8 @@
  *= require_tree .
  */
 
-= require 'rhino';
+/*= require 'rhino';*/
+
+#main-nav {
+  position: absolute;
+}
