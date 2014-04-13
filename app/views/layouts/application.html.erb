@@ -37,14 +37,8 @@
 
       <div class="main-menu collapse navbar-collapse">
         <% if user_signed_in? %>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-left">
           <li><%= Time.now.in_time_zone('Tehran').to_date %></li>
-          <li>
-            <div class="btn-group" style="margin-top:7px;">
-              <a class="medium twitter button radius" style="text-decoration:none;"><i style="fon   t-  size:14px; padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-envelope-alt"></i>(۵) پیغام</a>
-              <a href="/users/sign_out" rel="nofollow" class="medium twitter button radius" style="text-decoration:none;"><i style="padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-off"></i>خروج</a>
-            </div>
-          </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <span style="padding-right:10px; width:30px;"><img src="/assets/user_thumb.jpg" style="width:30px;" alt=""></span>جناب قورباغه
@@ -74,6 +68,12 @@
                 <a href="#"><i style="font-size:14px; padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-cogs"></i>تنظیمات سیستم</a>
               </li>
             </ul>
+          </li>
+          <li>
+            <div class="btn-group" style="margin-top:7px;">
+              <a class="medium twitter button radius" style="text-decoration:none;"><i style="font-size:14px; padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-envelope-alt"></i>(۵) پیغام</a>
+              <a href="/users/sign_out" data-method="delete" rel="nofollow" class="medium twitter button radius" style="text-decoration:none;"><i style="padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-off"></i>خروج</a>
+            </div>
           </li>
         </ul>
         <% else %>
@@ -172,8 +172,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="sub-menu collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#"><i class="glyphicon glyphicon-dashboard icon-large"></i> داشبورد</a></li>
-        <li><a href="#">ساختمان</a></li>
+        <li class=""><a href="/charge/dashboard"><i class="glyphicon glyphicon-dashboard icon-large"></i> داشبورد</a></li>
+        <li><a href="/buildings">ساختمان</a></li>
         <li><a href="#">پیوند</a></li>
         <li><a href="#"><i class="glyphicon glyphicon-bar-chart icon-large"></i> گزارش ها</a></li>
       </ul>

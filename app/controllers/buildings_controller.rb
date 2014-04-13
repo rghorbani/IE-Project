@@ -1,4 +1,6 @@
 class BuildingsController < ApplicationController
+
+  before_action :authenticate_user!
   before_action :set_building, only: [:show, :edit, :update, :destroy]
 
   # GET /buildings
