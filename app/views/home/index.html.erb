@@ -1,2 +1,53 @@
+<<<<<<< HEAD
+<div class="row">
+	<div class="container">
+	<div class="col-md-offset-4 col-md-4">
+		<% if not user_signed_in? %>
+		<div id="index-form" class="panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<form class="form" action="/user" method="POST" role="form">
+						<div class="form-group">
+							<label class="col-md-2 form-label">ایمیل</label>
+							<div class="col-md-8 input-group">
+								<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+								<input class="form-control" type="email" name="user[email]" placeholder="ایمیل">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-2 form-label">گذرواژه</label>
+							<div class="col-md-8 input-group">
+								<span class="input-group-addon"><i class="fa fa-key"></i></span>
+								<input class="form-control" type="password" name="user[password]" id="passHome" onchange="copyToConf()" placeholder="گذرواژه">
+								<script type="text/javascript">
+									function copyToConf() {
+										// alert(document.getElementById('passHome').value);
+										document.getElementById('passConfHome').value = document.getElementById('passHome').value;
+									}
+								</script>
+								<input  class="form-control hidden" type="password" name="user[password_confirmation]" id="passConfHome" placeholder="گذرواژه">
+							</div>
+						</div>
+						<button type="submit" class="col-md-offset-5 col-md-2 btn btn-primary btn-lg">ثبت نام </button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<% else %>
+		<div id="index-form" class="panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<div class="center">
+						<p>به سیستم شارژ ساختمان خوش آمدید - <a href="/charge/dashboard"> به داشبورد مراجعه کنید</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+	</div>
+</div>
+=======
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b

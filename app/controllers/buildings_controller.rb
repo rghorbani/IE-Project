@@ -6,7 +6,11 @@ class BuildingsController < ApplicationController
   # GET /buildings
   # GET /buildings.json
   def index
+<<<<<<< HEAD
+    @buildings = Building.all
+=======
     @buildings = Building.all.where(:manager_id => current_user.id)
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
   end
 
   # GET /buildings/1
@@ -28,8 +32,11 @@ class BuildingsController < ApplicationController
   def create
     @building = Building.new(building_params)
 
+<<<<<<< HEAD
+=======
     @building.manager_id = current_user.id
 
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
     respond_to do |format|
       if @building.save
         format.html { redirect_to @building, notice: 'Building was successfully created.' }

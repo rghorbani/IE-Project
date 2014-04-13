@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+IE::Application.configure do
+=======
 IE2::Application.configure do
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
   # Settings specified here will take precedence over those in config/application.rb.
 
   # The test environment is used exclusively to run your application's
