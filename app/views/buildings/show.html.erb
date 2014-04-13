@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Floor cnt:</strong>
+  <strong>تعداد طبقات:</strong>
   <%= @building.floor_cnt %>
 </p>
 
 <p>
-  <strong>Units cnt:</strong>
+  <strong>تعداد واحد:</strong>
   <%= @building.units_cnt %>
 </p>
 
 <p>
-  <strong>Manager:</strong>
+  <strong>مدیر:</strong>
   <%= @building.manager_id %>
 </p>
 
 <p>
-  <strong>General info:</strong>
+  <strong>دیگر مشخصات:</strong>
   <%= @building.general_info %>
 </p>
 
-<%= link_to 'Edit', edit_building_path(@building) %> |
-<%= link_to 'Back', buildings_path %>
+<%= link_to t('Edit'), edit_building_path(@building) %> |
+<%= link_to t('Back'), buildings_path %>

@@ -11,23 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :floor_cnt %><br>
-    <%= f.number_field :floor_cnt %>
+  <div class="form-group">
+    <%= f.label :floor_cnt, "تعداد طبقات", :class => 'form-label'%>
+    <div class="input-group">
+      <%= f.number_field :floor_cnt, :class => 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :units_cnt %><br>
-    <%= f.number_field :units_cnt %>
+  <div class="form-group">
+    <%= f.label :units_cnt, "تعداد واحد", :class => 'form-label' %>
+    <div class="input-group">
+      <%= f.number_field :units_cnt, :class => 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :manager_id %><br>
-    <%= f.number_field :manager_id %>
+  <div class="form-group hide">
+    <%= f.label :manager_id, "مدیر", :class => 'form-label' %>
+    <div class="input-group">
+      <%= f.number_field :manager_id, :class => 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :general_info %><br>
-    <%= f.text_area :general_info %>
+  <div class="form-group">
+    <%= f.label :general_info, "دیگر مشخصات", :class => 'form-label' %>
+    <div class="input-group">
+      <%= f.text_area :general_info, :class => 'form-control' %>
+    </div>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <br>
+    <%= f.submit "ایجاد", :class => 'btn btn-success' %>
   </div>
 <% end %>

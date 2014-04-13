@@ -4,7 +4,7 @@ class BuildingsController < ApplicationController
   # GET /buildings
   # GET /buildings.json
   def index
-    @buildings = Building.all
+    @buildings = Building.all.where(:manager_id => current_user.id)
   end
 
   # GET /buildings/1
@@ -25,6 +25,8 @@ class BuildingsController < ApplicationController
   # POST /buildings.json
   def create
     @building = Building.new(building_params)
+
+    @building.manager_id = current_user.id
 
     respond_to do |format|
       if @building.save
