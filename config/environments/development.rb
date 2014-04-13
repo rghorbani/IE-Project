@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 IE::Application.configure do
+=======
+IE2::Application.configure do
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -27,6 +31,10 @@ IE::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+<<<<<<< HEAD
   # User Management
   config.action_mailer.default_url_options = { :host => 'localhost:3000/charge/dashboard' }
+=======
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
 end

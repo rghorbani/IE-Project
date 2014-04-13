@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 IE::Application.routes.draw do
   resources :profiles
 
@@ -23,6 +24,13 @@ IE::Application.routes.draw do
   get "home/about"
   get "charge/dashboard"
   get "home/index"
+=======
+IE2::Application.routes.draw do
+  get "charge/dashboard"
+  get "home/index"
+  resources :buildings
+
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

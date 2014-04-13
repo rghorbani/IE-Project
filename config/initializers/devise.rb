@@ -4,7 +4,11 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
+<<<<<<< HEAD
   # config.secret_key = 'dd25ec6c83a10de9ed88a0e3083e62365f178c28c2e21163a5cd6b45250ae6990821b81535fa32bd6df0a434970331da8202b3d8f30b9f6402e5ded6adc778ca'
+=======
+  # config.secret_key = 'a5a188571263750182f59b3c841fb991de91757adfa5d82fe5807268a3d55974045a2f8f3d7d7f6b23a1f7099edda49c730bbd58570ab9d4272c7c621c949327'
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -76,7 +80,11 @@ Devise.setup do |config|
   # particular strategies by setting this option.
   # Notice that if you are skipping storage for all authentication paths, you
   # may want to disable generating routes to Devise's sessions controller by
+<<<<<<< HEAD
   # passing :skip => :sessions to `devise_for` in your config/routes.rb
+=======
+  # passing skip: :sessions to `devise_for` in your config/routes.rb
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
   config.skip_session_storage = [:http_auth]
 
   # By default, Devise cleans up the CSRF token on authentication to
@@ -91,11 +99,21 @@ Devise.setup do |config|
   #
   # Limiting the stretches to just one in testing will increase the performance of
   # your test suite dramatically. However, it is STRONGLY RECOMMENDED to not use
+<<<<<<< HEAD
   # a value less than 10 in other environments.
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
   # config.pepper = '0a007f69335c12894048e0608c77665e4deec0d99fdff9f7dff961189b55a1e10762ebbea5ae9b1cf0e029a707f504842f9569eac56e94218b91537c53fa8a37'
+=======
+  # a value less than 10 in other environments. Note that, for bcrypt (the default
+  # encryptor), the cost increases exponentially with the number of stretches (e.g.
+  # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
+  config.stretches = Rails.env.test? ? 1 : 10
+
+  # Setup a pepper to generate the encrypted password.
+  # config.pepper = 'ff8e2ad46d95c5f8160122a2bd72710f8b1cf1b32e852ffa7892f1ccce8fc36a0de5af7d8c13b0ef4918adeeb65d97ca36cc531fdb35f906eac6ae90f2321bd0'
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -115,8 +133,13 @@ Devise.setup do |config|
 
   # If true, requires any email changes to be confirmed (exactly the same way as
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
+<<<<<<< HEAD
   # db field (see migrations). Until confirmed new email is stored in
   # unconfirmed email column, and copied to email column on successful confirmation.
+=======
+  # db field (see migrations). Until confirmed, new email is stored in
+  # unconfirmed_email column, and copied to email column on successful confirmation.
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
   config.reconfirmable = true
 
   # Defines which key will be used when confirming an account
@@ -130,12 +153,20 @@ Devise.setup do |config|
   # config.extend_remember_period = false
 
   # Options to be passed to the created cookie. For instance, you can set
+<<<<<<< HEAD
   # :secure => true in order to force SSL only cookies.
+=======
+  # secure: true in order to force SSL only cookies.
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
   # config.rememberable_options = {}
 
   # ==> Configuration for :validatable
   # Range for password length.
+<<<<<<< HEAD
   config.password_length = 6..128
+=======
+  config.password_length = 8..128
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -164,6 +195,7 @@ Devise.setup do |config|
   # :time  = Re-enables login after a certain amount of time (see :unlock_in below)
   # :both  = Enables both strategies
   # :none  = No unlock strategy. You should handle unlocking by yourself.
+<<<<<<< HEAD
   config.unlock_strategy = :both
 
   # Number of authentication tries before locking an account if lock_strategy
@@ -172,6 +204,16 @@ Devise.setup do |config|
 
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
   config.unlock_in = 1.hour
+=======
+  # config.unlock_strategy = :both
+
+  # Number of authentication tries before locking an account if lock_strategy
+  # is failed attempts.
+  # config.maximum_attempts = 20
+
+  # Time interval to unlock the account if :time is enabled as unlock_strategy.
+  # config.unlock_in = 1.hour
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
 
   # Warn on the last attempt before the account is locked.
   # config.last_attempt_warning = false
@@ -184,7 +226,11 @@ Devise.setup do |config|
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
   # change their passwords.
+<<<<<<< HEAD
   config.reset_password_within = 2.hours
+=======
+  config.reset_password_within = 6.hours
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
 
   # ==> Configuration for :encryptable
   # Allow you to use another encryption algorithm besides bcrypt (default). You can use
@@ -227,7 +273,11 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
+<<<<<<< HEAD
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
+=======
+  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -235,7 +285,11 @@ Devise.setup do |config|
   #
   # config.warden do |manager|
   #   manager.intercept_401 = false
+<<<<<<< HEAD
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
+=======
+  #   manager.default_strategies(scope: :user).unshift :some_external_strategy
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
   # end
 
   # ==> Mountable engine configurations

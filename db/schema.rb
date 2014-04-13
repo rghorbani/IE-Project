@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140407185731) do
 
   create_table "bills", force: true do |t|
@@ -22,6 +23,9 @@ ActiveRecord::Schema.define(version: 20140407185731) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+=======
+ActiveRecord::Schema.define(version: 20140413132023) do
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
 
   create_table "buildings", force: true do |t|
     t.integer  "floor_cnt"
@@ -32,6 +36,7 @@ ActiveRecord::Schema.define(version: 20140407185731) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "events", force: true do |t|
     t.text     "title"
     t.datetime "event_time"
@@ -107,6 +112,8 @@ ActiveRecord::Schema.define(version: 20140407185731) do
     t.datetime "updated_at"
   end
 
+=======
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -125,6 +132,7 @@ ActiveRecord::Schema.define(version: 20140407185731) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
+<<<<<<< HEAD
   create_table "users_roles", id: false, force: true do |t|
     t.integer "user_id"
     t.integer "role_id"
@@ -132,4 +140,6 @@ ActiveRecord::Schema.define(version: 20140407185731) do
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
 
+=======
+>>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
 end
