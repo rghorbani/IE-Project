@@ -1,18 +1,10 @@
 <h2>Resend unlock instructions</h2>
 
-<<<<<<< HEAD
-<%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-=======
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>
->>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
 
   <div><%= f.submit "Resend unlock instructions" %></div>
 <% end %>

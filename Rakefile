@@ -3,8 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-<<<<<<< HEAD
-IE::Application.load_tasks
-=======
 IE2::Application.load_tasks
->>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b

@@ -264,7 +264,7 @@ input[type=submit].button { -webkit-appearance: none; }
 
 body {
   background-image: url("/assets/bg_main.png"); repeat;
-  padding-top: 65px;
+  padding-top: 70px;
   padding-bottom: 60px;
 }
 
@@ -474,10 +474,7 @@ footer {
   }
 
 }
-<<<<<<< HEAD
-=======
 
 .hide {
   display: none;
 }
->>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b

@@ -13,11 +13,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-<<<<<<< HEAD
-# gem 'coffee-rails', '~> 4.0.0'
-=======
 gem 'coffee-rails', '~> 4.0.0'
->>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -39,18 +35,8 @@ end
 # User Management
 gem 'devise'
 
-<<<<<<< HEAD
-# User Permissions
-gem 'cancan'
-gem 'role_model'
-gem 'protected_attributes'
-
-# Use ActiveModel has_secure_password
-gem 'bcrypt'
-=======
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
->>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -58,9 +44,4 @@ gem 'bcrypt'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-# Use debugger
-<<<<<<< HEAD
-gem 'debugger', group: [:development, :test]
-=======
 # gem 'debugger', group: [:development, :test]
->>>>>>> c65f81f4d82ef87298bbcbc553797664478b880b
