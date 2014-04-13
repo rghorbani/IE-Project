@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>شارژ</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Reza Ghorbani Farid">
+  <link href="/assets/font-awesome.min.css" media="all" rel="stylesheet" />
+  <link href="/assets/bootstrap.min.css" media="all" rel="stylesheet" />
+  <link href="/assets/bootstrap.rtl.css" media="all" rel="stylesheet" />
+  <link href="/assets/charge.css" media="all" rel="stylesheet" />
+  <link href="/assets/google-webfonts.css" media="all" rel="stylesheet" />
+  <!-- <link href="/assets/application.css" media="all" rel="stylesheet" /> -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+<!--START NAVBAR -->
+
+<nav id="main-nav" class="mainnav navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".main-menu">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><!--img src="/assets/logo.png" alt=""--></a>
+      </div>
+
+      <div class="main-menu collapse navbar-collapse">
+        <% if user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= Time.now.in_time_zone('Tehran').to_date %></li>
+          <li>
+            <div class="btn-group" style="margin-top:7px;">
+              <a class="medium twitter button radius" style="text-decoration:none;"><i style="fon   t-  size:14px; padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-envelope-alt"></i>(۵) پیغام</a>
+              <a href="/users/sign_out" rel="nofollow" class="medium twitter button radius" style="text-decoration:none;"><i style="padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-off"></i>خروج</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span style="padding-right:10px; width:30px;"><img src="/assets/user_thumb.jpg" style="width:30px;" alt=""></span>جناب قورباغه
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="" data-toggle="modal" data-target="#userSettingsDialog"><i class="fa fa-cogs"></i> Settings</a>
+              </li>
+              <li>
+                <a href="#">تنظیمات شخصی حساب</a>
+              </li>
+              <li>
+                <a href="#">حساب من</a>
+              </li>
+              <li>
+                <a href="#">تنظیمات سیستم</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="#"><i style="font-size:14px; padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-user"></i>حساب من</a>
+              </li>
+              <li>
+                <a href="#"><i style="font-size:14px; padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-lock"></i>تنظیمات شخصی حساب</a>
+              </li>
+               <li>
+                <a href="#"><i style="font-size:14px; padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-cogs"></i>تنظیمات سیستم</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <% else %>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <div class="btn-group" style="margin-top:7px;">
+              <a href="/users/sign_in" class="medium twitter button radius" style="text-decoration:none;">ورود</a>
+              <a href="/users/sign_up" class="medium twitter button radius" style="text-decoration:none;">ثبت نام</a>
+            </div>
+          </li>
+        </ul>
+        <% end %>
+      </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<% if user_signed_in? %>
+<div class="modal fade" id="userSettingsDialog" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        User Settings
+      </div>
+      <div class="modal-body">
+        <ul id="userSettings" class="nav nav-tabs">
+          <li class="active">
+            <a href="#settings" data-toggle="tab" data-original-title="">Settings</a>
+          </li>
+          <li class="">
+            <a href="#password" data-toggle="tab" data-original-title="">Password</a>
+          </li>
+        </ul>
+        <br>
+        <div id="userSettingsContent" class="tab-content">
+          <div class="tab-pane fade active in" id="settings">
+            <form id="changeSettings">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="text" class="form-control" Placeholder="First Name">
+              </div>
+              &nbsp;
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="text" class="form-control" Placeholder="Last Name">
+              </div>
+              &nbsp;
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <input type="email" class="form-control" Placeholder="Email">
+              </div>
+              &nbsp;
+              <div class="input-group">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+              </div>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="password">
+            <form id="changePassword">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="password" class="form-control" Placeholder="Password">
+              </div>
+              &nbsp;
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="password" class="form-control" Placeholder="Confirm Password">
+              </div>
+              &nbsp;
+              <div class="input-group">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<% if user_signed_in? %>
+<nav class="subnav subnav-fixed navbar" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sub-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <a class="navbar-brand" href="#">Brand</a> -->
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="sub-menu collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#"><i class="glyphicon glyphicon-dashboard icon-large"></i> داشبورد</a></li>
+        <li><a href="#">ساختمان</a></li>
+        <li><a href="#">پیوند</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-bar-chart icon-large"></i> گزارش ها</a></li>
+      </ul>
+      <!--
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul> -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<% end %>
+
+<%= yield %>
+
+<footer>
+  <div class="footer_container">
+    <div class="container">
+      <p style="margin-left:10px;"><a href="http://rghorbnai.ir"><i class="glyphicon glyphicon-copyright-mark"></i> آقا رضای قربانی</a></p>
+    </div>
+  </div>
+</footer>
+
+
+<!--jQuery References-->
+<script src="/assets/jquery.min.js" type="text/javascript"></script>
+<!-- <script src="/assets/jquery-ui.min.js" type="text/javascript"></script> -->
+
+<!--LOAD JQUERY/JAVASCRIPT ASSETS-->
+<script type="text/javascript" src="/assets/bootstrap.min.js"></script>
+<!-- <script src="/assets/scriptdash.js" type="text/javascript"></script> -->
+
+<i title="Raphaël Colour Picker" style="display: none; color: black;"></i>
+</body>
+</html>

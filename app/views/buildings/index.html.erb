@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+      <h1>لیست ساختمانها</h1>
+    </div>
+    <div class="panel-body">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>تعداد طبقات</th>
+              <th>تعداد واحد</th>
+              <th>مدیر</th>
+              <th>دیگر اطلاعات</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @buildings.each do |building| %>
+              <tr>
+                <td><%= building.floor_cnt %></td>
+                <td><%= building.units_cnt %></td>
+                <td><%= building.manager_id %></td>
+                <td><%= building.general_info %></td>
+                <td><%= link_to 'Show', building %></td>
+                <td><%= link_to 'Edit', edit_building_path(building) %></td>
+                <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <br>
+
+      <%= link_to 'New Building', new_building_path %>
+    </div>
+  </div>
+</div>
