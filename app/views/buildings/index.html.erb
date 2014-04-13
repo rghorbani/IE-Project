@@ -20,9 +20,9 @@
         <td><%= building.units_cnt %></td>
         <td><%= building.manager_id %></td>
         <td><%= building.general_info %></td>
-        <td><%= link_to 'Show', building %></td>
-        <td><%= link_to 'Edit', edit_building_path(building) %></td>
-        <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('Show'), building %></td>
+        <td><%= link_to t('Edit'), edit_building_path(building) %></td>
+        <td><%= link_to t('Destroy'), building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Building', new_building_path %>
+<%= link_to 'ساختمان جدید', new_building_path %>

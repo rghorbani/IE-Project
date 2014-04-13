@@ -13,7 +13,7 @@
 
   				  <div class="control-group">
               <%= f.label :email,"ایمیل", :class=>'control-label' %>
-    				  <div class="controls">
+    				  <div class="input-group">
     				  	<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
     				  	<%= f.email_field :email, :placeholder=>'ایمیل', :class=>'input-xlarge', :style=>'width:285px; padding:10px;', :autofocus => true %>
               </div>
@@ -21,7 +21,7 @@
 
   				  <div class="form-group">
               <%= f.label :password,"گذرواژه", :class=>'control-label' %>
-    				  <div class="controls">
+    				  <div class="input-group">
     				  	<span class="input-group-addon"><i class="fa fa-key"></i></span>
     				  	<%= f.password_field :password, :placeholder=>'گذرواژه', :class=>'input-xlarge' %>
               </div>
@@ -29,7 +29,7 @@
 
   				  <div class="form-group">
               <%= f.label :password_confirmation,"تایید گذرواژه", :class=>'control-label' %>
-    				  <div class="controls">
+    				  <div class="input-group">
     				  	<span class="input-group-addon"><i class="fa fa-key"></i></span>
     				  	<%= f.password_field :password_confirmation, :placeholder=>'تایید گذرواژه', :class=>'input-xlarge' %>
               </div>
