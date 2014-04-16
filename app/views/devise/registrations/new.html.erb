@@ -1,7 +1,7 @@
 <div class="container">
   <div class="panel">
     <div class="panel-heading">
-          <h3>ورود مدیر<small>به حساب خود وارد شوید</small></h3>
+          <h3>ثبت نام&nbsp<small>حساب کاربری</small></h3>
     </div>
     <div class="panel-body">
 			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :class=>'form', :role=>'form') do |f| %>
@@ -9,7 +9,7 @@
         <div class="alert alert-notice"><%= devise_error_messages! %></div>
         <% end %>
 
-			  <div class="control-group">
+			  <div class="form-group">
           <%= f.label :email,"ایمیل", :class=>'control-label' %>
 				  <div class="input-group">
 				  	<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
@@ -34,10 +34,9 @@
 			  </div>
 
 			  <%= f.submit "ثبت نام", :class=>'large green button radius' %>
-        </div></div><hr><p><a href="#">گذرواژه خود را فراموش کرده ام</a><span class="pull-right"><a href="register.htm">ثبت نام حساب کاربری</a></span></p>
+        </div></div><hr><p></p><a href="#">گذرواژه خود را فراموش کرده ام</a><!--span class="pull-right"><a href="register.htm">ثبت نام حساب کاربری</a></span--></p>
 
       <% end %>
-      <br>
       <div>
         <%= render "devise/shared/links" %>
       </div>
