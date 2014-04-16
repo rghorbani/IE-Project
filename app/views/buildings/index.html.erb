@@ -9,6 +9,34 @@
 
       <%= link_to 'ایجاد ساختمان', new_building_path %>
     </div>
+    <% elsif @buildings.size == 1 %>
+    <% building = @buildings.first %>
+    <div class="panel-heading">
+      <h1>ساختمان شما</h1>
+    </div>
+    <div class="panel-body">
+
+      <p>
+        <strong>تعداد طبقات:</strong>
+        <%= building.floor_cnt %>
+      </p>
+
+      <p>
+        <strong>تعداد واحد:</strong>
+        <%= building.units_cnt %>
+      </p>
+
+      <p>
+        <strong>دیگر مشخصات:</strong>
+        <%= building.general_info %>
+      </p>
+      <br>
+      <%= link_to t('Edit'), edit_building_path(building) %>
+      <%= link_to t('Destroy'), building, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <br>
+      <br>
+      <%= link_to 'ایجاد ساختمان', new_building_path %>
+    </div>
     <% else %>
     <div class="panel-heading">
       <h1>لیست ساختمانها</h1>
@@ -41,9 +69,6 @@
           </tbody>
         </table>
       </div>
-
-      <br>
-
       <%= link_to 'ایجاد ساختمان', new_building_path %>
     </div>
     <% end %>

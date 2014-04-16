@@ -32,7 +32,7 @@ class BuildingsController < ApplicationController
 
     respond_to do |format|
       if @building.save
-        format.html { redirect_to @building, notice: 'Building was successfully created.' }
+        format.html { redirect_to buildings_path, notice: 'ساختمان با موفقیت ایجاد شد.' }
         format.json { render action: 'show', status: :created, location: @building }
       else
         format.html { render action: 'new' }
