@@ -6,30 +6,34 @@
 		<div id="index-form" class="panel panel-default">
 			<div class="panel-body">
 				<div class="row">
-					<form class="form" action="/user" method="POST" role="form">
-						<div class="form-group">
-							<label class="col-md-3 form-label">ایمیل</label>
-							<div class="col-md-8 input-group">
-								<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-								<input class="form-control" type="email" name="user[email]" placeholder="ایمیل">
-							</div>
+					<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :class=>'form', :role=>'form') do |f| %>
+
+					<div class="form-group">
+					<%= f.label :email,"ایمیل", :class=>'col-md-3 form-label' %>
+						<div class="col-md-8 input-group">
+							<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+							<%= f.email_field :email, :placeholder=>'Email', :class=>'form-control', :autofocus => true %>
 						</div>
-						<div class="form-group">
-							<label class="col-md-3 form-label">گذرواژه</label>
-							<div class="col-md-8 input-group">
-								<span class="input-group-addon"><i class="fa fa-key"></i></span>
-								<input class="form-control" type="password" name="user[password]" id="passHome" onchange="copyToConf()" placeholder="گذرواژه">
-								<script type="text/javascript">
-									function copyToConf() {
-										// alert(document.getElementById('passHome').value);
-										document.getElementById('passConfHome').value = document.getElementById('passHome').value;
-									}
-								</script>
-								<input  class="form-control hidden" type="password" name="user[password_confirmation]" id="passConfHome" placeholder="گذرواژه">
-							</div>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :password,"گذرواژه", :class=>'col-md-3 form-label' %>
+						<div class="col-md-8 input-group">
+							<span class="input-group-addon"><i class="fa fa-key"></i></span>
+							<%= f.password_field :password, :placeholder=>'Password', :class=>'form-control' %>
 						</div>
-						<button type="submit" class="col-md-offset-5 col-md-3 btn btn-primary btn-lg">ورود </button>
-					</form>
+					</div>
+
+					<% if devise_mapping.rememberable? -%>
+					<div class="form-group">
+						<div class="controls">
+							<%= f.check_box :remember_me %>&nbsp;<%= f.label :remember_me,"مرا به خاطر بسپار", :class=>'form-label' %>
+						</div>
+					</div>
+					<% end -%>
+
+					<%= f.submit "ورود", :class=>'col-md-offset-5 col-md-3 btn btn-primary btn-lg large green button radius' %>
+					<% end %>			
 				</div>
 			</div>
 		</div>

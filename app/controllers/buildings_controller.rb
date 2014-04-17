@@ -6,7 +6,8 @@ class BuildingsController < ApplicationController
   # GET /buildings
   # GET /buildings.json
   def index
-    @buildings = Building.all.where(:manager_id => current_user.id)
+    #@buildings = Building.all.where(:manager_id => current_user.id)
+    @buildings = current_user.buildings
   end
 
   # GET /buildings/1
@@ -28,7 +29,7 @@ class BuildingsController < ApplicationController
   def create
     @building = Building.new(building_params)
 
-    @building.manager_id = current_user.id
+    @building.user_id = current_user.id
 
     respond_to do |format|
       if @building.save
@@ -73,6 +74,6 @@ class BuildingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def building_params
-      params.require(:building).permit(:floor_cnt, :units_cnt, :manager_id, :general_info)
+      params.require(:building).permit(:floor_cnt, :units_cnt, :user_id, :general_info)
     end
 end
