@@ -26,7 +26,7 @@
 
 					<% if devise_mapping.rememberable? -%>
 					<div class="form-group">
-						<div class="controls">
+						<div class="controls col-md-offset-3">
 							<%= f.check_box :remember_me %>&nbsp;<%= f.label :remember_me,"مرا به خاطر بسپار", :class=>'form-label' %>
 						</div>
 					</div>
@@ -38,11 +38,12 @@
 			</div>
 		</div>
 		<% else %>
+		<br/>
 		<div id="index-form" class="panel panel-default">
 			<div class="panel-body">
 				<div class="row">
-					<div class="center">
-						<p>به سیستم شارژ ساختمان خوش آمدید - <a href="/charge/dashboard"> به داشبورد مراجعه کنید</a></p>
+					<div class="text-center">
+						<h2>به سیستم شارژ ساختمان خوش آمدید<br/><br/><br/><br/><br/><br/> <a href="/charge/dashboard">مشاهده داشبورد</a></h2>
 					</div>
 				</div>
 			</div>
