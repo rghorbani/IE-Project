@@ -11,29 +11,29 @@
 </p>
 
 <p>
-  <strong>Floor number:</strong>
+  <strong>طبقه:</strong>
   <%= @unit.floor_number %>
 </p>
 
 <p>
-  <strong>Side:</strong>
+  <strong>جهت مکانی:</strong>
   <%= @unit.side %>
 </p>
 
 <p>
-  <strong>Unit number:</strong>
+  <strong>شماره واحد:</strong>
   <%= @unit.unit_number %>
 </p>
 
 <p>
-  <strong>Area:</strong>
+  <strong>مساحت:</strong>
   <%= @unit.area %>
 </p>
 
 <p>
-  <strong>Resident count:</strong>
+  <strong>شمار سکنه:</strong>
   <%= @unit.resident_count %>
 </p>
 
-<%= link_to 'Edit', edit_unit_path(@unit) %> |
-<%= link_to 'Back', units_path %>
+<%= link_to t('Edit'), edit_unit_path(@unit) %> |
+<%= link_to t('Back'), units_path %>
