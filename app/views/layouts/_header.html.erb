@@ -19,14 +19,11 @@
         <li><%= Time.now.in_time_zone('Tehran').to_date %></li>
         <li class="dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown">
-            <span style="padding-right:10px; width:30px;"><img src="/assets/user_thumb.jpg" style="width:30px;" alt=""></span><%= current_user.email %><b class="caret"></b>
+            <span style="padding-right:10px; width:30px;"><img src="/assets/user_thumb.jpg" style="width:30px;" alt=""></span> <%= current_user.email %>&nbsp;<b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="#" data-toggle="modal" data-target="#userSettingsDialog"><i class="fa fa-cogs"></i> Settings</a>
-            </li>
-            <li>
-              <a href="#">تنظیمات شخصی حساب</a>
+              <a href="#" data-toggle="modal" data-target="#userSettingsDialog"><i class="fa fa-cogs"></i> تنظیمات شخصی حساب</a>
             </li>
             <li>
               <a href="#">حساب من</a>
@@ -36,7 +33,7 @@
             </li>
             <li class="divider"></li>
             <li>
-              <a href="#"><i style="font-size:14px; padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-user"></i>حساب من</a>
+              <a href="#"><i style="font-size:14px; padding-top:3px; padding-right:5px;" class="fa fa-user"></i>حساب من</a>
             </li>
             <li>
               <a href="#"><i style="font-size:14px; padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-lock"></i>تنظیمات شخصی حساب</a>
@@ -48,8 +45,8 @@
         </li>
         <li>
           <div class="btn-group" style="margin-top:7px;">
-            <a class="medium twitter button radius" style="text-decoration:none;"><i style="font-size:14px; padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-envelope-alt"></i>(۵) پیغام</a>
-            <a href="/users/sign_out" rel="nofollow" class="medium twitter button radius" style="text-decoration:none;"><i style="padding-top:3px; padding-right:5px;" class="glyphicon glyphicon-off"></i>خروج</a>
+            <a class="medium twitter button radius" style="text-decoration:none;"><i class="fa fa-envelope-o"></i> (۵) پیغام</a>
+            <a href="/users/sign_out" rel="nofollow" class="medium twitter button radius" style="text-decoration:none;"><i class="fa fa-power-off"></i> خروج</a>
           </div>
         </li>
       </ul>
@@ -77,17 +74,17 @@
       <div class="modal-body">
         <ul id="userSettings" class="nav nav-tabs">
           <li class="active">
-            <a href="#settings" data-toggle="tab" data-original-title="">Settings</a>
+            <a href="#settings" data-toggle="tab" data-original-title="">پروفایل</a>
           </li>
           <li class="">
-            <a href="#password" data-toggle="tab" data-original-title="">Password</a>
+            <a href="#password" data-toggle="tab" data-original-title="">رمز عبور</a>
           </li>
         </ul>
         <br>
         <div id="userSettingsContent" class="tab-content">
           <div class="tab-pane fade active in" id="settings">
             <% @profile = get_profile %>
-            <%= render 'profiles/form' %>
+            <%= render 'profiles/form_modal' %>
           </div>
           <div class="tab-pane fade" id="password">
             <form id="changePassword">
@@ -108,7 +105,7 @@
           </div>
         </div>
       </div>
-      <div class="modal-footer"></div>
+      <!-- <div class="modal-footer"></div> -->
     </div>
   </div>
 </div>
@@ -131,10 +128,35 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="sub-menu collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class=""><a href="/charge/dashboard"><i class="glyphicon glyphicon-dashboard icon-large"></i> داشبورد</a></li>
-        <li><a href="/buildings">ساختمان</a></li>
-        <li><a href="#">پیوند</a></li>
-        <li><a href="#"><i class="glyphicon glyphicon-bar-chart icon-large"></i> گزارش ها</a></li>
+        <li class=""><a href="/charge/dashboard"><i class="fa fa-dashboard icon-large"></i> داشبورد</a></li>
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown">ساختمان <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="/buildings">نمایش ساختمانها</a>
+            </li>
+            <li>
+              <a href="/buildings/new">ایجاد ساختمان</a>
+            </li>
+            <li>
+              <a href="#">تنظیمات سیستم</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-file-text icon-large"></i> گزارش ها <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="/buildings">نمایش ساختمانها</a>
+            </li>
+            <li>
+              <a href="/buildings/new">ایجاد ساختمان</a>
+            </li>
+            <li>
+              <a href="#">تنظیمات سیستم</a>
+            </li>
+          </ul>
+        </li>
       </ul>
       <!--
       <form class="navbar-form navbar-left" role="search">

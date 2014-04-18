@@ -1,4 +1,6 @@
-<%= form_for(@profile) do |f| %>
+<%= form_for(@profile, :remote => true, method: "patch") do |f| %>
+
+  <div id="flash_notice" style="display:none"></div>
 
   <div class="form-group">
     <%= f.label :first_name, :class => 'form-label' %>
@@ -33,6 +35,6 @@
     </div>
   </div>
   <div class="actions">
-    <%= f.submit 'تغییر', :class => 'btn btn-lg btn-primary' %>
+    <%= f.submit 'تغییر', :id => 'profile_submit', :class => 'btn btn-lg btn-primary' %>
   </div>
 <% end %>
