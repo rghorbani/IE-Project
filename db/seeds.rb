@@ -6,5 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user = User.create(:email => "r.ghorbani.f@gmail.com", :password => "123456e", :password_confirmation => "123456e")
-profile = Profile.create(:user_id => user.id)
+user = User.create( :email => "r.ghorbani.f@gmail.com",
+                    :password => "123456e",
+                    :password_confirmation => "123456e")
+user.add_role :admin
+user.save
+profile = Profile.create( :user_id => user.id,
+                          :first_name => 'Reza')
+profile.save
