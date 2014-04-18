@@ -15,6 +15,7 @@ class UnitsController < ApplicationController
   # GET /units/new
   def new
     @unit = Unit.new
+    @unit.building_id = params[:building_id]
   end
 
   # GET /units/1/edit
