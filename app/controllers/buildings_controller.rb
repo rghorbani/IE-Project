@@ -48,7 +48,7 @@ class BuildingsController < ApplicationController
   def update
     respond_to do |format|
       if @building.update(building_params)
-        format.html { redirect_to @building, notice: 'Building was successfully updated.' }
+        format.html { redirect_to @building, notice: 'ساختمان با موفقیت به روزرسانی شد.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
