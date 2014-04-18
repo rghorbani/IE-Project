@@ -87,7 +87,8 @@
         <br>
         <div id="userSettingsContent" class="tab-content">
           <div class="tab-pane fade active in" id="settings">
-            <!-- put form profile/form -->
+            <% @profile = get_profile %>
+            <%= render 'profiles/form' %>
           </div>
           <div class="tab-pane fade" id="password">
             <form id="changePassword">

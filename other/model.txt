@@ -1,5 +1,5 @@
 
-rails g scaffold profile user_id:integer first_name:text last_name:text gender:boolean family_size:integer cardnumber:text
+rails g scaffold profile user:references first_name:text last_name:text gender:boolean family_size:integer cardnumber:text
 rails g scaffold news user_id:integer title:text content:text
 rails g scaffold building floor_cnt:integer units_cnt:integer manager_id:integer general_info:text
 rails g scaffold events title:text event_time:datetime description:text need_to_send_mail:boolean

@@ -1,6 +1,9 @@
 IE2::Application.routes.draw do
+<<<<<<< HEAD
   resources :units
+=======
   resources :profiles
+>>>>>>> 53a65fe6904d9baa8bf20d77ad76d25ed7bd489e
 
   get "charge/dashboard"
   get "home/index"

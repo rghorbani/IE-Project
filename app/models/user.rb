@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	has_one :profile
 	has_many :buildings
 	has_many :units
   # Include default devise modules. Others available are:
