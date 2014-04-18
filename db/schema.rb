@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418071409) do
+ActiveRecord::Schema.define(version: 20140418181900) do
 
   create_table "buildings", force: true do |t|
     t.integer  "floor_cnt"
@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(version: 20140418071409) do
 
   create_table "profiles", force: true do |t|
     t.integer  "user_id"
-    t.text     "first_name"
-    t.text     "last_name"
-    t.boolean  "gender"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "gender"
     t.integer  "family_size"
-    t.text     "cardnumber"
+    t.string   "cardnumber"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
