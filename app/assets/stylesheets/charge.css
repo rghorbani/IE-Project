@@ -264,7 +264,7 @@ input[type=submit].button { -webkit-appearance: none; }
 
 body {
   background-image: url("/assets/bg_main.png"); repeat;
-  padding-top: 70px;
+  padding-top: 90px;
   padding-bottom: 60px;
 }
 
@@ -415,8 +415,8 @@ footer {
 /* Fixed subnav on scroll, but only for 980px and up (sorry IE!) */
 @media (min-width: 980px) {
   .subnav-fixed {
-    /*position: ;*/
-    /*top: 40px;*/
+    position: fixed;
+    top: 65px;
     left: 0;
     right: 0;
     z-index: 1020; /* 10 less than .navbar-fixed to prevent any overlap */
