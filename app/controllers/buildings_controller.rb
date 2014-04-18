@@ -7,6 +7,7 @@ class BuildingsController < ApplicationController
   # GET /buildings.json
   def index
     #@buildings = Building.all.where(:manager_id => current_user.id)
+    # authorize! :index, @building
     @buildings = current_user.buildings
   end
 

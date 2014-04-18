@@ -1,8 +1,8 @@
 
-rails g scaffold profile user:references first_name:text last_name:text gender:boolean family_size:integer cardnumber:text
-rails g scaffold news user_id:integer title:text content:text
+rails g scaffold profile user:references first_name:string last_name:string gender:boolean family_size:integer cardnumber:string
+rails g scaffold news user_id:integer title:string content:text
 rails g scaffold building floor_cnt:integer units_cnt:integer manager_id:integer general_info:text
-rails g scaffold events title:text event_time:datetime description:text need_to_send_mail:boolean
+rails g scaffold events title:string event_time:datetime description:text need_to_send_mail:boolean
 rails g scaffold unit building_id:integer floor:integer resident_id:integer area:integer
 rails g scaffold bill manager_id:integer price:integer description:text deadline:datetime state:boolean
 rails g scaffold payment building_id:integer payer_id:integer trace_id:integer
