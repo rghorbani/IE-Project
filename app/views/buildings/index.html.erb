@@ -85,6 +85,8 @@
       <%= link_to 'واحد جدید برای این ساختمان', new_unit_path(building_id: building.id) %>
       <br/>
       <%= link_to 'مشاهده هزینه ها', expenses_path(building_id: building.id) %>
+      <br/>
+      <%= link_to 'مشاهده پلان های هزینه', plans_path(building_id: building.id) %>
       <br>
       <br>
     </div>
@@ -105,6 +107,7 @@
               <th></th>
               <th></th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
 
@@ -119,6 +122,7 @@
                 <td><%= link_to t('Destroy'), building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 <td><%= link_to 'واحد جدید برای این ساختمان', new_unit_path(building_id: building.id) %>
                 <td><%= link_to 'مشاهده هزینه ها', expenses_path(building_id: building.id) %></td>
+                <td><%= link_to 'مشاهده پلان های هزینه', plans_path(building_id: building.id) %></td>
               </tr>
             <% end %>
           </tbody>

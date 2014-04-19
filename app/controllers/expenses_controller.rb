@@ -33,7 +33,7 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to @expense, notice: 'Expense was successfully created.' }
+        format.html { redirect_to expenses_path(:building_id => @expense.building_id), notice: 'Expense was successfully created.' }
         format.json { render action: 'show', status: :created, location: @expense }
       else
         format.html { render action: 'new' }
@@ -47,7 +47,7 @@ class ExpensesController < ApplicationController
   def update
     respond_to do |format|
       if @expense.update(expense_params)
-        format.html { redirect_to @expense, notice: 'Expense was successfully updated.' }
+        format.html { redirect_to expenses_path(:building_id => @expense.building_id), notice: 'Expense was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -59,9 +59,10 @@ class ExpensesController < ApplicationController
   # DELETE /expenses/1
   # DELETE /expenses/1.json
   def destroy
+    @building_id = @expense.building_id
     @expense.destroy
     respond_to do |format|
-      format.html { redirect_to expenses_url }
+      format.html { redirect_to expenses_path(:building_id => @building_id) }
       format.json { head :no_content }
     end
   end

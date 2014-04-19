@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419115312) do
+ActiveRecord::Schema.define(version: 20140419123321) do
+
+  create_table "bills", force: true do |t|
+    t.integer  "expense_id"
+    t.integer  "unit_id"
+    t.integer  "price"
+    t.datetime "deadline"
+    t.text     "description"
+    t.boolean  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "buildings", force: true do |t|
     t.integer  "floor_cnt"
@@ -29,6 +40,18 @@ ActiveRecord::Schema.define(version: 20140419115312) do
     t.datetime "release_date"
     t.datetime "deadline"
     t.integer  "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payments", force: true do |t|
+    t.integer  "bill_id"
+    t.integer  "user_id"
+    t.integer  "amount"
+    t.integer  "trace_number"
+    t.boolean  "status"
+    t.text     "message"
+    t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
