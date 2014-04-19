@@ -5,18 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Charge</title>
   
-  <%= stylesheet_link_tag 'font-awesome.min', 'bootstrap.min', 'bootstrap-rtl', 'charge'%>
-  <%= javascript_include_tag "application", 'bootstrap.min' %>
+  <%= stylesheet_link_tag 'font-awesome.min', 'bootstrap.min', 'bootstrap-rtl', 'charge' %>
+  
   <%= csrf_meta_tags %>
 
 </head>
 <body>
 
-<%=render :partial => 'layouts/header' %>
+  <%=render :partial => 'layouts/header' %>
 
-<%= yield %>
+  <%= yield %>
 
-<%=render :partial => 'layouts/footer' %>
+  <%=render :partial => 'layouts/footer' %>
 
+  <div class="notification"></div>
+  <%= javascript_include_tag "application", 'bootstrap.min' %>
 </body>
 </html>
