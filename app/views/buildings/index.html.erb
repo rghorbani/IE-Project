@@ -30,6 +30,51 @@
         <strong>دیگر مشخصات:</strong>
         <%= building.general_info %>
       </p>
+      <br/>
+      <p>
+        <% @units = building.units %>
+        <% @units.each do |unit| %>
+        <br><br>
+        <p>
+          <strong>User:</strong>
+          <%= unit.user_id %>
+        </p>
+
+        <p>
+          <strong>Building:</strong>
+          <%= unit.building_id %>
+        </p>
+
+        <p>
+          <strong>طبقه:</strong>
+          <%= unit.floor_number %>
+        </p>
+
+        <p>
+          <strong>جهت مکانی:</strong>
+          <%= unit.side %>
+        </p>
+
+        <p>
+          <strong>شماره واحد:</strong>
+          <%= unit.unit_number %>
+        </p>
+
+        <p>
+          <strong>مساحت:</strong>
+          <%= unit.area %>
+        </p>
+
+        <p>
+          <strong>شمار سکنه:</strong>
+          <%= unit.resident_count %>
+        </p>
+        <%= link_to t('Edit'), edit_unit_path(unit) %> |
+        <%= link_to t('Destroy'), unit, method: :delete, data: { confirm: 'آیا مطمئن هستید؟' } %> |
+        <%= link_to t('Show'), unit %>
+        <% end %>
+        <br/>
+      </p>
       <br>
       <%= link_to t('Edit'), edit_building_path(building) %>
       <br>
@@ -38,7 +83,6 @@
       <%= link_to 'واحد جدید برای این ساختمان', new_unit_path(building_id: building.id) %>
       <br>
       <br>
-      <%= link_to 'ایجاد ساختمان', new_building_path %>
     </div>
     <% else %>
     <div class="panel-heading">
@@ -74,7 +118,6 @@
           </tbody>
         </table>
       </div>
-      <%= link_to 'ایجاد ساختمان', new_building_path %>
     </div>
     <% end %>
   </div>
