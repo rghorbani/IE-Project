@@ -21,6 +21,8 @@ class ProfilesController < ApplicationController
         redirect_to profiles_path, notice: 'شما از پیش دارای یک پروفایل میباشید.'
     else
       @profile = Profile.new
+      @profile.user_id = current_user.id
+      @profile.save
     end
   end
 
@@ -37,7 +39,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to profiles_path, notice: 'پروفایل با موفقیت ایجاد شد.' }
+        format.html { redirect_to '/charge/dashboard', notice: 'پروفایل با موفقیت ایجاد شد.' }
         format.json { render action: 'show', status: :created, location: @profile }
         format.js
       else
@@ -55,7 +57,7 @@ class ProfilesController < ApplicationController
       @profile.id = current_user.id
 
       if @profile.update(profile_params)
-        format.html { redirect_to profiles_path, notice: 'پروفایل با موفقیت به روزرسانی شد.' }
+        format.html { redirect_to '/charge/dashboard', notice: 'پروفایل با موفقیت به روزرسانی شد.' }
         format.json { head :no_content }
         format.js
       else
