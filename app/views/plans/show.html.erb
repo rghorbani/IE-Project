@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Building:</strong>
+  <strong>ساختمان:</strong>
   <%= @plan.building_id %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>نام:</strong>
   <%= @plan.name %>
 </p>
 
 <p>
-  <strong>Number:</strong>
+  <strong>شماره:</strong>
   <%= @plan.number %>
 </p>
 
-<%= link_to 'Edit', edit_plan_path(@plan) %> |
-<%= link_to 'Back', plans_path %>
+<%= link_to t('Edit'), edit_plan_path(@plan) %> |
+<%= link_to t('Back'), plans_path(:building_id => @plan.building_id) %>

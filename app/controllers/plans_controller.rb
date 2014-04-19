@@ -4,7 +4,12 @@ class PlansController < ApplicationController
   # GET /plans
   # GET /plans.json
   def index
-    @plans = Plan.all
+    @building_id = params[:building_id]
+    if(@building_id != nil)
+      @plans = Plan.all.where(:building_id => @building_id)
+    else
+      @plan = Plan.all
+    end
   end
 
   # GET /plans/1
@@ -15,6 +20,7 @@ class PlansController < ApplicationController
   # GET /plans/new
   def new
     @plan = Plan.new
+    @plan.building_id = params[:building_id]
   end
 
   # GET /plans/1/edit
@@ -25,10 +31,9 @@ class PlansController < ApplicationController
   # POST /plans.json
   def create
     @plan = Plan.new(plan_params)
-
     respond_to do |format|
       if @plan.save
-        format.html { redirect_to @plan, notice: 'Plan was successfully created.' }
+        format.html { redirect_to plans_path(:building_id => @plan.building_id), notice: 'Plan was successfully created.' }
         format.json { render action: 'show', status: :created, location: @plan }
       else
         format.html { render action: 'new' }
@@ -42,7 +47,7 @@ class PlansController < ApplicationController
   def update
     respond_to do |format|
       if @plan.update(plan_params)
-        format.html { redirect_to @plan, notice: 'Plan was successfully updated.' }
+        format.html { redirect_to plans_path(:building_id => @plan.building_id), notice: 'Plan was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -54,9 +59,10 @@ class PlansController < ApplicationController
   # DELETE /plans/1
   # DELETE /plans/1.json
   def destroy
+    @building_id = @plan.building_id
     @plan.destroy
     respond_to do |format|
-      format.html { redirect_to plans_url }
+      format.html { redirect_to plans_path(:building_id => @building_id) }
       format.json { head :no_content }
     end
   end
