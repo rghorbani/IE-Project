@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 	has_one :profile
 	has_many :buildings
 	has_many :units
+  has_many :payments
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

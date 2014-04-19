@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bill_id: 1
+  user_id: 1
+  amount: 1
+  trace_number: 1
+  status: false
+  message: MyText
+  date: 2014-04-19 17:03:21
+
+two:
+  bill_id: 1
+  user_id: 1
+  amount: 1
+  trace_number: 1
+  status: false
+  message: MyText
+  date: 2014-04-19 17:03:21

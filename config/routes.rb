@@ -1,4 +1,6 @@
 IE2::Application.routes.draw do
+  resources :payments
+
   resources :bills
 
   resources :rates
