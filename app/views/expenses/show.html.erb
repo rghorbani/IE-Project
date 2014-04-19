@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ساختمان:</strong>
+  <%= @expense.building_id %>
+</p>
+
+<p>
+  <strong>مبلغ:</strong>
+  <%= @expense.price %>
+</p>
+
+<p>
+  <strong>توضیحات:</strong>
+  <%= @expense.description %>
+</p>
+
+<p>
+  <strong>تاریخ صدور:</strong>
+  <%= @expense.release_date %>
+</p>
+
+<p>
+  <strong>زمان پرداخت:</strong>
+  <%= @expense.deadline %>
+</p>
+
+<p>
+  <strong>شماره سریال:</strong>
+  <%= @expense.number %>
+</p>
+
+<%= link_to t('Edit'), edit_expense_path(@expense) %> |
+<%= link_to t('Back'), expenses_path(:building_id => @expense.building_id) %>

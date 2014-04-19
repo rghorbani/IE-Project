@@ -1,0 +1,41 @@
+<%= form_for(@expense) do |f| %>
+  <% if @expense.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+
+      <ul>
+      <% @expense.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!--div class="field">
+    <%= f.label :building_id, :class => 'form-label' %><br>
+    <%= f.number_field :building_id, :class => 'form-control' %>
+  </div-->
+  <div class="field">
+    <%= f.label :price,"مبلغ", :class => 'form-label' %><br>
+    <%= f.number_field :price, :class => 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :description,"توضیحات", :class => 'form-label' %><br>
+    <%= f.text_area :description, :class => 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :release_date,"تاریخ صدور", :class => 'form-label' %><br>
+    <%= f.datetime_select :release_date, :class => 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :deadline,"زمان پرداخت", :class => 'form-label' %><br>
+    <%= f.datetime_select :deadline, :class => 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :number,"شماره سریال", :class => 'form-label' %><br>
+    <%= f.number_field :number, :class => 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit "تائید", :class => 'btn btn-success' %>
+  </div>
+<% end %>

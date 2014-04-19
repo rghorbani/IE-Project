@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  price: 1
+  description: MyText
+  release_date: 2014-04-19 13:52:14
+  deadline: 2014-04-19 13:52:14
+  number: 1
+
+two:
+  user_id: 1
+  price: 1
+  description: MyText
+  release_date: 2014-04-19 13:52:14
+  deadline: 2014-04-19 13:52:14
+  number: 1

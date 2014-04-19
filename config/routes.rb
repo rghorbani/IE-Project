@@ -1,4 +1,10 @@
 IE2::Application.routes.draw do
+  resources :rates
+
+  resources :plans
+
+  resources :expenses
+
   resources :units
   resources :profiles
   resources :buildings

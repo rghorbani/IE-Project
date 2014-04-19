@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418181324) do
+ActiveRecord::Schema.define(version: 20140419115312) do
 
   create_table "buildings", force: true do |t|
     t.integer  "floor_cnt"
@@ -20,6 +20,25 @@ ActiveRecord::Schema.define(version: 20140418181324) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+  end
+
+  create_table "expenses", force: true do |t|
+    t.integer  "building_id"
+    t.integer  "price"
+    t.text     "description"
+    t.datetime "release_date"
+    t.datetime "deadline"
+    t.integer  "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "plans", force: true do |t|
+    t.integer  "building_id"
+    t.string   "name"
+    t.integer  "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "profiles", force: true do |t|
@@ -34,6 +53,14 @@ ActiveRecord::Schema.define(version: 20140418181324) do
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+
+  create_table "rates", force: true do |t|
+    t.integer  "plan_id"
+    t.integer  "unit_id"
+    t.integer  "rate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "units", force: true do |t|
     t.integer  "user_id"

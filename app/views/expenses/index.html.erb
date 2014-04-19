@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+      <h1>لیست هزینه ها</h1>
+    </div>
+    <div class="panel-body">
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>ساختمان</th>
+              <th>مبلغ</th>
+              <th>توضیحات</th>
+              <th>تاریخ صدور</th>
+              <th>زمان پرداخت</th>
+              <th>شماره سریال</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @expenses.each do |expense| %>
+            <tr>
+              <td><%= expense.building_id %></td>
+              <td><%= expense.price %></td>
+              <td><%= expense.description %></td>
+              <td><%= expense.release_date %></td>
+              <td><%= expense.deadline %></td>
+              <td><%= expense.number %></td>
+              <td><%= link_to t('Show'), expense %></td>
+              <td><%= link_to t('Edit'), edit_expense_path(expense) %></td>
+              <td><%= link_to t('Destroy'), expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <br>
+
+      <%= link_to 'ایجاد هزینه جدید', new_expense_path(:building_id => @building_id) %>
+      <br>
+      <%= link_to 'ساختمان ها', buildings_path %>
+    </div>
+  </div>
+</div>

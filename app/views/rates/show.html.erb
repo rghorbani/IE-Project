@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Plan:</strong>
+  <%= @rate.plan_id %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @rate.unit_id %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @rate.rate %>
+</p>
+
+<%= link_to 'Edit', edit_rate_path(@rate) %> |
+<%= link_to 'Back', rates_path %>

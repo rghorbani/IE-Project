@@ -1,0 +1,6 @@
+<h1>ویرایش هزینه</h1>
+
+<%= render 'form' %>
+
+<%= link_to t('Show'), @expense %> |
+<%= link_to t('Back'), expenses_path(:building_id => @expense.building_id) %>
