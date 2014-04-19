@@ -1,10 +1,10 @@
 IE2::Application.routes.draw do
   resources :units
   resources :profiles
+  resources :buildings
 
   get "charge/dashboard"
   get "home/index"
-  resources :buildings
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

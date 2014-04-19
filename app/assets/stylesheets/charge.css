@@ -176,7 +176,7 @@ input[type=submit].button { -webkit-appearance: none; }
 
 body {
   background-image: url("/assets/bg_main.png"); repeat;
-  padding-top: 120px;
+  padding-top: 140px;
   min-height: 100%;
   /*padding-bottom: 100px;*/
   font-family: 'tahoma';
