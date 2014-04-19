@@ -2,5 +2,7 @@
 
 <%= render 'form' %>
 
+<%= link_to 'واحد جدید برای این ساختمان', new_unit_path(building_id: @building.id) %>
+<br/>
 <%= link_to t('Show'), @building %> |
 <%= link_to t('Back'), buildings_path %>
