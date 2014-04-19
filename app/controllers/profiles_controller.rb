@@ -8,6 +8,8 @@ class ProfilesController < ApplicationController
   def index
     # @profiles = Profile.all
     @profile = Profile.find(current_user.id)
+    @profile.id
+    '/profiles/<%= @profile.id %>'
   end
 
   # GET /profiles/1
