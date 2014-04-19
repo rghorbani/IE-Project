@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <div class="container">
   <div class="panel">
     <div class="panel-heading">
@@ -6,7 +8,7 @@
     <div class="panel-body">
       <div class="table-responsive">
         <table class="table table-hover">
-
+        <% if @profile != nil %>
           <thead>
             <tr>
               <th>User</th>
@@ -33,6 +35,7 @@
                 <td><%= link_to 'Destroy', @profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
           </tbody>
+        <% end %>
         </table>
       </div>
       <br>

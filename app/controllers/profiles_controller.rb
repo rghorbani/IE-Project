@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     # @profiles = Profile.all
-    @profile = Profile.find(current_user.id)
+    @profile = current_user.profile
   end
 
   # GET /profiles/1
@@ -17,7 +17,11 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
-    # @profile = Profile.new
+    if(current_user.profile != nil)
+        redirect_to profiles_path, notice: 'شما از پیش دارای یک پروفایل میباشید.'
+    else
+      @profile = Profile.new
+    end
   end
 
   # GET /profiles/1/edit
@@ -33,8 +37,9 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to '/charge/dashboard', notice: 'پروفایل با موفقیت ایجاد شد.' }
+        format.html { redirect_to profiles_path, notice: 'پروفایل با موفقیت ایجاد شد.' }
         format.json { render action: 'show', status: :created, location: @profile }
+        format.js
       else
         format.html { render action: 'new' }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
@@ -50,7 +55,7 @@ class ProfilesController < ApplicationController
       @profile.id = current_user.id
 
       if @profile.update(profile_params)
-        format.html { redirect_to @profile, notice: 'پروفایل با موفقیت به روزرسانی شد.' }
+        format.html { redirect_to profiles_path, notice: 'پروفایل با موفقیت به روزرسانی شد.' }
         format.json { head :no_content }
         format.js
       else
