@@ -21,6 +21,17 @@
   src:url("/assets/IRRoya.ttfF");
 }
 
+@font-face {
+    font-family: 'WMitra';
+    src: url('/assets/WebMitra.eot');
+    src: url('/assets/WebMitra.eot?#iefix') format('embedded-opentype'),
+         url('/assets/WebMitra.woff') format('woff'),
+         url('/assets/WebMitra.ttf') format('truetype'),
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+0600–06FF;
+}
+         /*url('/fonts/WebMitra.svg#WebMitra') format('svg');*/
 
 #sortable {
   list-style-type:
@@ -199,7 +210,7 @@ body {
   /*padding-bottom: 100px;*/
   /*font-family: Tahoma;*/
   /*font-family: Tahoma, Geneva, sans-serif;*/
-  font-family: 'sade';
+  font-family: 'WMitra';
 }
 
 body > .container {
