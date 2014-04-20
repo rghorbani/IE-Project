@@ -15,5 +15,18 @@
   <%= @plan.number %>
 </p>
 
+<br>
+<% @plan.building.units.each do |unit| %>
+<div>
+<%= unit.id %>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<% if @plan.rates.where(:unit_id => unit.id).first != nil %>
+<%= @plan.rates.where(:unit_id => unit.id).first.rate %>
+<% else %>
+<%= "موجود نیست" %>
+<%end%>
+</div>
+<%end%>
+
 <%= link_to t('Edit'), edit_plan_path(@plan) %> |
 <%= link_to t('Back'), plans_path(:building_id => @plan.building_id) %>

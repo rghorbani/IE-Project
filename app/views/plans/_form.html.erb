@@ -23,6 +23,14 @@
     <%= f.label :number,"شماره", :class => 'form-label' %><br>
     <%= f.number_field :number, :class => 'form-control' %>
   </div>
+  <br/>
+  <br/>
+  <% @plan.building.units.each do |unit| %>
+  <div class="field">
+  <%= unit.id %>
+
+  </div>
+  <%end%>
   <div class="actions">
     <%= f.submit "تائید", :class => 'btn btn-success' %>
   </div>
