@@ -33,6 +33,15 @@ class PlansController < ApplicationController
     @plan = Plan.new(plan_params)
     respond_to do |format|
       if @plan.save
+        @rates_hash = {}
+        params.each do |name, value|
+          if /unit_(.+)$/.match(name)
+            @rates_hash[$1] = value
+          end
+        end
+        @rates_hash.each do |name,value|
+          Rate.create(:plan_id => @plan.id, :unit_id => name, :rate => value)
+        end
         format.html { redirect_to plans_path(:building_id => @plan.building_id), notice: 'Plan was successfully created.' }
         format.json { render action: 'show', status: :created, location: @plan }
       else
@@ -45,11 +54,14 @@ class PlansController < ApplicationController
   # PATCH/PUT /plans/1
   # PATCH/PUT /plans/1.json
   def update
-    @rate_array = {}
+    @rates_hash = {}
     params.each do |name, value|
       if /unit_(.+)$/.match(name)
-        @rate_array[$1] = value
+        @rates_hash[$1] = value
       end
+    end
+    @rates_hash.each do |name,value|
+      Rate.create(:plan_id => @plan.id, :unit_id => name, :rate => value)
     end
     respond_to do |format|
       if @plan.update(plan_params)
