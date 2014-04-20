@@ -45,6 +45,12 @@ class PlansController < ApplicationController
   # PATCH/PUT /plans/1
   # PATCH/PUT /plans/1.json
   def update
+    @rate_array = {}
+    params.each do |name, value|
+      if /unit_(.+)$/.match(name)
+        @rate_array[$1] = value
+      end
+    end
     respond_to do |format|
       if @plan.update(plan_params)
         format.html { redirect_to plans_path(:building_id => @plan.building_id), notice: 'Plan was successfully updated.' }

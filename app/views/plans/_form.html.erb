@@ -28,7 +28,8 @@
   <% @plan.building.units.each do |unit| %>
   <div class="field">
   <%= unit.id %>
-
+  &nbsp
+  <%= number_field_tag "unit_#{unit.id}"%>
   </div>
   <%end%>
   <div class="actions">
