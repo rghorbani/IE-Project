@@ -8,7 +8,7 @@ class PlansController < ApplicationController
     if(@building_id != nil)
       @plans = Plan.all.where(:building_id => @building_id)
     else
-      @plan = Plan.all
+      @plans = Plan.all
     end
   end
 
