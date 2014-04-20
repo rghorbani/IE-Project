@@ -4,6 +4,24 @@
   src:url('/assets/BYekan.eot'),url('/assets/BYekan.woff'),url('/assets/BYekan.ttf');
 }
 
+@font-face {
+  font-family:'sade';
+  src:url("/assets/A-Sade.ttf");
+}
+@font-face {
+  font-family:'shikaste';
+  src:url("/assets/AShekari.ttf");
+}
+@font-face {
+  font-family:'nastealigh';
+  src:url("/assets/IranNastaliq.TTF");
+}
+@font-face {
+  font-family:'roya';
+  src:url("/assets/IRRoya.ttfF");
+}
+
+
 #sortable {
   list-style-type:
   none; margin: 0; padding: 0;
@@ -180,8 +198,8 @@ body {
   min-height: 100%;
   /*padding-bottom: 100px;*/
   /*font-family: Tahoma;*/
-  font-family: Tahoma, Geneva, sans-serif;
-  /*font-family: 'yekan';*/
+  /*font-family: Tahoma, Geneva, sans-serif;*/
+  font-family: 'sade';
 }
 
 body > .container {
