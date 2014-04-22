@@ -29,7 +29,7 @@ class UnitsController < ApplicationController
 
     respond_to do |format|
       if @unit.save
-        format.html { redirect_to buildings_path, notice: 'واحد با موفقیت ایجاد شد.' }
+        format.html { redirect_to building_path(@unit.building_id), notice: 'واحد با موفقیت ایجاد شد.' }
         format.json { render action: 'show', status: :created, location: @unit }
       else
         format.html { render action: 'new' }
@@ -43,7 +43,7 @@ class UnitsController < ApplicationController
   def update
     respond_to do |format|
       if @unit.update(unit_params)
-        format.html { redirect_to buildings_path, notice: 'واحد با موفقیت به روزرسانی شد.' }
+        format.html { redirect_to building_path(@unit.building_id), notice: 'واحد با موفقیت به روزرسانی شد.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -55,9 +55,10 @@ class UnitsController < ApplicationController
   # DELETE /units/1
   # DELETE /units/1.json
   def destroy
+    @building_id = @unit.building_id
     @unit.destroy
     respond_to do |format|
-      format.html { redirect_to buildings_path }
+      format.html { redirect_to building_path(@building_id) }
       format.json { head :no_content }
     end
   end
