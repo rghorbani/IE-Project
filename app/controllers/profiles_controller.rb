@@ -54,7 +54,7 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       
-      @profile.id = current_user.id
+      @profile.user_id = current_user.id
 
       if @profile.update(profile_params)
         format.html { redirect_to '/charge/dashboard', notice: 'پروفایل با موفقیت به روزرسانی شد.' }
