@@ -1,39 +1,42 @@
 <div class="container">
-  <div class="panel">
-    <div class="panel-heading">
-      <h3>ورود&nbsp<small>به حساب کاربری خود</small></h3>
-    </div>
-    <div class="panel-body">
-			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :class=>'form', :role=>'form') do |f| %>
-			  
-        <div class="form-group">
-          <%= f.label :email,"ایمیل", :class=>'form-label' %>
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-            <%= f.email_field :email, :placeholder=>'ایمیل', :class=>'form-control', :autofocus => true %>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <%= f.label :password,"گذرواژه", :class=>'form-label' %>
-				  <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-key"></i></span>
-            <%= f.password_field :password, :placeholder=>'گذرواژه', :class=>'form-control' %>
-          </div>
-        </div>
-
-			  <% if devise_mapping.rememberable? -%>
-			    <div class="form-group">
-            <div class="controls">
-              <%= f.check_box :remember_me %>&nbsp;<%= f.label :remember_me,"مرا به خاطر بسپار", :class=>'form-label' %>
+  <div class="col-md-4 col-md-offset-4">
+    <div class="panel">
+      <div class="panel-heading">
+        <h3>ورود&nbsp;<small>به حساب کاربری خود</small></h3>
+      </div>
+      <div class="panel-body">
+  			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :class=>'form', :role=>'form') do |f| %>
+  			  
+          <div class="form-group">
+            <%= f.label :email,"ایمیل", :class=>'form-label' %>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+              <%= f.email_field :email, :placeholder=>'ایمیل', :class=>'form-control', :autofocus => true %>
             </div>
           </div>
-			  <% end -%>
 
-			  <%= f.submit "ورود", :class=>'large green button radius' %>
-			<% end %>
-      <hr>
-      <%= render "devise/shared/links" %>
+          <div class="form-group">
+            <%= f.label :password,"گذرواژه", :class=>'form-label' %>
+  				  <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key"></i></span>
+              <%= f.password_field :password, :placeholder=>'گذرواژه', :class=>'form-control' %>
+            </div>
+          </div>
+
+  			  <% if devise_mapping.rememberable? -%>
+  			    <div class="form-group">
+              <div class="controls">
+                <%= f.check_box :remember_me %>&nbsp;<%= f.label :remember_me,"مرا به خاطر بسپار" %>
+              </div>
+            </div>
+  			  <% end -%>
+
+  			  <%= f.submit "ورود", :class=>'btn btn-lg btn-success col-md-12' %>
+        <% end %>
+        <br>
+        <hr>
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
 </div>

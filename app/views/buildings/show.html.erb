@@ -1,77 +1,82 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>تعداد طبقات:</strong>
-  <%= @building.floor_cnt %>
-</p>
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+      <h1>ایجاد ساختمان</h1>
+    </div>
+    <div class="panel-body">
+    	<div class="row-fluid">
 
-<p>
-  <strong>تعداد واحد:</strong>
-  <%= @building.units_cnt %>
-</p>
+				<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>مدیر:</strong>
-  <%= @building.user_id %>
-</p>
+				<p>
+				  <strong>تعداد طبقات:</strong>
+				  <%= @building.floor_cnt %>
+				</p>
 
-<p>
-  <strong>دیگر مشخصات:</strong>
-  <%= @building.general_info %>
-</p>
+				<p>
+				  <strong>تعداد واحد:</strong>
+				  <%= @building.units_cnt %>
+				</p>
 
+				<p>
+				  <strong>مدیر:</strong>
+				  <%= @building.user_id %>
+				</p>
 
-<% @units = @building.units %>
-<% @units.each do |unit| %>
-<br><br>
-<p>
-	<strong>User:</strong>
-	<%= unit.user_id %>
-</p>
+				<p>
+				  <strong>دیگر مشخصات:</strong>
+				  <%= @building.general_info %>
+				</p>
+				<br>
+				<br>
+				<br>
+				<div class="table-responsive">
+					<table class="table table-success table-condensed table-striped table-bordered table-hover">
+						<thead>
+							<tr>
+								<th style="width:10%;">کاربر</th>
+								<th style="width:10%;">ساختمان</th>
+								<th style="width:10%;">طبقه</th>
+								<th style="width:10%;">شماره واحد</th>
+								<th style="width:15%;">جهت مکانی</th>
+								<th style="width:15%;">مساحت</th>
+								<th style="width:10%;">تعداد ساکنین</th>
+								<th style="width:10%;" colspan="2"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<% @units = @building.units %>
+							<% @units.each do |unit| %>
+							<tr>
+								<th><%= unit.user_id %></th>
+								<th><%= unit.building_id %></th>
+								<th><%= unit.floor_number %></th>
+								<th><%= unit.unit_number %></th>
+								<th><%= unit.side %></th>
+								<th><%= unit.area %></th>
+								<th><%= unit.resident_count %></th>
+								<th class="center"><%= link_to t('Edit'), edit_unit_path(unit), :class => 'btn btn-primary' %></th>
+								<th class="center"><%= link_to t('Destroy'), unit, method: :delete, data: { confirm: 'آیا مطمئن هستید؟' }, :class => 'btn btn-danger' %></th>
+							</tr>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+				
+				<br>
+				<br>
 
-<p>
-	<strong>Building:</strong>
-	<%= unit.building_id %>
-</p>
+				<%= link_to 'واحد جدید برای این ساختمان', new_unit_path(building_id: @building.id) %>
+				<br/>
+				<%= link_to 'مشاهده هزینه ها', expenses_path(building_id: @building.id) %>
+				<br>
+				<%= link_to 'مشاهده پلان های هزینه', plans_path(building_id: @building.id) %>
+				<br>
+				<%= link_to t('Edit'), edit_building_path(@building) %> |
+				<%= link_to t('Back'), buildings_path %>
 
-<p>
-	<strong>طبقه:</strong>
-	<%= unit.floor_number %>
-</p>
-
-<p>
-	<strong>جهت مکانی:</strong>
-	<%= unit.side %>
-</p>
-
-<p>
-	<strong>شماره واحد:</strong>
-	<%= unit.unit_number %>
-</p>
-
-<p>
-	<strong>مساحت:</strong>
-	<%= unit.area %>
-</p>
-
-<p>
-	<strong>شمار سکنه:</strong>
-	<%= unit.resident_count %>
-</p>
-<%= link_to t('Edit'), edit_unit_path(unit) %> |
-<%= link_to t('Destroy'), unit, method: :delete, data: { confirm: 'آیا مطمئن هستید؟' } %> |
-<%= link_to t('Show'), unit %>
-<% end %>
-<br/>
-<br/>
-
-
-
-<%= link_to 'واحد جدید برای این ساختمان', new_unit_path(building_id: @building.id) %>
-<br/>
-<%= link_to 'مشاهده هزینه ها', expenses_path(building_id: @building.id) %>
-<br>
-<%= link_to 'مشاهده پلان های هزینه', plans_path(building_id: @building.id) %>
-<br>
-<%= link_to t('Edit'), edit_building_path(@building) %> |
-<%= link_to t('Back'), buildings_path %>
+			</div>
+    </div>
+  </div>
+</div>
