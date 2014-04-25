@@ -35,5 +35,16 @@
   <%= @unit.resident_count %>
 </p>
 
+<br/>
+<h2> ‌قبوض: </h2>
+<br/>
+<% @unit.bills.each do |bill| %>
+<div>
+<%= bill.description %>
+&nbsp
+<%= bill.price %>
+</div>
+<% end %>
+
 <%= link_to t('Edit'), edit_unit_path(@unit) %> |
 <%= link_to t('Back'), buildings_path %>

@@ -38,4 +38,13 @@
   <div class="actions">
     <%= f.submit "تائید", :class => 'btn btn-success' %>
   </div>
+  <br/>
+  <br/>
+  <% @expense.building.plans.each do |plan| %>
+  <div>
+  <%= plan.name %>
+  &nbsp
+  <%= radio_button_tag :plan_id ,plan.id %>
+  </div>
+  <% end %>
 <% end %>
