@@ -19,7 +19,8 @@
   <div class="form-group">
     <%= f.label :gender,"جنسیت", :class => 'form-label' %>
     <div class="input-group">
-      <%= select :profile, :gender, [['Male', 0], ['Female', 1]], :class => 'form-control selectpicker' %>
+      <div class="input-group-addon"><i class="fa fa-user"></i></div>
+      <%= select :profile, :gender, [['Male', 0], ['Female', 1]], {}, :class => 'form-control' %>
     </div>
   </div>
   <div class="form-group">
@@ -37,6 +38,6 @@
     </div>
   </div>
   <div class="actions">
-    <%= f.submit 'تائید', :id => 'profile_submit', :class => 'btn btn-lg btn-primary' %>
+    <%= f.submit 'تائید', :id => 'profile_submit', :class => 'btn btn-lg btn-primary col-md-6' %>
   </div>
 <% end %>

@@ -19,18 +19,12 @@
       <ul class="nav navbar-nav navbar-left">
         <li><%= Time.now.in_time_zone('Tehran').to_date %></li>
         <li class="dropdown">
-          <a href="" class="dropdown-toggle" data-toggle="dropdown">
+          <a href="" class="dropdown-toggle btn-nav2" data-toggle="dropdown">
             <i class="fa fa-user"></i> <%= current_user.email %>&nbsp;<b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
             <li>
               <a href="#" data-toggle="modal" data-target="#userSettingsDialog"><i class="fa fa-cogs"></i> تنظیمات شخصی حساب</a>
-            </li>
-            <li>
-              <a href="#">حساب من</a>
-            </li>
-            <li>
-              <a href="#">تنظیمات سیستم</a>
             </li>
             <li class="divider"></li>
             <li>
@@ -50,9 +44,9 @@
       <% else %>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <div class="btn-group" style="margin-top:7px;">
-            <a href="/users/sign_in" class="medium twitter button radius" style="text-decoration:none;">ورود</a>
-            <a href="/users/sign_up" class="medium twitter button radius" style="text-decoration:none;">ثبت نام</a>
+          <div class="btn-group" style="margin-top:15px;">
+            <a href="/users/sign_in" class="btn btn-nav" style="text-decoration:none;">ورود</a>
+            <a href="/users/sign_up" class="btn btn-nav" style="text-decoration:none;">ثبت نام</a>
           </div>
         </li>
       </ul>
@@ -80,7 +74,11 @@
         <br>
         <div id="userSettingsContent" class="tab-content">
           <div class="tab-pane fade active in" id="settings">
-            <%= render 'profiles/form_modal' %>
+            <div class="row">
+            <div class="col-md-8">
+              <%= render 'profiles/form_modal' %>
+            </div>
+            </div>
           </div>
           <div class="tab-pane fade" id="password">
             <form id="changePassword">
@@ -124,9 +122,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="sub-menu collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class=""><a href="/charge/dashboard"><i class="fa fa-dashboard icon-large"></i> داشبورد</a></li>
+        <li class=""><a href="/charge/dashboard"><i class="fa fa-dashboard icon-large"></i>&nbsp;داشبورد</a></li>
         <li class="dropdown">
-          <a href="" class="dropdown-toggle" data-toggle="dropdown">ساختمان <b class="caret"></b></a>
+          <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-building-o"></i>&nbsp;ساختمان <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li>
               <a href="/buildings">نمایش ساختمانها</a>
@@ -140,13 +138,15 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-file-text icon-large"></i> گزارش ها <b class="caret"></b></a>
+          <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bar-chart-o icon-large"></i>&nbsp;گزارش ها <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li>
-              <a href="/buildings">نمایش ساختمانها</a>
-            </li>
+            <li><a href="/buildings">ساکنین</a></li>
+            <li><a href="/buildings">وضعیت حساب</a></li>
+            <li><a href="/buildings">گردش حساب</a></li>
+            <li><a href="/buildings">بدهی ساکنین</a></li>
           </ul>
         </li>
+        <li class=""><a href="/charge/help"><i class="fa fa-lightbulb-o icon-large"></i>&nbsp;راهنما</a></li>
       </ul>
       <!--
       <form class="navbar-form navbar-left" role="search">

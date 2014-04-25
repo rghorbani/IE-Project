@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
     if(current_user.profile != nil)
-        redirect_to profiles_path, notice: 'شما از پیش دارای یک پروفایل میباشید.'
+        # redirect_to profiles_path, notice: 'شما از پیش دارای یک پروفایل میباشید.'
     else
       @profile = Profile.new
       @profile.user_id = current_user.id
@@ -54,7 +54,7 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       
-      @profile.id = current_user.id
+      @profile.user_id = current_user.id
 
       if @profile.update(profile_params)
         format.html { redirect_to '/charge/dashboard', notice: 'پروفایل با موفقیت به روزرسانی شد.' }
