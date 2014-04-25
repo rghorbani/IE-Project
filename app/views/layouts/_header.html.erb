@@ -19,7 +19,7 @@
       <ul class="nav navbar-nav navbar-left">
         <li><%= Time.now.in_time_zone('Tehran').to_date %></li>
         <li class="dropdown">
-          <a href="" class="dropdown-toggle" data-toggle="dropdown">
+          <a href="" class="dropdown-toggle btn-nav2" data-toggle="dropdown">
             <i class="fa fa-user"></i> <%= current_user.email %>&nbsp;<b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
@@ -44,9 +44,9 @@
       <% else %>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <div class="btn-group" style="margin-top:7px;">
-            <a href="/users/sign_in" class="medium twitter button radius" style="text-decoration:none;">ورود</a>
-            <a href="/users/sign_up" class="medium twitter button radius" style="text-decoration:none;">ثبت نام</a>
+          <div class="btn-group" style="margin-top:15px;">
+            <a href="/users/sign_in" class="btn btn-nav" style="text-decoration:none;">ورود</a>
+            <a href="/users/sign_up" class="btn btn-nav" style="text-decoration:none;">ثبت نام</a>
           </div>
         </li>
       </ul>

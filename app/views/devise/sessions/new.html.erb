@@ -11,7 +11,7 @@
             <%= f.label :email,"ایمیل", :class=>'form-label' %>
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-              <%= f.email_field :email, :placeholder=>'ایمیل', :class=>'form-control', :autofocus => true %>
+              <%= f.email_field :email, :placeholder=>'ایمیل', :class=>'form-control ltr', :autofocus => true %>
             </div>
           </div>
 
@@ -19,13 +19,13 @@
             <%= f.label :password,"گذرواژه", :class=>'form-label' %>
   				  <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-key"></i></span>
-              <%= f.password_field :password, :placeholder=>'گذرواژه', :class=>'form-control' %>
+              <%= f.password_field :password, :placeholder=>'گذرواژه', :class=>'form-control ltr' %>
             </div>
           </div>
 
   			  <% if devise_mapping.rememberable? -%>
   			    <div class="form-group">
-              <div class="controls">
+              <div class="input-group">
                 <%= f.check_box :remember_me %>&nbsp;<%= f.label :remember_me,"مرا به خاطر بسپار" %>
               </div>
             </div>
@@ -35,7 +35,10 @@
         <% end %>
         <br>
         <hr>
-        <%= render "devise/shared/links" %>
+      </div>
+      <div class="panel-footer">
+        <a href="/users/password/new"><i class="fa fa-arrow-right"></i>&nbsp;گذرواژه خود را فراموش کرده اید؟</a>
+        <a href="/users/sign_up" class="pull-left">ثبت نام&nbsp;<i class="fa fa-arrow-left"></i></a>
       </div>
     </div>
   </div>

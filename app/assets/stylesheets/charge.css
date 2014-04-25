@@ -66,18 +66,33 @@ div.shadow:hover {
   background:#F3F3F3;
 }
 
+.btn-nav {
+  background: #3B3B3B;
+  display: inline-block;
+  text-align: center;
+  padding: 9px 19px 11px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+  font-size:14px;
+  position: relative;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-nav:hover, .btn-nav:focus  { background-color: #363636; color: #fff; }
+
 /*----------------------*/
 
 body {
   background-image: url("/assets/bg_main.png"); repeat;
   padding-top: 140px;
   min-height: 100%;
+  font-size: 14px;
   /*padding-bottom: 100px;*/
-  /*font-family: Tahoma;*/
   /*font-family: Tahoma, Geneva, sans-serif;*/
   /*font-family: WMitra, Tahome, Arial;*/
   font-family: 'WMitra';
-  /*white-space: normal !important;*/
 }
 
 body > .container {
@@ -174,6 +189,12 @@ footer ul li {
 
 .panel-body {
   /*padding: 5px 10px 5px 10px;*/
+}
+
+.panel-body div.divider {
+  position: relative;
+  margin: 10px 0 10px 0;
+  border: 1px dotted #A6C4DB;
 }
 
 .notification {
