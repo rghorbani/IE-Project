@@ -138,6 +138,10 @@ footer ul li {
   text-align: left;
 }
 
+.center {
+  text-align: center;
+}
+
 .icon-large {
   font-size: 18px;
 }

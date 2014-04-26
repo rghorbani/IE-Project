@@ -9,6 +9,9 @@ class BuildingsController < ApplicationController
     #@buildings = Building.all.where(:manager_id => current_user.id)
     # authorize! :index, @building
     @buildings = current_user.buildings
+    if @buildings.size == 1
+      @building = @buildings.first
+    end
   end
 
   # GET /buildings/1

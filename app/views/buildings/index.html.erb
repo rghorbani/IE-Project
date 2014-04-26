@@ -7,7 +7,7 @@
     <div class="panel-body">
       <br>
 
-      <%= link_to 'ایجاد ساختمان', new_building_path %>
+      <%= link_to 'ایجاد ساختمان', new_building_path, :class => 'btn btn-success' %>
     </div>
     <% elsif @buildings.size == 1 %>
     <% building = @buildings.first %>
@@ -31,50 +31,38 @@
         <%= building.general_info %>
       </p>
       <br/>
-      <p>
-        <% @units = building.units %>
-        <% @units.each do |unit| %>
-        <br><br>
-        <p>
-          <strong>User:</strong>
-          <%= unit.user_id %>
-        </p>
-
-        <p>
-          <strong>Building:</strong>
-          <%= unit.building_id %>
-        </p>
-
-        <p>
-          <strong>طبقه:</strong>
-          <%= unit.floor_number %>
-        </p>
-
-        <p>
-          <strong>جهت مکانی:</strong>
-          <%= unit.side %>
-        </p>
-
-        <p>
-          <strong>شماره واحد:</strong>
-          <%= unit.unit_number %>
-        </p>
-
-        <p>
-          <strong>مساحت:</strong>
-          <%= unit.area %>
-        </p>
-
-        <p>
-          <strong>شمار سکنه:</strong>
-          <%= unit.resident_count %>
-        </p>
-        <%= link_to t('Edit'), edit_unit_path(unit) %> |
-        <%= link_to t('Destroy'), unit, method: :delete, data: { confirm: 'آیا مطمئن هستید؟' } %> |
-        <%= link_to t('Show'), unit %>
-        <% end %>
-        <br/>
-      </p>
+      
+      <div class="table-responsive">
+        <table class="table table-success table-condensed table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th style="width:10%;">کاربر</th>
+              <th style="width:10%;">ساختمان</th>
+              <th style="width:10%;">طبقه</th>
+              <th style="width:10%;">شماره واحد</th>
+              <th style="width:15%;">جهت مکانی</th>
+              <th style="width:15%;">مساحت</th>
+              <th style="width:10%;">تعداد ساکنین</th>
+              <th style="width:20%;"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @units = @building.units %>
+            <% @units.each do |unit| %>
+            <tr>
+              <th><%= unit.user_id %></th>
+              <th><%= unit.building_id %></th>
+              <th><%= unit.floor_number %></th>
+              <th><%= unit.unit_number %></th>
+              <th><%= unit.side %></th>
+              <th><%= unit.area %></th>
+              <th><%= unit.resident_count %></th>
+              <th class="center"><%= link_to t('Edit'), edit_unit_path(unit), :class => 'btn btn-primary' %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to t('Destroy'), unit, method: :delete, data: { confirm: 'آیا مطمئن هستید؟' }, :class => 'btn btn-danger' %></th>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
       <br/>
       <%= link_to t('Show'), building %>
       <br>
