@@ -11,28 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field hidden">
+  <div class="form-group hidden">
     <%= f.label :building_id, :class => 'form-label' %><br>
     <%= f.number_field :building_id, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name,"نام", :class => 'form-label' %><br>
     <%= f.text_field :name, :class => 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :number,"شماره", :class => 'form-label' %><br>
     <%= f.number_field :number, :class => 'form-control' %>
   </div>
   <br/>
   <br/>
   <% @plan.building.units.each do |unit| %>
-  <div class="field">
+  <div class="form-group">
   <%= unit.id %>
   &nbsp
   <%= number_field_tag "unit_#{unit.id}", @plan.rates.where(:unit_id => unit.id).first.rate %>
   </div>
   <%end%>
   <div class="actions">
-    <%= f.submit "تائید", :class => 'btn btn-success' %>
+    <%= f.submit "تائید", :class => 'btn btn-success col-md-4' %>
   </div>
 <% end %>
