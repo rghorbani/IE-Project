@@ -82,13 +82,18 @@ div.shadow:hover {
 
 .btn-nav:hover, .btn-nav:focus  { background-color: #363636; color: #fff; }
 
+.btn-text, .btn-text:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
 /*----------------------*/
 
 body {
   background-image: url("/assets/bg_main.png"); repeat;
   padding-top: 140px;
   min-height: 100%;
-  font-size: 14px;
+  font-size: 15px;
   /*padding-bottom: 100px;*/
   /*font-family: Tahoma, Geneva, sans-serif;*/
   /*font-family: WMitra, Tahome, Arial;*/
@@ -140,6 +145,10 @@ footer ul li {
 
 .center {
   text-align: center;
+}
+
+.left {
+  text-align: left;
 }
 
 .icon-large {
@@ -215,6 +224,10 @@ footer ul li {
   text-align: center;
   vertical-align: baseline;
   font-size: 17px;
+}
+
+#buildings-table {
+  font-size: 20px;
 }
 
 /*----------------------*/
