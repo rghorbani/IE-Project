@@ -8,5 +8,6 @@
 <br/>
 <%= link_to 'پلان هزینه جدید برای این ساختمان', new_plan_path(building_id: @building.id) %>
 <br>
+<%= link_to t('Destroy'), @building, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to t('Show'), @building %> |
 <%= link_to t('Back'), buildings_path %>
