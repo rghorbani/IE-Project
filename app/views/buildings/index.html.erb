@@ -32,11 +32,11 @@
             <tbody>
 
               <tr>
-                <th>نام ساختمان:</th>
+                <th><strong>نام ساختمان:</strong></th>
                 <th><%= building.name %></th>
               </tr>
               <tr>
-                <th><strong>تعداد طبقات:</strong></th>
+                <th><strong>تعداد طبقات:&nbsp</strong></th>
                 <th><%= building.floor_cnt %></th>
               </tr>
 
@@ -90,8 +90,14 @@
     </div>
     <div class="panel-footer">
       <div class="left">
-      <%= link_to 'هزینه جدید برای این ساختمان', new_expense_path(building_id: building.id), :class => 'btn btn-primary' %>
-      <%= link_to 'مشاهده هزینه ها', expenses_path(building_id: building.id), :class => 'btn btn-primary' %>
+      <%= link_to new_expense_path(building_id: building.id),:class => "btn btn-primary" do %>
+        <i class="fa fa-plus-square"></i>
+        <%= 'هزینه جدید برای این ساختمان' %>
+      <% end %>
+      <%= link_to expenses_path(building_id: building.id),:class => "btn btn-primary" do %>
+        <i class="fa fa-tasks"></i>
+        <%= 'مشاهده هزینه ها' %>
+      <% end %>
       </div>
     </div>
     <% else %>
