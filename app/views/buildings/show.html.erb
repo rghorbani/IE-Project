@@ -2,7 +2,7 @@
 <div class="container">
   <div class="panel">
     <div class="panel-heading">
-      <h1>نمایش ساختمان</h1>
+      <h1>اطلاعات ساختمان</h1>
     </div>
     <div class="panel-body">
     	<div class="row-fluid">
@@ -36,8 +36,7 @@
 					<table class="table table-success table-condensed table-striped table-bordered table-hover">
 						<thead>
 							<tr>
-								<th style="width:10%;">کاربر</th>
-								<th style="width:10%;">ساختمان</th>
+								<th style="width:10%;">نام مالک</th>
 								<th style="width:10%;">طبقه</th>
 								<th style="width:10%;">شماره واحد</th>
 								<th style="width:15%;">جهت مکانی</th>
@@ -50,14 +49,17 @@
 							<% @units = @building.units %>
 							<% @units.each do |unit| %>
 							<tr>
-								<th><%= unit.user_id %></th>
-								<th><%= unit.building_id %></th>
+								<th>
+									<% if unit.user != nil %>
+									<%= unit.user.profile.first_name %> <%= unit.user.profile.last_name %>
+									<% end %>
+								</th>
 								<th><%= unit.floor_number %></th>
 								<th><%= unit.unit_number %></th>
 								<th><%= unit.side %></th>
 								<th><%= unit.area %></th>
 								<th><%= unit.resident_count %></th>
-								<th class="center"><%= link_to t('Edit'), edit_unit_path(unit), :class => 'btn btn-primary' %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to t('Destroy'), unit, method: :delete, data: { confirm: 'آیا مطمئن هستید؟' }, :class => 'btn btn-danger' %></th>
+								<th class="center"><%= link_to t('Edit'), edit_unit_path(unit), :class => 'btn btn-primary' %></th>
 							</tr>
 							<% end %>
 						</tbody>

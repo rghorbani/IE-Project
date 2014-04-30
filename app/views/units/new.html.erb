@@ -2,15 +2,16 @@
 <div class="container">
   <div class="panel">
     <div class="panel-heading">
-		<h1>ایجاد واحد</h1>
+		<h1>ایجاد واحد برای <h3><%= @unit.building.name %></h3></h1>
 	</div>
     <div class="panel-body">
       <div class="row">
         <div class="col-md-5">
-
-          <h1>ساختمان: <%= @unit.building_id %></h1>
           <%= render 'form' %>
-
+          <br/>
+          <br/>
+          <br/>
+          <%= link_to t('Back'), building_path(@unit.building), :class => 'btn btn-lg btn-danger col-md-3' %>
         </div>
         <div class="col-md-7"></div>
       </div>

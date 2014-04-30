@@ -2,5 +2,11 @@
 
 <%= render 'form' %>
 
-<%= link_to t('Show'), @unit %> |
-<%= link_to t('Back'), buildings_path %>
+<br/>
+<br/>
+<br/>
+<%= link_to t('Back'), building_path(@unit.building), :class => 'btn btn-lg btn-danger col-md-3' %>
+<br/>
+<br/>
+<br/>
+<%= link_to "حذف این واحد", @unit, method: :delete, data: { confirm: 'آیا مطمئن هستید؟' }, :class => 'btn btn-danger' %>
