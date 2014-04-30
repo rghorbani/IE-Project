@@ -82,7 +82,13 @@
             </div>
           </div>
           <div class="tab-pane fade" id="password">
-            <form id="changePassword">
+            <div class="row">
+              <!-- <div class="col-md-1"></div> -->
+              <div class="col-md-8" style="margin-right:10px;">
+                <%= render 'devise/passwords/edit_form' %>
+              </div>
+            </div>
+            <!-- <form id="changePassword">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                 <input type="password" class="form-control" Placeholder="Password">
@@ -96,7 +102,7 @@
               <div class="input-group">
                 <button type="submit" class="btn btn-primary btn-lg">Submit</button>
               </div>
-            </form>
+            </form> -->
           </div>
         </div>
       </div>
