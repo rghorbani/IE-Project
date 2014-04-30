@@ -12,7 +12,11 @@
     <% elsif @buildings.size == 1 %>
     <% building = @buildings.first %>
     <div class="panel-heading">
-      <h3>ساختمان شما</h3>
+      <h3><% if building.name != nil %>
+          <%= building.name %>
+          <% else %>
+          <%= 'ساختمان شما' %>
+          <% end %></h3>
     </div>
     <div class="panel-body">
       <br>
@@ -28,7 +32,7 @@
             <tbody>
 
               <tr>
-                <th><strong>نام ساختمان:</strong></th>
+                <th>نام ساختمان:</th>
                 <th><%= building.name %></th>
               </tr>
               <tr>
@@ -47,8 +51,14 @@
           <!-- Picture -->
         </div>
       </div>
-      
+      <div class="pull-left">
+      <%= link_to building,:class => "btn btn-success" do %>
+        <i class="fa fa-folder-open-o"></i>
+        <%=t :show_building_info %>
+      <% end %>
+      </div>
       <br>
+      <br/>
 
       <div class="row-fluid">
         <div class="table-responsive">
@@ -77,18 +87,10 @@
           </table>
         </div>
       </div>
-      <br/>
-      <div class="pull-left">
-      <%= link_to building,:class => "btn btn-success" do %>
-        <i class="fa fa-folder-open-o"></i>
-        <%=t :show_building_info %>
-      <% end %>
-      </div>
-
-      <br>
     </div>
     <div class="panel-footer">
       <div class="left">
+      <%= link_to 'هزینه جدید برای این ساختمان', new_expense_path(building_id: building.id), :class => 'btn btn-primary' %>
       <%= link_to 'مشاهده هزینه ها', expenses_path(building_id: building.id), :class => 'btn btn-primary' %>
       </div>
     </div>

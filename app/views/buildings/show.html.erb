@@ -68,15 +68,10 @@
 				
 				<br>
 				<br>
-
-				<%= link_to 'واحد جدید برای این ساختمان', new_unit_path(building_id: @building.id) %>
-				<br/>
 				<%= link_to 'مشاهده هزینه ها', expenses_path(building_id: @building.id) %>
 				<br>
 				<%= link_to 'مشاهده پلان های هزینه', plans_path(building_id: @building.id) %>
 				<br>
-				<%= link_to t('Edit'), edit_building_path(@building) %> |
-				<%= link_to t('Back'), buildings_path %>
 
 			</div>
     </div>

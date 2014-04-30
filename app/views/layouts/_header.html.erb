@@ -137,9 +137,14 @@
               <a href="/buildings/new">ایجاد ساختمان</a>
             </li>
             <% end %>
-            <% if params[:controller] == 'buildings' and params[:action] == 'show' %>
+            <% if params[:controller] == 'buildings' and (params[:action] == 'show' or params[:action] == 'edit') %>
             <li>
               <%= link_to 'واحد جدید برای این ساختمان', new_unit_path(building_id: @building.id) %>
+            </li>
+            <% end %>
+            <% if params[:controller] == 'buildings' and params[:action] == 'show' %>
+            <li>
+                <%= link_to 'ویرایش ساختمان', edit_building_path(@building) %>
             </li>
             <% end %>
           </ul>

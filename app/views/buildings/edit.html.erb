@@ -2,8 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'واحد جدید برای این ساختمان', new_unit_path(building_id: @building.id) %>
-<br/>
+
 <%= link_to 'هزینه جدید برای این ساختمان', new_expense_path(building_id: @building.id) %>
 <br/>
 <%= link_to 'پلان هزینه جدید برای این ساختمان', new_plan_path(building_id: @building.id) %>
