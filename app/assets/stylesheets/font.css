@@ -1,0 +1,17 @@
+@font-face{font-family:'yekan';src:url('/assets/BYekan.eot'),url('/assets/BYekan.woff'),url('/assets/BYekan.ttf');}
+
+
+body {
+  font-family: 'yekan';
+}
+
+body,
+input,
+button,
+select,
+textarea,
+p,
+h4, h3, h1,.blue,
+.navbar-search .search-query {
+	font-family: 'yekan' ;
+}

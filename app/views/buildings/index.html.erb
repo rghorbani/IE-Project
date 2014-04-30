@@ -12,7 +12,7 @@
     <% elsif @buildings.size == 1 %>
     <% building = @buildings.first %>
     <div class="panel-heading">
-      <h1>ساختمان شما</h1>
+      <h3>ساختمان شما</h3>
     </div>
     <div class="panel-body">
       <br>
@@ -79,7 +79,10 @@
       </div>
       <br/>
       <div class="pull-left">
-        <div class="btn btn-success"><i class="fa fa-plus"></i>&nbsp;<%= link_to 'نمایش اطلاعات کامل ساختمان', building, :class => 'btn-text' %></div>
+      <%= link_to building,:class => "btn btn-success" do %>
+        <i class="fa fa-folder-open-o"></i>
+        <%=t :show_building_info %>
+      <% end %>
       </div>
 
       <br>
