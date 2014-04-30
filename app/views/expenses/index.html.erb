@@ -28,11 +28,20 @@
               <td><%= expense.deadline %></td>
               <td><%= expense.number %></td>
               <td>
-                <div class="btn btn-success"><i class="fa fa-plus"></i>&nbsp;<%= link_to t('Show'), expense, :class => 'btn-text' %></div>
+                <%= link_to expense, :class => 'btn btn-success' do %>
+                  <i class="fa fa-plus"></i>&nbsp;
+                  <%= t('Show') %>
+                <% end %>
                 &nbsp;
-                <div class="btn btn-primary"><i class="fa fa-pencil"></i>&nbsp;<%= link_to t('Edit'), edit_expense_path(expense), :class => 'btn-text' %></div>
+                <%= link_to edit_expense_path(expense), :class => 'btn btn-primary' do %>
+                  <i class="fa fa-pencil"></i>&nbsp;
+                  <%= t('Edit') %>
+                <% end %>
                 &nbsp;
-                <div class="btn btn-danger"><i class="fa fa-trash-o"></i>&nbsp;<%= link_to t('Destroy'), expense, method: :delete, data: { confirm: 'آیا اطمینان دارید؟' }, :class => 'btn-text' %></div>
+                <%= link_to expense, method: :delete, data: { confirm: 'آیا اطمینان دارید؟' }, :class => 'btn btn-danger' do %>
+                  <i class="fa fa-trash-o"></i>&nbsp;
+                  <%= t('Destroy') %>
+                <% end %>
               </td>
             </tr>
             <% end %>
@@ -40,10 +49,13 @@
         </table>
       </div>
       <br>
-
-      <%= link_to 'ایجاد هزینه جدید', new_expense_path(:building_id => @building_id) %>
-      <br>
-      <%= link_to 'ساختمان ها', buildings_path %>
+    </div>
+    <div class="panel-footer">
+      <div class="left">
+        <%= link_to 'ایجاد هزینه جدید', new_expense_path(:building_id => @building_id), :class => 'btn btn-primary' %>
+        &nbsp;
+        <%= link_to 'ساختمان ها', buildings_path, :class => 'btn btn-info' %>
+      </div>
     </div>
   </div>
 </div>

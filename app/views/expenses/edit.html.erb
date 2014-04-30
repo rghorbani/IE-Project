@@ -1,6 +1,21 @@
-<h1>ویرایش هزینه</h1>
 
-<%= render 'form' %>
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+      <h1>ویرایش هزینه</h1>
+    </div>
+    <div class="panel-body">
+    	<div class="row">
+    		<div class="col-md-5">
 
-<%= link_to t('Show'), @expense %> |
-<%= link_to t('Back'), expenses_path(:building_id => @expense.building_id) %>
+				<%= render 'form' %>
+
+				<%= link_to t('Show'), @expense, :class => 'btn btn-info' %>&nbsp;
+				<%= link_to t('Back'), expenses_path(:building_id => @expense.building_id), :class => 'btn btn-primary' %>
+
+			</div>
+    		<div class="col-md-7"></div>
+    	</div>
+    </div>
+  </div>
+</div>
