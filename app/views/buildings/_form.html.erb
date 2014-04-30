@@ -12,6 +12,12 @@
   <% end %>
 
   <div class="form-group">
+    <%= f.label :name, "نام ساختمان", :class => 'form-label'%>
+    <div class="input-group">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
     <%= f.label :floor_cnt, "تعداد طبقات", :class => 'form-label'%>
     <div class="input-group">
       <%= f.number_field :floor_cnt, :class => 'form-control' %>
@@ -27,12 +33,6 @@
     <%= f.label :user_id, "مدیر", :class => 'form-label' %>
     <div class="input-group">
       <%= f.number_field :user_id, :class => 'form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :general_info, "دیگر مشخصات", :class => 'form-label' %>
-    <div class="input-group">
-      <%= f.text_area :general_info, :class => 'form-control' %>
     </div>
   </div>
   <div class="actions">

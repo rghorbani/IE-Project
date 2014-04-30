@@ -39,6 +39,7 @@ class ExpensesController < ApplicationController
           sum += rate.rate
         end
         @plan.rates.each do |rate|
+          next if(rate.rate == 0)
           Bill.create(:expense_id => @expense.id, :unit_id => rate.unit_id, :price => (rate.rate*(@expense.price))/sum, :deadline => @expense.deadline, :description => @expense.description, :status => false)
         end
         format.html { redirect_to expenses_path(:building_id => @expense.building_id), notice: 'Expense was successfully created.' }

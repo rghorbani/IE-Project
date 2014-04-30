@@ -10,6 +10,11 @@
 				<p id="notice"><%= notice %></p>
 
 				<p>
+				  <strong>نام ساختمان:</strong>
+				  <%= @building.name %>
+				</p>
+
+				<p>
 				  <strong>تعداد طبقات:</strong>
 				  <%= @building.floor_cnt %>
 				</p>
@@ -20,14 +25,10 @@
 				</p>
 
 				<p>
-				  <strong>مدیر:</strong>
-				  <%= @building.user_id %>
+				  <strong>نام مدیر:</strong>
+				  <%= @building.user.profile.first_name %> <%= @building.user.profile.last_name %>
 				</p>
 
-				<p>
-				  <strong>دیگر مشخصات:</strong>
-				  <%= @building.general_info %>
-				</p>
 				<br>
 				<br>
 				<br>
