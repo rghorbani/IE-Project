@@ -19,6 +19,11 @@
   <%=render :partial => 'layouts/footer' %>
 
   <div class="notification"></div>
+  <% unless notice.nil? %>
+  <div id="notice" class="notification">
+    <%= notice %>
+  </div>
+  <% end %>
   <%= javascript_include_tag "application", 'bootstrap.min' %>
 </body>
 </html>

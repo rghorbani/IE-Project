@@ -223,7 +223,7 @@ footer ul li {
   display: none;
   padding: 13px 15px 10px 15px;
   text-align: center;
-  vertical-align: baseline;
+  vertical-align: middle;
   font-size: 17px;
 }
 
