@@ -1,20 +1,18 @@
-<h3><% if @building.name != nil %>
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+      <h3><% if @building.name != nil %>
           ویرایش <%= @building.name %>
           <% else %>
           ویرایش ساختمان
           <% end %></h3>
-
-<div class="container">
-  <div class="panel">
-    <div class="panel-heading">
-      <h1>ویرایش ساختمان</h1>
     </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-md-5">
 
         <%= render 'form' %>
-
+        <br/>
         <%= link_to building_path(@building),:class => "btn btn-orange" do %>
           <i class="fa fa-arrow-circle-o-right"></i>&nbsp;
           <%= t('Back') %>
