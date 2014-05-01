@@ -1,4 +1,8 @@
-<h1>ویرایش ساختمان</h1>
+<h3><% if @building.name != nil %>
+          ویرایش <%= @building.name %>
+          <% else %>
+          ویرایش ساختمان
+          <% end %></h3>
 
 <%= render 'form' %>
 

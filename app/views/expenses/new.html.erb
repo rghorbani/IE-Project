@@ -2,19 +2,26 @@
 <div class="container">
   <div class="panel">
     <div class="panel-heading">
-      <h1>ایجاد هزینه</h1>
+      <h3><% if @expense.building.name != nil %>
+          ایجاد هزینه برای <%= @expense.building.name %>
+          <% else %>
+          ایجاد هزینه برای ساختمان
+          <% end %></h3>
     </div>
     <div class="panel-body">
     	<div class="row">
     		<div class="col-md-5">
 
-				<%= render 'form' %>
-
-        &nbsp;
-				<%= link_to t('Back'), expenses_path(:building_id => @expense.building_id), :class => 'btn btn-primary' %>
-			</div>
-    		<div class="col-md-7"></div>
-    	</div>
+          <%= render 'form' %>
+          <br/>
+          <br/>
+          <%= link_to expenses_path(:building_id => @expense.building_id),:class => "btn btn-primary" do %>
+          <i class="fa fa-arrow-circle-o-right"></i>&nbsp;
+          <%= t('Back') %>
+          <% end %>
+        </div>
+        <div class="col-md-7"></div>
+      </div>
     </div>
   </div>
 </div>
