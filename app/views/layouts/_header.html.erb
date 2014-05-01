@@ -153,35 +153,24 @@
             <% end %>
           </ul>
         </li>
-        <% if (params[:controller] == 'buildings' and (params[:action] == 'show' or params[:action] == 'edit')) or params[:controller] == 'expenses' or params[:controller] == 'plans' %>
+        <% if (params[:controller] == 'buildings' and
+              (params[:action] == 'show' or params[:action] == 'edit')) or
+              params[:controller] == 'expenses' or
+              params[:controller] == 'plans' %>
         <li class="dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-money"></i>&nbsp;هزینه <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <% if params[:controller] == 'buildings' and (params[:action] == 'show' or params[:action] == 'edit') %>
+            <% if params[:controller] != 'plans' %>
             <li>
               <%= link_to 'هزینه جدید برای این ساختمان', new_expense_path(building_id: @building.id) %>
             </li>
             <% end %>
-            <% if params[:controller] == 'expenses' and params[:action] == 'index' %>
-            <li>
-              <%= link_to 'هزینه جدید برای این ساختمان', new_expense_path(building_id: @building.id) %>
-            </li>
-            <% end %>
-            <% if params[:controller] == 'buildings' and (params[:action] == 'show' or params[:action] == 'edit') %>
             <li>
               <%= link_to 'مشاهده هزینه ها', expenses_path(building_id: @building.id) %>
             </li>
-            <% end %>
-            <% if params[:controller] == 'expenses' %>
-            <li>
-              <%= link_to 'مشاهده هزینه ها', expenses_path(building_id: @building.id) %>
-            </li>
-            <% end %>
-            <% if params[:controller] == 'buildings' and (params[:action] == 'show' or params[:action] == 'edit') %>
             <li>
               <%= link_to 'مشاهده پلان های هزینه', plans_path(building_id: @building.id) %>
             </li>
-            <% end %>
           </ul>
         </li>
         <% end %>

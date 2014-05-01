@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>ساختمان:</strong>
   <%= @expense.building_id %>
@@ -30,5 +28,14 @@
   <%= @expense.number %>
 </p>
 
-<%= link_to t('Edit'), edit_expense_path(@expense) %> |
-<%= link_to t('Back'), expenses_path(:building_id => @expense.building_id) %>
+
+
+<%= link_to expenses_path(:building_id => @expense.building_id),:class => "btn btn-primary" do %>
+<i class="fa fa-arrow-circle-o-right"></i>&nbsp;
+<%= t('Back') %>
+<% end %>
+
+<%= link_to edit_expense_path(@expense), :class => 'btn btn-primary' do %>
+<i class="fa fa-edit"></i>&nbsp;
+<%= 'ویرایش هزینه' %>
+<% end %>

@@ -8,6 +8,10 @@
           <% end %></h3>
     </div>
     <div class="panel-body">
+      <%= link_to new_expense_path(building_id: @building.id),:class => "btn btn-primary" do %>
+        <i class="fa fa-plus-square"></i>&nbsp;
+        <%= 'هزینه جدید برای این ساختمان' %>
+      <% end %>
       <div class="table-responsive">
         <table class="table table-hover">
           <thead>
@@ -27,18 +31,8 @@
               <td><%= expense.release_date %></td>
               <td>
                 <%= link_to expense, :class => 'btn btn-success' do %>
-                  <i class="fa fa-plus"></i>&nbsp;
-                  <%= t('Show') %>
-                <% end %>
-                &nbsp;
-                <%= link_to edit_expense_path(expense), :class => 'btn btn-primary' do %>
-                  <i class="fa fa-pencil"></i>&nbsp;
-                  <%= t('Edit') %>
-                <% end %>
-                &nbsp;
-                <%= link_to expense, method: :delete, data: { confirm: 'آیا اطمینان دارید؟' }, :class => 'btn btn-danger' do %>
-                  <i class="fa fa-trash-o"></i>&nbsp;
-                  <%= t('Destroy') %>
+                  <i class="fa fa-folder-open-o"></i>&nbsp;
+                  <%= 'نمایش جزئیات' %>
                 <% end %>
               </td>
             </tr>
@@ -50,7 +44,6 @@
     </div>
     <div class="panel-footer">
       <div class="left">
-        <%= link_to 'ایجاد هزینه جدید', new_expense_path(:building_id => @building_id), :class => 'btn btn-primary' %>
       </div>
     </div>
   </div>
