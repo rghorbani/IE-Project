@@ -1,50 +1,57 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @unit.user_id %>
-</p>
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+      <p>
+        <strong>User:</strong>
+        <%= @unit.user_id %>
+      </p>
 
-<p>
-  <strong>Building:</strong>
-  <%= @unit.building_id %>
-</p>
+      <p>
+        <strong>Building:</strong>
+        <%= @unit.building_id %>
+      </p>
 
-<p>
-  <strong>طبقه:</strong>
-  <%= @unit.floor_number %>
-</p>
+      <p>
+        <strong>طبقه:</strong>
+        <%= @unit.floor_number %>
+      </p>
 
-<p>
-  <strong>جهت مکانی:</strong>
-  <%= @unit.side %>
-</p>
+      <p>
+        <strong>جهت مکانی:</strong>
+        <%= @unit.side %>
+      </p>
 
-<p>
-  <strong>شماره واحد:</strong>
-  <%= @unit.unit_number %>
-</p>
+      <p>
+        <strong>شماره واحد:</strong>
+        <%= @unit.unit_number %>
+      </p>
 
-<p>
-  <strong>مساحت:</strong>
-  <%= @unit.area %>
-</p>
+      <p>
+        <strong>مساحت:</strong>
+        <%= @unit.area %>
+      </p>
 
-<p>
-  <strong>شمار سکنه:</strong>
-  <%= @unit.resident_count %>
-</p>
+      <p>
+        <strong>شمار سکنه:</strong>
+        <%= @unit.resident_count %>
+      </p>
 
-<br/>
-<h2> ‌قبوض: </h2>
-<br/>
-<% @unit.bills.each do |bill| %>
-<div>
-<%= bill.description %>
-&nbsp
-<%= bill.price %>
+      <br/>
+      <h2> ‌قبوض: </h2>
+      <br/>
+      <% @unit.bills.each do |bill| %>
+      <div>
+      <%= bill.description %>
+      &nbsp;
+      <%= bill.price %>
+      </div>
+      <% end %>
+
+      <%= link_to t('Edit'), edit_unit_path(@unit), :class => 'btn btn-primary' %>&nbsp;
+      <%= link_to t('Back'), buildings_path, :class => 'btn btn-orange' %>
+    </div>
+  </div>
 </div>
-<% end %>
-
-<%= link_to t('Edit'), edit_unit_path(@unit) %> |
-<%= link_to t('Back'), buildings_path %>

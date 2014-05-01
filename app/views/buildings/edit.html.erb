@@ -1,18 +1,27 @@
-<h1>ویرایش ساختمان</h1>
 
-<%= render 'form' %>
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+      <h1>ویرایش ساختمان</h1>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-5">
 
-<br/>
-<br/>
+        <%= render 'form' %>
 
-<%= link_to building_path(@building),:class => "btn btn-primary" do %>
-<i class="fa fa-arrow-circle-o-right"></i>&nbsp;
-<%= t('Back') %>
-<% end %>
+        <%= link_to building_path(@building),:class => "btn btn-orange" do %>
+          <i class="fa fa-arrow-circle-o-right"></i>&nbsp;
+          <%= t('Back') %>
+        <% end %>
 
-<%= link_to @building, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn btn-danger" do %>
-<i class="fa fa-trash-o"></i>&nbsp;
-<%= 'حذف این ساختمان' %>
-<% end %>
-
-
+        <%= link_to @building, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn btn-danger" do %>
+          <i class="fa fa-trash-o"></i>&nbsp;
+          <%= 'حذف این ساختمان' %>
+        <% end %>
+      </div>
+        <div class="col-md-7"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,20 @@
-<h1>Editing payment</h1>
 
-<%= render 'form' %>
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+      <h1>ویرایش پرداخت</h1>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-5">
 
-<%= link_to 'Show', @payment %> |
-<%= link_to 'Back', payments_path %>
+					<%= render 'form' %>
+
+					<%= link_to 'Show', @payment, :class => 'btn btn-info' %>&nbsp;
+					<%= link_to 'Back', payments_path, :class => 'btn btn-orange' %>
+				</div>
+        <div class="col-md-7"></div>
+      </div>
+    </div>
+  </div>
+</div>

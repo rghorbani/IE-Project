@@ -189,7 +189,7 @@ footer ul li {
 }
 
 .panel-heading h1 {
-  margin: 10px 0 5px 0;
+  margin: 5px 0 5px 0;
 }
 
 .panel-heading h4 {
@@ -227,6 +227,18 @@ footer ul li {
   font-size: 17px;
 }
 
+.btn-orange {
+  color: white;
+  background-color: #F3B149;
+  border-color: #F3A223;
+}
+
+.btn-orange:hover {
+  color: white;
+  background-color: #F3A223;
+  border-color: #F29708;
+}
+
 #buildings-table {
   font-size: 20px;
 }
@@ -242,6 +254,11 @@ footer ul li {
   background: url("/assets/header_bg.png") repeat-x  #F3F1F8;
   /*position: relative;*/
   /*margin-bottom: 0;*/
+}
+
+.mainnav ul li {
+  display: block;
+  color: white;
 }
 
 .mainnav .nav > li > a,

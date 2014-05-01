@@ -1,37 +1,45 @@
-<h1>Listing bills</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Expense</th>
-      <th>Unit</th>
-      <th>Price</th>
-      <th>Deadline</th>
-      <th>Description</th>
-      <th>Status</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+      <h1>Listing bills</h1>
+    </div>
+    <div class="panel-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Expense</th>
+            <th>Unit</th>
+            <th>Price</th>
+            <th>Deadline</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @bills.each do |bill| %>
-      <tr>
-        <td><%= bill.expense_id %></td>
-        <td><%= bill.unit_id %></td>
-        <td><%= bill.price %></td>
-        <td><%= bill.deadline %></td>
-        <td><%= bill.description %></td>
-        <td><%= bill.status %></td>
-        <td><%= link_to 'Show', bill %></td>
-        <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
-        <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @bills.each do |bill| %>
+            <tr>
+              <td><%= bill.expense_id %></td>
+              <td><%= bill.unit_id %></td>
+              <td><%= bill.price %></td>
+              <td><%= bill.deadline %></td>
+              <td><%= bill.description %></td>
+              <td><%= bill.status %></td>
+              <td><%= link_to 'Show', bill %></td>
+              <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
+              <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-<br>
+      <br>
 
-<%= link_to 'New Bill', new_bill_path %>
+      <%= link_to 'New Bill', new_bill_path, :class => 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

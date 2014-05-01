@@ -1,12 +1,22 @@
-<h1>ویرایش واحد</h1>
 
-<%= render 'form' %>
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+      <h1>ویرایش واحد</h1>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-5">
 
-<br/>
-<br/>
-<br/>
-<%= link_to t('Back'), building_path(@unit.building), :class => 'btn btn-lg btn-danger col-md-3' %>
-<br/>
-<br/>
-<br/>
-<%= link_to "حذف این واحد", @unit, method: :delete, data: { confirm: 'آیا مطمئن هستید؟' }, :class => 'btn btn-danger' %>
+					<%= render 'form' %>
+
+					<br/>
+					<%= link_to t('Back'), building_path(@unit.building), :class => 'btn btn-lg btn-orange col-md-3' %>&nbsp;
+					<%= link_to "حذف این واحد", @unit, method: :delete, data: { confirm: 'آیا مطمئن هستید؟' }, :class => 'btn btn-danger' %>
+				</div>
+        <div class="col-md-7"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
