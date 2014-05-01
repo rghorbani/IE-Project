@@ -10,9 +10,15 @@
 
 				<%= render 'form' %>
 
-				<%= link_to t('Show'), @expense, :class => 'btn btn-info' %>&nbsp;
-				<%= link_to t('Back'), expenses_path(:building_id => @expense.building_id), :class => 'btn btn-orange' %>
+                <%= link_to expense_path(@expense),:class => "btn btn-orange" do %>
+                <i class="fa fa-arrow-circle-o-right"></i>&nbsp;
+                <%= t('Back') %>
+                <% end %>
 
+                <%= link_to @expense, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn btn-danger" do %>
+                <i class="fa fa-trash-o"></i>&nbsp;
+                <%= 'حذف این هزینه' %>
+                <% end %>
 			</div>
     		<div class="col-md-7"></div>
     	</div>

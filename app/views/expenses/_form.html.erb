@@ -38,11 +38,7 @@
     <%= f.label :number,"شماره سریال", :class => 'control-label' %><br>
     <%= f.number_field :number, :class => 'form-control' %>
   </div>
-  <div class="actions">
-    <%= f.submit "تائید", :class => 'btn btn-success col-md-4' %>
-  </div>
-  <br/>
-  <br/>
+  <div>
   <% @expense.building.plans.each do |plan| %>
   <div>
   <%= plan.name %>
@@ -50,4 +46,8 @@
   <%= radio_button_tag :plan_id ,plan.id %>
   </div>
   <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit "تائید", :class => 'btn btn-success col-md-4' %>
+  </div>
 <% end %>

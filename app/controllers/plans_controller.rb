@@ -5,6 +5,7 @@ class PlansController < ApplicationController
   # GET /plans.json
   def index
     @building_id = params[:building_id]
+    @building = Building.find(@building_id)
     if(@building_id != nil)
       @plans = Plan.all.where(:building_id => @building_id)
     else
@@ -15,16 +16,22 @@ class PlansController < ApplicationController
   # GET /plans/1
   # GET /plans/1.json
   def show
+    @building_id = @plan.building_id
+    @building = Building.find(@building_id)
   end
 
   # GET /plans/new
   def new
     @plan = Plan.new
     @plan.building_id = params[:building_id]
+    @building_id = params[:building_id]
+    @building = Building.find(@building_id)
   end
 
   # GET /plans/1/edit
   def edit
+    @building_id = @plan.building_id
+    @building = Building.find(@building_id)
   end
 
   # POST /plans

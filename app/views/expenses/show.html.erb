@@ -34,8 +34,15 @@
         <%= @expense.number %>
       </p>
 
-      <%= link_to t('Edit'), edit_expense_path(@expense), :class => 'btn btn-primary' %>&nbsp;
-      <%= link_to t('Back'), expenses_path(:building_id => @expense.building_id), :class => 'btn btn-orange' %>
+      <%= link_to expenses_path(:building_id => @expense.building_id),:class => "btn btn-orange" do %>
+        <i class="fa fa-arrow-circle-o-right"></i>&nbsp;
+        <%= t('Back') %>
+      <% end %>
+
+      <%= link_to edit_expense_path(@expense), :class => 'btn btn-primary' do %>
+        <i class="fa fa-edit"></i>&nbsp;
+        <%= 'ویرایش هزینه' %>
+      <% end %>
     </div>
   </div>
 </div>
