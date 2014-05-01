@@ -44,6 +44,10 @@
                 <th><strong>تعداد واحد:</strong></th>
                 <th><%= building.units_cnt %></th>
               </tr>
+              <tr>
+                <th><strong>نام مدیر:</strong></th>
+                <th><%= @building.user.profile.first_name %> <%= @building.user.profile.last_name %></th>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -110,8 +114,6 @@
           <thead>
             <tr>
               <th>نام ساختمان</th>
-              <th>تعداد طبقات</th>
-              <th>تعداد واحد</th>
               <th></th>
               <th></th>
             </tr>
@@ -121,29 +123,24 @@
             <% @buildings.each do |building| %>
               <tr>
                 <td><%= building.name %></td>
-                <td><%= building.floor_cnt %></td>
-                <td><%= building.units_cnt %></td>
                 <td>
-                  <%= link_to building, class: 'btn btn-success' do %>
-                    <i class="fa fa-plus"></i>&nbsp;
-                    <%= t('Show') %>
+                  <%= link_to building,:class => "btn btn-success" do %>
+                  <i class="fa fa-folder-open-o"></i>&nbsp;
+                  <%=t :show_building_info %>
                   <% end %>
                 </td>
                 <td>
-                  <%= link_to edit_building_path(building), class: 'btn btn-primary' do %>
-                    <i class="fa fa-pencil"></i>&nbsp;
-                    <%= t('Edit') %>
-                  <% end %>
+                <%= link_to new_expense_path(building_id: building.id),:class => "btn btn-primary" do %>
+                  <i class="fa fa-plus-square"></i>&nbsp;
+                  <%= 'هزینه جدید برای این ساختمان' %>
+                <% end %>
                 </td>
                 <td>
-                  <%= link_to building, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
-                    <i class="fa fa-trash-o"></i>&nbsp;
-                    <%= t('Destroy') %>
-                  <% end %>
+                <%= link_to expenses_path(building_id: building.id),:class => "btn btn-info" do %>
+                  <i class="fa fa-tasks"></i>&nbsp;
+                  <%= 'مشاهده هزینه ها' %>
+                <% end %>
                 </td>
-                <td><%= link_to '<i class="fa fa-plus"></i>&nbsp;واحد جدید برای این ساختمان'.html_safe, new_unit_path(building_id: building.id), class: 'btn btn-primary' %>
-                <td><%= link_to 'مشاهده هزینه ها', expenses_path(building_id: building.id), class: 'btn btn-info' %></td>
-                <td><%= link_to 'مشاهده پلان های هزینه', plans_path(building_id: building.id), class: 'btn btn-info' %></td>
               </tr>
             <% end %>
           </tbody>

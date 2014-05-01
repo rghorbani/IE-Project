@@ -2,7 +2,11 @@
 <div class="container">
   <div class="panel">
     <div class="panel-heading">
-      <h1>اطلاعات ساختمان</h1>
+      <h3><% if @building.name != nil %>
+          <%= @building.name %>
+          <% else %>
+          <%= 'اطلاعات ساختمان' %>
+          <% end %></h3>
     </div>
     <div class="panel-body">
       <div class="row-fluid">
@@ -72,9 +76,6 @@
     </div>
     <div class="panel-footer">
       <div class="left">
-        <%= link_to 'مشاهده هزینه ها', expenses_path(building_id: @building.id), :class => 'btn btn-info' %>
-        &nbsp;
-        <%= link_to 'مشاهده پلان های هزینه', plans_path(building_id: @building.id), :class => 'btn btn-info' %>
       </div>
     </div>
   </div>

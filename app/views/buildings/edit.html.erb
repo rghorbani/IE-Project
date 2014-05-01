@@ -2,11 +2,17 @@
 
 <%= render 'form' %>
 
-
-<%= link_to 'هزینه جدید برای این ساختمان', new_expense_path(building_id: @building.id) %>
 <br/>
-<%= link_to 'پلان هزینه جدید برای این ساختمان', new_plan_path(building_id: @building.id) %>
-<br>
-<%= link_to t('Destroy'), @building, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to t('Show'), @building %> |
-<%= link_to t('Back'), buildings_path %>
+<br/>
+
+<%= link_to building_path(@building),:class => "btn btn-primary" do %>
+<i class="fa fa-arrow-circle-o-right"></i>&nbsp;
+<%= t('Back') %>
+<% end %>
+
+<%= link_to @building, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn btn-danger" do %>
+<i class="fa fa-trash-o"></i>&nbsp;
+<%= 'حذف این ساختمان' %>
+<% end %>
+
+
