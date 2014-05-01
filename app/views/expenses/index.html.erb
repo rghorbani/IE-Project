@@ -1,19 +1,20 @@
 <div class="container">
   <div class="panel">
     <div class="panel-heading">
-      <h1>لیست هزینه ها</h1>
+      <h3><% if @building.name != nil %>
+          لیست هزینه های <%= @building.name %>
+          <% else %>
+          لیسته هزینه های ساختمان
+          <% end %></h3>
     </div>
     <div class="panel-body">
       <div class="table-responsive">
         <table class="table table-hover">
           <thead>
             <tr>
-              <th>ساختمان</th>
-              <th>مبلغ</th>
               <th>توضیحات</th>
+              <th>مبلغ</th>
               <th>تاریخ صدور</th>
-              <th>زمان پرداخت</th>
-              <th>شماره سریال</th>
               <th style="width:25%;"></th>
             </tr>
           </thead>
@@ -21,12 +22,9 @@
           <tbody>
             <% @expenses.each do |expense| %>
             <tr>
-              <td><%= expense.building_id %></td>
-              <td><%= expense.price %></td>
               <td><%= expense.description %></td>
+              <td><%= expense.price %></td>
               <td><%= expense.release_date %></td>
-              <td><%= expense.deadline %></td>
-              <td><%= expense.number %></td>
               <td>
                 <%= link_to expense, :class => 'btn btn-success' do %>
                   <i class="fa fa-plus"></i>&nbsp;
@@ -53,8 +51,6 @@
     <div class="panel-footer">
       <div class="left">
         <%= link_to 'ایجاد هزینه جدید', new_expense_path(:building_id => @building_id), :class => 'btn btn-primary' %>
-        &nbsp;
-        <%= link_to 'ساختمان ها', buildings_path, :class => 'btn btn-info' %>
       </div>
     </div>
   </div>

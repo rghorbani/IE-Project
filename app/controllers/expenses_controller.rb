@@ -5,6 +5,7 @@ class ExpensesController < ApplicationController
   # GET /expenses.json
   def index
     @building_id = params[:building_id]
+    @building = Building.find(@building_id)
     if(@building_id != nil)
       @expenses = Expense.all.where(:building_id => @building_id)
     else
@@ -15,16 +16,22 @@ class ExpensesController < ApplicationController
   # GET /expenses/1
   # GET /expenses/1.json
   def show
+    @building_id = @expense.building_id
+    @building = Building.find(@building_id)
   end
 
   # GET /expenses/new
   def new
     @expense = Expense.new
     @expense.building_id = params[:building_id]
+    @building_id = params[:building_id]
+    @building = Building.find(@building_id)
   end
 
   # GET /expenses/1/edit
   def edit
+    @building_id = @expense.building_id
+    @building = Building.find(@building_id)
   end
 
   # POST /expenses
