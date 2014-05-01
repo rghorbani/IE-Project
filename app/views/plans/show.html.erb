@@ -1,32 +1,39 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>ساختمان:</strong>
-  <%= @plan.building_id %>
-</p>
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+			<p>
+			  <strong>ساختمان:</strong>
+			  <%= @plan.building_id %>
+			</p>
 
-<p>
-  <strong>نام:</strong>
-  <%= @plan.name %>
-</p>
+			<p>
+			  <strong>نام:</strong>
+			  <%= @plan.name %>
+			</p>
 
-<p>
-  <strong>شماره:</strong>
-  <%= @plan.number %>
-</p>
+			<p>
+			  <strong>شماره:</strong>
+			  <%= @plan.number %>
+			</p>
 
-<br>
-<% @plan.building.units.each do |unit| %>
-<div>
-<%= unit.id %>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<% if @plan.rates.where(:unit_id => unit.id).first != nil %>
-<%= @plan.rates.where(:unit_id => unit.id).first.rate %>
-<% else %>
-<%= "موجود نیست" %>
-<%end%>
+			<br>
+			<% @plan.building.units.each do |unit| %>
+			<div>
+			<%= unit.id %>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<% if @plan.rates.where(:unit_id => unit.id).first != nil %>
+			<%= @plan.rates.where(:unit_id => unit.id).first.rate %>
+			<% else %>
+			<%= "موجود نیست" %>
+			<%end%>
+			</div>
+			<%end%>
+
+			<%= link_to t('Edit'), edit_plan_path(@plan), :class => 'btn btn-primary' %>&nbsp;
+			<%= link_to t('Back'), plans_path(:building_id => @plan.building_id), :class => 'btn btn-orange' %>
+    </div>
+	</div>
 </div>
-<%end%>
-
-<%= link_to t('Edit'), edit_plan_path(@plan) %> |
-<%= link_to t('Back'), plans_path(:building_id => @plan.building_id) %>
