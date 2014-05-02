@@ -4,7 +4,12 @@ class NewsController < ApplicationController
   # GET /news
   # GET /news.json
   def index
-    @news = News.all.order("created_at DESC").limit(5)
+    if params[:system]
+      @news_type = true
+    else
+      @news_type = false
+    end
+    @news = News.where('system = ?', @news_type).order("created_at DESC").limit(5)
   end
 
   # GET /news/1
