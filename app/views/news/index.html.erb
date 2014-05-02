@@ -5,7 +5,7 @@
     </div>
     <div class="panel-body">
       <div class="col-md-10 col-md-offset-1">
-      <div class="list-group">
+      <div id="news-group" class="list-group">
         <% @news.each do |news| %>
           <%= link_to news, :class => 'list-group-item' do %>
             <h4 class="list-group-item-heading"><%= news.title %></h4>
