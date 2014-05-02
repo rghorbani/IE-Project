@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+      <h1>اخبار ساختمان</h1>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-10 col-md-offset-1">
+      <div class="list-group">
+        <% @news.each do |news| %>
+          <%= link_to news, :class => 'list-group-item' do %>
+            <h4 class="list-group-item-heading"><%= news.title %></h4>
+            <p class="list-group-item-text"><%= news.content %></p>
+          <% end %>
+        <% end %>
+      </div>
+
+      &nbsp;
+      <%= link_to 'خبر جدید', "#", :class => 'btn btn-success col-md-4', "data-toggle" => "modal", 'data-target' => '#newNews' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="newNews" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        ایجاد خبر
+      </div>
+      <div class="modal-body">
+
+        <%= render 'form_modal' %>
+
+      </div>
+    </div>
+  </div>
+</div>

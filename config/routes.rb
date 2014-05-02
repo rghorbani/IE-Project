@@ -1,4 +1,6 @@
 IE2::Application.routes.draw do
+  resources :news
+
   resources :payments
 
   resources :bills

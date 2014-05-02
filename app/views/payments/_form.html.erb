@@ -11,35 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :bill_id %><br>
-    <%= f.number_field :bill_id %>
+  <div class="form-group">
+    <%= f.label :bill_id, :class => 'control-label' %>
+    <%= f.number_field :bill_id, :class => 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+  <div class="form-group">
+    <%= f.label :user_id, :class => 'control-label' %>
+    <%= f.number_field :user_id, :class => 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :amount %><br>
-    <%= f.number_field :amount %>
+  <div class="form-group">
+    <%= f.label :amount, :class => 'control-label' %>
+    <%= f.number_field :amount, :class => 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :trace_number %><br>
-    <%= f.number_field :trace_number %>
+  <div class="form-group">
+    <%= f.label :trace_number, :class => 'control-label' %>
+    <%= f.number_field :trace_number, :class => 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.check_box :status %>
+  <div class="checkbox">
+    <%= f.label :status, :class => 'control-label' %>
+    <%= f.check_box :status, :class => 'checkbox' %>
   </div>
-  <div class="field">
-    <%= f.label :message %><br>
-    <%= f.text_area :message %>
+  <div class="form-group">
+    <%= f.label :message, :class => 'control-label' %>
+    <%= f.text_area :message, :class => 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
+  <div class="form-group">
+    <%= f.label :date, :class => 'control-label' %>
+    <%= f.datetime_select :date, :class => 'form-control' %>
   </div>
-  <div class="actions">
+  <div class="form-group">
     <%= f.submit %>
   </div>
 <% end %>

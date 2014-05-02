@@ -20,6 +20,7 @@
     <div class="input-group">
       <div class="input-group-addon"><i class="fa fa-money"></i></div>
       <%= f.number_field :price, :class => 'form-control' %>
+      <div class="input-group-addon">ریال</div>
     </div>
   </div>
   <div class="form-group">
@@ -47,6 +48,6 @@
   <% end %>
   <br/>
   <div class="actions">
-    <%= f.submit "تائید", :class => 'btn btn-success col-md-2' %>
+    <%= f.submit "تائید", :class => 'btn btn-success col-md-4' %>
   </div>
 <% end %>

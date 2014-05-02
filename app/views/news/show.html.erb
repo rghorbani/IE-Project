@@ -1,0 +1,27 @@
+
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+		  <h3><%= @news.title %></h3>
+    </div>
+    <div class="panel-body">
+
+			<p>
+			  <strong>Content:</strong>
+			  <%= @news.content %>
+			</p>
+
+			<p>
+			  <strong>System:</strong>
+			  <%= @news.system %>
+			</p>
+
+			<%= link_to t('Back'), news_index_path, :class => 'btn btn-orange' %>
+			<%= link_to t('Edit'), edit_news_path(@news), :class => 'btn btn-primary' %>&nbsp;
+			<%= link_to @expense, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn btn-danger" do %>
+	          <i class="fa fa-trash-o"></i>&nbsp;
+	          <%= 'حذف خبر' %>
+	        <% end %>
+    </div>
+  </div>
+</div>

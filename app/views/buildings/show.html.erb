@@ -51,7 +51,7 @@
               <tr>
                 <th>
                   <% if unit.user != nil %>
-                  <%= unit.user.profile.first_name %> <%= unit.user.profile.last_name %>
+                    <%= unit.user.profile.first_name %> <%= unit.user.profile.last_name %>
                   <% end %>
                 </th>
                 <th><%= unit.floor_number %></th>
@@ -61,8 +61,8 @@
                 <th><%= unit.resident_count %></th>
                 <th class="center">
                   <%= link_to edit_unit_path(unit), :class => "btn btn-primary" do %>
-                  <i class="fa fa-pencil"></i>&nbsp;
-                  <%= t('Edit') %>
+                    <i class="fa fa-pencil"></i>&nbsp;
+                    <%= t('Edit') %>
                   <% end %>
                 </th>
               </tr>

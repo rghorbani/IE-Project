@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140430131049) do
+ActiveRecord::Schema.define(version: 20140502082035) do
 
   create_table "bills", force: true do |t|
     t.integer  "expense_id"
@@ -43,6 +43,17 @@ ActiveRecord::Schema.define(version: 20140430131049) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "news", force: true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.text     "content"
+    t.boolean  "system"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "news", ["user_id"], name: "index_news_on_user_id"
 
   create_table "payments", force: true do |t|
     t.integer  "bill_id"

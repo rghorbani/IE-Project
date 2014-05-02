@@ -1,0 +1,33 @@
+<%= form_for(@news) do |f| %>
+  <% if @news.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@news.errors.count, "error") %> prohibited this news from being saved:</h2>
+
+      <ul>
+      <% @news.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group hidden">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="form-group">
+    <%= f.label :title, "عنوان", :class => 'control-label' %>
+    <%= f.text_field :title, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, "متن", :class => 'control-label' %>
+    <%= f.text_area :content, :class => 'form-control' %>
+  </div>
+  <div class="checkbox">
+    <%= f.label :system, "خبر سیستمی", :class => 'control-label' %>
+    <%= f.check_box :system, :class => 'checkbox' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "ویرایش", :class => 'btn btn-success col-md-4' %>
+  </div>
+<% end %>
