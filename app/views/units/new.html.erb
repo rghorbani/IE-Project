@@ -2,7 +2,11 @@
 <div class="container">
   <div class="panel">
     <div class="panel-heading">
-		<h1>ایجاد واحد برای <h3><%= @unit.building.name %></h3></h1>
+    <h3><% if @unit.building.name != nil %>
+          ایجاد واحد جدید برای <%= @unit.building.name %>
+          <% else %>
+          ایجاد واحد جدید
+          <% end %></h3>
 	</div>
     <div class="panel-body">
       <div class="row">
@@ -11,7 +15,10 @@
           <br/>
           <br/>
           <br/>
-          <%= link_to t('Back'), building_path(@unit.building), :class => 'btn btn-lg btn-danger col-md-3' %>
+          <%= link_to building_path(@unit.building),:class => "btn btn-primary" do %>
+          <i class="fa fa-arrow-circle-o-right"></i>&nbsp;
+          <%= t('Back') %>
+          <% end %>
         </div>
         <div class="col-md-7"></div>
       </div>

@@ -8,15 +8,24 @@
       <div class="row">
         <div class="col-md-5">
 
-					<%= render 'form' %>
+         <%= render 'form' %>
 
-					<br/>
-					<%= link_to t('Back'), building_path(@unit.building), :class => 'btn btn-lg btn-orange col-md-3' %>&nbsp;
-					<%= link_to "حذف این واحد", @unit, method: :delete, data: { confirm: 'آیا مطمئن هستید؟' }, :class => 'btn btn-danger' %>
-				</div>
-        <div class="col-md-7"></div>
-      </div>
-    </div>
-  </div>
+         <br/>
+         <br/>
+         <br/>
+
+         <%= link_to building_path(@unit.building),:class => "btn btn-orange" do %>
+         <i class="fa fa-arrow-circle-o-right"></i>&nbsp;
+         <%= t('Back') %>
+         <% end %>
+         <%= link_to @unit, method: :delete, data: { confirm: 'آیا مطمئن هستید؟' },:class => "btn btn-danger" do %>
+         <i class="fa fa-trash-o"></i>&nbsp;
+         <%= 'حذف این واحد' %>
+         <% end %>
+       </div>
+       <div class="col-md-7"></div>
+     </div>
+   </div>
+ </div>
 </div>
 
