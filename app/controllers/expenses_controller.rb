@@ -26,12 +26,16 @@ class ExpensesController < ApplicationController
     @expense.building_id = params[:building_id]
     @building_id = params[:building_id]
     @building = Building.find(@building_id)
+    if @building.plans.size == 0
+      redirect_to plans_path(:building_id => @building_id), notice: "پلان هزینه ای برای این ساختمان موجود نیست."
+    end
   end
 
   # GET /expenses/1/edit
   def edit
     @building_id = @expense.building_id
     @building = Building.find(@building_id)
+    redirect_to expense_path(@expense), notice: "در حال حاضر امکان ویرایش هزینه در سیستم ممکن نیست."
   end
 
   # POST /expenses
@@ -49,7 +53,7 @@ class ExpensesController < ApplicationController
           next if(rate.rate == 0)
           Bill.create(:expense_id => @expense.id, :unit_id => rate.unit_id, :price => (rate.rate*(@expense.price))/sum, :deadline => @expense.deadline, :description => @expense.description, :status => false)
         end
-        format.html { redirect_to expenses_path(:building_id => @expense.building_id), notice: 'Expense was successfully created.' }
+        format.html { redirect_to expenses_path(:building_id => @expense.building_id), notice: 'هزینه برای این ساختمان با موفقیت ایجاد شد.' }
         format.json { render action: 'show', status: :created, location: @expense }
       else
         format.html { render action: 'new' }

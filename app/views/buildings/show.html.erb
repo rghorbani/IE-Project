@@ -3,78 +3,83 @@
   <div class="panel">
     <div class="panel-heading">
       <h3><% if @building.name != nil %>
-          <%= @building.name %>
-          <% else %>
-          <%= 'اطلاعات ساختمان' %>
-          <% end %></h3>
-    </div>
-    <div class="panel-body">
-      <div class="row-fluid">
-        <p>
-          <strong>نام ساختمان:</strong>
-          <%= @building.name %>
-        </p>
-
-        <p>
-          <strong>تعداد طبقات:</strong>
-          <%= @building.floor_cnt %>
-        </p>
-
-        <p>
-          <strong>تعداد واحد:</strong>
-          <%= @building.units_cnt %>
-        </p>
-
-        <p>
-          <strong>نام مدیر:</strong>
-          <%= @building.user.profile.first_name %> <%= @building.user.profile.last_name %>
-        </p>
-
-        <br>
-        <br>
-        <div class="table-responsive">
-          <table class="table table-success table-condensed table-striped table-bordered table-hover">
-            <thead>
-              <tr>
-                  <th style="width:10%;">نام مالک</th>
-                  <th style="width:10%;">طبقه</th>
-                  <th style="width:10%;">شماره واحد</th>
-                  <th style="width:15%;">جهت مکانی</th>
-                  <th style="width:15%;">مساحت</th>
-                  <th style="width:10%;">تعداد ساکنین</th>
-                  <th style="width:20%;"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @units = @building.units %>
-              <% @units.each do |unit| %>
-              <tr>
-                <th>
-                  <% if unit.user != nil %>
-                    <%= unit.user.profile.first_name %> <%= unit.user.profile.last_name %>
-                  <% end %>
-                </th>
-                <th><%= unit.floor_number %></th>
-                <th><%= unit.unit_number %></th>
-                <th><%= unit.side %></th>
-                <th><%= unit.area %></th>
-                <th><%= unit.resident_count %></th>
-                <th class="center">
-                  <%= link_to edit_unit_path(unit), :class => "btn btn-primary" do %>
-                    <i class="fa fa-pencil"></i>&nbsp;
-                    <%= t('Edit') %>
-                  <% end %>
-                </th>
-              </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>              
+        <%= @building.name %>
+        <% else %>
+        <%= 'اطلاعات ساختمان' %>
+        <% end %></h3>
       </div>
-    </div>
-    <div class="panel-footer">
-      <div class="left">
+      <div class="panel-body">
+        <div class="row-fluid">
+          <p>
+            <strong>نام ساختمان:</strong>
+            <%= @building.name %>
+          </p>
+
+          <p>
+            <strong>تعداد طبقات:</strong>
+            <%= @building.floor_cnt %>
+          </p>
+
+          <p>
+            <strong>تعداد واحد:</strong>
+            <%= @building.units_cnt %>
+          </p>
+
+          <p>
+            <strong>نام مدیر:</strong>
+            <%= @building.user.profile.first_name %> <%= @building.user.profile.last_name %>
+          </p>
+          <% if @building.units.size == 0 %>
+          <%= link_to new_unit_path(building_id: @building.id),:class => "btn btn-primary" do %>
+          <i class="fa fa-plus-square"></i>&nbsp;
+          <%= 'واحد جدید برای این ساختمان' %>
+          <% end %>
+          <% end %>
+          <br>
+          <br>
+          <div class="table-responsive">
+            <table class="table table-success table-condensed table-striped table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th style="width:15%;">نام مالک</th>
+                  <th style="width:8%;">طبقه</th>
+                  <th style="width:8%;">شماره واحد</th>
+                  <th style="width:15%;">جهت مکانی</th>
+                  <th style="width:8%;">مساحت</th>
+                  <th style="width:10%;">تعداد ساکنین</th>
+                  <th style="width:8%;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @units = @building.units %>
+                <% @units.each do |unit| %>
+                <tr>
+                  <th>
+                    <% if unit.user != nil %>
+                    <%= unit.user.profile.first_name %> <%= unit.user.profile.last_name %>
+                    <% end %>
+                  </th>
+                  <th><%= unit.floor_number %></th>
+                  <th><%= unit.unit_number %></th>
+                  <th><%= unit.side %></th>
+                  <th><%= unit.area %></th>
+                  <th><%= unit.resident_count %></th>
+                  <th class="center">
+                    <%= link_to edit_unit_path(unit), :class => 'btn btn-primary' do %>
+                    <i class="fa fa-edit"></i>&nbsp;
+                    <%= 'ویرایش واحد' %>
+                    <% end %>
+                  </th>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>              
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class="left">
+        </div>
       </div>
     </div>
   </div>
-</div>

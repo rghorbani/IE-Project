@@ -16,6 +16,9 @@ class UnitsController < ApplicationController
   def new
     @unit = Unit.new
     @unit.building_id = params[:building_id]
+    if(@unit.building.units.size >= @unit.building.units_cnt)
+      redirect_to building_path(@unit.building_id), notice: "تعداد مجاز واحد برای این ساختمان تکمیل شده است."
+    end
   end
 
   # GET /units/1/edit

@@ -2,15 +2,23 @@
 <div class="container">
   <div class="panel">
     <div class="panel-heading">
-      <h1>پلان جدید</h1>
+      <h3><% if @plan.building.name != nil %>
+          ایجاد پلان هزینه برای <%= @plan.building.name %>
+          <% else %>
+          ایجاد پلان هزینه برای ساختمان
+          <% end %></h3>
     </div>
     <div class="panel-body">
     	<div class="row">
     		<div class="col-md-5">
 
-				<%= render 'form' %>
-				&nbsp;
-				<%= link_to t('Back'), plans_path(:building_id => @plan.building_id), :class => 'btn btn-primary' %>
+				<%= render 'uform' %>
+				<br/>
+        <br/>
+        <%= link_to plans_path(:building_id => @plan.building_id),:class => "btn btn-orange" do %>
+          <i class="fa fa-arrow-circle-o-right"></i>&nbsp;
+          <%= t('Back') %>
+        <% end %>
 			</div>
     		<div class="col-md-7"></div>
     	</div>
