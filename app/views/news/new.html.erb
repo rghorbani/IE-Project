@@ -1,5 +1,21 @@
-<h1>New news</h1>
 
-<%= render 'form' %>
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+        <h1>ایجاد خبر</h1>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-5">
 
-<%= link_to 'Back', news_index_path %>
+					<%= render 'form' %>
+
+					<br>
+
+					<%= link_to t('Back'), news_index_path, :class => 'btn btn-orange' %>
+				</div>
+        <div class="col-md-7"></div>
+      </div>
+    </div>
+  </div>
+</div>
