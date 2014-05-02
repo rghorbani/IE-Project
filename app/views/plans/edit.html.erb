@@ -2,7 +2,11 @@
 <div class="container">
   <div class="panel">
     <div class="panel-heading">
-      <h1>ویرایش پلان هزینه</h1>
+      <h3><% if @plan.building.name != nil %>
+          ویرایش پلان هزینه برای <%= @plan.building.name %>
+          <% else %>
+          ویرایش پلان هزینه برای ساختمان
+          <% end %></h3>
     </div>
     <div class="panel-body">
     	<div class="row">
@@ -10,8 +14,16 @@
 
 				<%= render 'uform' %>
 
-				<%= link_to t('Show'), @plan %> |
-				<%= link_to t('Back'), plans_path(:building_id => @plan.building_id) %>
+        <br/>
+        <br/>
+        <%= link_to plans_path(:building_id => @plan.building_id),:class => "btn btn-orange" do %>
+          <i class="fa fa-arrow-circle-o-right"></i>&nbsp;
+          <%= t('Back') %>
+        <% end %>
+        <%= link_to @plan, method: :delete, data: { confirm: 'آیا اطمینان دارید؟' },:class => "btn btn-danger" do %>
+          <i class="fa fa-trash-o"></i>&nbsp;
+          <%= 'حذف این پلان هزینه' %>
+        <% end %>
 
 			</div>
     		<div class="col-md-7"></div>

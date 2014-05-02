@@ -1,39 +1,45 @@
 
 <div class="container">
-  <div class="panel">
-    <div class="panel-heading">
-    </div>
-    <div class="panel-body">
+	<div class="panel">
+		<div class="panel-heading">
+		<h3><% if @plan.building.name != nil %>
+          پلان هزینه برای <%= @plan.building.name %>
+          <% else %>
+          مشاهده پلان هزینه
+          <% end %></h3>
+		</div>
+		<div class="panel-body">
 			<p>
-			  <strong>ساختمان:</strong>
-			  <%= @plan.building_id %>
+				<strong>نام ساختمان:</strong>
+				<%= @plan.building.name %>
 			</p>
 
 			<p>
-			  <strong>نام:</strong>
-			  <%= @plan.name %>
+				<strong>نام:</strong>
+				<%= @plan.name %>
 			</p>
 
-			<p>
-			  <strong>شماره:</strong>
-			  <%= @plan.number %>
-			</p>
 
-			<br>
 			<% @plan.building.units.each do |unit| %>
 			<div>
-			<%= unit.id %>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<% if @plan.rates.where(:unit_id => unit.id).first != nil %>
-			<%= @plan.rates.where(:unit_id => unit.id).first.rate %>
-			<% else %>
-			<%= "موجود نیست" %>
-			<%end%>
+				واحد <%= unit.unit_number %> : 
+				<% if @plan.rates.where(:unit_id => unit.id).first != nil %>
+				<%= @plan.rates.where(:unit_id => unit.id).first.rate %>
+				<% else %>
+				<%= "موجود نیست" %>
+				<%end%>
 			</div>
 			<%end%>
 
-			<%= link_to t('Edit'), edit_plan_path(@plan), :class => 'btn btn-primary' %>&nbsp;
-			<%= link_to t('Back'), plans_path(:building_id => @plan.building_id), :class => 'btn btn-orange' %>
-    </div>
+			<%= link_to plans_path(:building_id => @plan.building_id),:class => "btn btn-orange" do %>
+			<i class="fa fa-arrow-circle-o-right"></i>&nbsp;
+			<%= t('Back') %>
+			<% end %>
+
+			<%= link_to edit_plan_path(@plan), :class => 'btn btn-primary' do %>
+			<i class="fa fa-edit"></i>&nbsp;
+			<%= 'ویرایش هزینه' %>
+			<% end %>
+		</div>
 	</div>
 </div>

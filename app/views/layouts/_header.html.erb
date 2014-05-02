@@ -165,6 +165,11 @@
               <%= link_to 'هزینه جدید برای این ساختمان', new_expense_path(building_id: @building.id) %>
             </li>
             <% end %>
+            <% if params[:controller] == 'plans' %>
+            <li>
+              <%= link_to 'پلان هزینه جدید برای این ساختمان', new_plan_path(:building_id => @building_id) %>
+            </li>
+            <% end %>
             <li>
               <%= link_to 'مشاهده هزینه ها', expenses_path(building_id: @building.id) %>
             </li>

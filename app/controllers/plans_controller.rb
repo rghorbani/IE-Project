@@ -45,7 +45,7 @@ class PlansController < ApplicationController
             Rate.create(:plan_id => @plan.id, :unit_id => $1, :rate => value)
           end
         end
-        format.html { redirect_to plans_path(:building_id => @plan.building_id), notice: 'Plan was successfully created.' }
+        format.html { redirect_to plans_path(:building_id => @plan.building_id), notice: 'پلان هزینه با موفقیت ایجاد شد.' }
         format.json { render action: 'show', status: :created, location: @plan }
       else
         format.html { render action: 'new' }
@@ -60,12 +60,16 @@ class PlansController < ApplicationController
     params.each do |name, value|
       if /unit_(.+)$/.match(name)
         @rate = @plan.rates.where(:unit_id => $1).first
-        @rate.update(:plan_id => @plan.id, :unit_id => $1, :rate => value)
+        if @rate != nil
+          @rate.update(:plan_id => @plan.id, :unit_id => $1, :rate => value)
+        else
+          Rate.create(:plan_id => @plan.id, :unit_id => $1, :rate => value)
+        end
       end
     end
     respond_to do |format|
       if @plan.update(plan_params)
-        format.html { redirect_to plans_path(:building_id => @plan.building_id), notice: 'Plan was successfully updated.' }
+        format.html { redirect_to plans_path(:building_id => @plan.building_id), notice: 'پلان هزینه با موفقیت به روز رسانی شد.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

@@ -1,45 +1,56 @@
 <div class="container">
   <div class="panel">
     <div class="panel-heading">
-    <h1>لیست پلان های هزینه</h1>
-    </div>
-    <div class="panel-body">
-      <div class="table-responsive">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>ساختمان</th>
-              <th>نام</th>
-              <th>شماره</th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <% @plans.each do |plan| %>
-            <tr>
-              <td><%= plan.building_id %></td>
-              <td><%= plan.name %></td>
-              <td><%= plan.number %></td>
-              <td>
-                <div class="btn btn-success"><i class="fa fa-plus"></i>&nbsp;<%= link_to t('Show'), plan, :class => 'btn-text' %></div>
-                &nbsp;
-                <div class="btn btn-primary"><i class="fa fa-pencil"></i>&nbsp;<%= link_to t('Edit'), edit_plan_path(plan), :class => 'btn-text' %></div>
-                &nbsp;
-                <div class="btn btn-danger"><i class="fa fa-trash-o"></i>&nbsp;<%= link_to t('Destroy'), plan, method: :delete, data: { confirm: 'آیا اطمینان دارید؟' }, :class => 'btn-text' %></div>
-              </td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
+      <h3><% if @building.name != nil %>
+        لیست پلان های هزینه <%= @building.name %>
+        <% else %>
+        لیسته پلان های هزینه ساختمان
+        <% end %></h3>
       </div>
-      <br>
+      <div class="panel-body">
+        <%= link_to new_plan_path(:building_id => @building_id),:class => "btn btn-primary" do %>
+        <i class="fa fa-plus-square"></i>&nbsp;
+        <%= 'پلان هزینه جدید برای این ساختمان' %>
+        <% end %>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>ردیف</th>
+                <th>نام</th>
+                <% @building.units.each do |unit| %>
+                <th>واحد <%= unit.unit_number %></th>
+                <% end %>
+                </tr>
+              </thead>
 
-      <%= link_to 'ایجاد پلان جدید', new_plan_path(:building_id => @building_id) %>
-      <br>
-      <%= link_to 'ساختمان ها', buildings_path %>
+              <tbody>
+                <% @plans.each_with_index do |plan,index| %>
+                <tr>
+                  <td><%= index + 1 %></td>
+                  <td><%= plan.name %></td>
+                  <% @building.units.each do |unit| %>
+                    <% if plan.rates.where(:unit_id => unit.id).first != nil %>
+                    <td>
+                    <%= plan.rates.where(:unit_id => unit.id).first.rate %>
+                    </td>
+                    <% else %>
+                    <td>
+                    <%= "موجود نیست" %>
+                    </td>
+                    <%end%>
+                  <% end %>
+                  <td>
+                  <%= link_to plan, :class => 'btn btn-success' do %>
+                    <i class="fa fa-folder-open-o"></i>&nbsp;
+                    <%= 'نمایش جزئیات' %>
+                    <% end %>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>

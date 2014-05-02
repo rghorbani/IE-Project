@@ -19,7 +19,7 @@
     <%= f.label :name,"نام", :class => 'form-label' %><br>
     <%= f.text_field :name, :class => 'form-control' %>
   </div>
-  <div class="form-group">
+  <div class="form-group hidden">
     <%= f.label :number,"شماره", :class => 'form-label' %><br>
     <%= f.number_field :number, :class => 'form-control' %>
   </div>
@@ -27,12 +27,18 @@
   <br/>
   <% @plan.building.units.each do |unit| %>
   <div class="form-group">
-  <%= unit.id %>
+  واحد <%= unit.unit_number %>
   &nbsp
+  <% if @plan.rates.where(:unit_id => unit.id).first != nil and @plan.rates.where(:unit_id => unit.id).first.rate != nil %>
   <%= number_field_tag "unit_#{unit.id}", @plan.rates.where(:unit_id => unit.id).first.rate %>
+  <% else %>
+  <%= number_field_tag "unit_#{unit.id}", 1 %>
+  <% end %>
   </div>
   <%end%>
   <div class="actions">
     <%= f.submit "تائید", :class => 'btn btn-success col-md-4' %>
   </div>
 <% end %>
+<br/>
+<br/>
