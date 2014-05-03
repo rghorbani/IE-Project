@@ -2,16 +2,28 @@
 <div class="container">
   <div class="panel">
     <div class="panel-heading">
+
+
+    <h3><% if @unit.building.name != nil %>
+          واحد <%= @unit.unit_number %> ساختمان <%= @unit.building.name %>
+          <% else %>
+          واحد <%= @unit.unit_number %>
+          <% end %></h3>
     </div>
     <div class="panel-body">
       <p>
-        <strong>User:</strong>
-        <%= @unit.user_id %>
+        <strong>مالک:</strong>
+        <%= @unit.user.profile.first_name %> <%= @unit.user.profile.last_name %>
       </p>
 
       <p>
-        <strong>Building:</strong>
-        <%= @unit.building_id %>
+        <strong>نام ساختمان:</strong>
+        <%= @unit.building.name %>
+      </p>
+
+      <p>
+        <strong>شماره واحد:</strong>
+        <%= @unit.unit_number %>
       </p>
 
       <p>
@@ -25,11 +37,6 @@
       </p>
 
       <p>
-        <strong>شماره واحد:</strong>
-        <%= @unit.unit_number %>
-      </p>
-
-      <p>
         <strong>مساحت:</strong>
         <%= @unit.area %>
       </p>
@@ -40,7 +47,7 @@
       </p>
 
       <br/>
-      <h2> ‌قبوض: </h2>
+      <h3> ‌قبوض: </h3>
       <br/>
       <% @unit.bills.each do |bill| %>
       <div>
@@ -50,8 +57,10 @@
       </div>
       <% end %>
 
-      <%= link_to t('Edit'), edit_unit_path(@unit), :class => 'btn btn-primary' %>&nbsp;
-      <%= link_to t('Back'), buildings_path, :class => 'btn btn-orange' %>
+      <%= link_to '/units/user_index',:class => "btn btn-orange" do %>
+        <i class="fa fa-arrow-circle-o-right"></i>&nbsp;
+        <%= t('Back') %>
+      <% end %>
     </div>
   </div>
 </div>
