@@ -98,6 +98,7 @@ body {
   /*font-family: Tahoma, Geneva, sans-serif;*/
   /*font-family: WMitra, Tahome, Arial;*/
   font-family: 'WMitra';
+  height: 100%;
 }
 
 body .container {
@@ -483,4 +484,16 @@ html {
 #column-main {
   width: 33%;
   padding-top: 50px;
+}
+
+/****************************/
+.wrapper {
+min-height: 80%;
+height: auto !important;
+height: 80%;
+margin-bottom:  -10em;
+}
+.footer, .push {
+height: 10em;
+clear: both;
 }
