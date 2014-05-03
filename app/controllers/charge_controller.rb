@@ -4,4 +4,7 @@ class ChargeController < ApplicationController
   
   def dashboard
   end
+
+  def help
+  end
 end

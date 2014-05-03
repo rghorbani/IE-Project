@@ -17,6 +17,7 @@ IE2::Application.routes.draw do
   resources :buildings
 
   get "charge/dashboard"
+  get "charge/help"
   get "home/index"
 
 

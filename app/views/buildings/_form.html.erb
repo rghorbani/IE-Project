@@ -3,7 +3,7 @@
     <div id="error_explanation">
       <!--h2><%= pluralize(@building.errors.count, "error") %> prohibited this building from being saved:</h2-->
 
-      <div>
+      <div class='error_explanation'>
       <% @building.errors.each do |attr,msg| %>
         <%= msg %>
       <% end %>

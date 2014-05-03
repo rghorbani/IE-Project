@@ -2,11 +2,8 @@
 <div class="container">
 	<div class="panel">
 		<div class="panel-heading">
-		<h3><% if @plan.building.name != nil %>
-          پلان هزینه برای <%= @plan.building.name %>
-          <% else %>
-          مشاهده پلان هزینه
-          <% end %></h3>
+		<h3>
+          <%= @plan.name %></h3>
 		</div>
 		<div class="panel-body">
 			<p>
@@ -41,7 +38,7 @@
 
 			<%= link_to edit_plan_path(@plan), :class => 'btn btn-primary' do %>
 			<i class="fa fa-edit"></i>&nbsp;
-			<%= 'ویرایش هزینه' %>
+			<%= 'ویرایش پلان هزینه' %>
 			<% end %>
 		</div>
 	</div>
