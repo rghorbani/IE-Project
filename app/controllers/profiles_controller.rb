@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
     if(current_user.profile != nil)
-        # redirect_to profiles_path, notice: 'شما از پیش دارای یک پروفایل میباشید.'
+      redirect_to profiles_path, notice: 'شما از پیش دارای یک پروفایل میباشید.'
     else
       @profile = Profile.new
       @profile.user_id = current_user.id

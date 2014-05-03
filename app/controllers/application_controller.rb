@@ -13,7 +13,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    request.env['omniauth.origin'] || '/charge/dashboard'
+    if current_user.profile == nil
+      new_profile_path
+    else
+      request.env['omniauth.origin'] || '/charge/dashboard'
+    end
   end
 
   protected

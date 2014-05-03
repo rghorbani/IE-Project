@@ -55,7 +55,7 @@
                 <% @units.each do |unit| %>
                 <tr>
                   <th>
-                    <% if unit.user != nil %>
+                    <% if unit.user != nil and unit.user.profile != nil %>
                     <%= unit.user.profile.first_name %> <%= unit.user.profile.last_name %>
                     <% end %>
                   </th>

@@ -112,7 +112,7 @@
 </div>
 <% end %>
 
-<% if user_signed_in? %>
+<% if user_signed_in? and !(current_user.has_role? :resident) %>
 <nav class="subnav subnav-fixed navbar" role="navigation">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -219,5 +219,50 @@
       </ul> -->
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
+</nav>
+<% end %>
+
+<% if user_signed_in? and (current_user.has_role? :resident) %>
+<nav class="subnav subnav-fixed navbar" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sub-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="sub-menu collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class=""><a href="/charge/dashboard"><i class="fa fa-dashboard icon-large"></i>&nbsp;داشبورد</a></li>
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-building-o"></i>&nbsp;واحد <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="/units/user_index">نمایش واحدها</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bar-chart-o icon-large"></i>&nbsp;گزارش ها <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">وضعیت حساب</a></li>
+            <li><a href="#">گردش حساب</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bar-chart-o icon-large"></i>&nbsp;اخبار <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/news">اخبار ساختمان</a></li>
+            <li><a href="/news?system=1">اخبار سیستم</a></li>
+          </ul>
+        </li>
+        <li class=""><a href="/charge/help"><i class="fa fa-lightbulb-o icon-large"></i>&nbsp;راهنما</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
 <% end %>

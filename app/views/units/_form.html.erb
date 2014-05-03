@@ -11,6 +11,17 @@
     </div>
   <% end %>
 
+
+  <div class="form-group">
+    <%= label_tag :email,"ایمیل مالک", :class=>'control-label' %>
+    <div class="input-group">
+      <% if @unit.user == nil %>
+      <%= email_field_tag :email,"", class:'form-control ltr' %>
+      <% else %>
+      <%= email_field_tag :email,@unit.user.email, class:'form-control ltr', disabled: true %>
+      <% end %>
+    </div>
+  </div>
   <div class="form-group hidden">
     <%= f.label :user_id, :class => 'form-label' %>
     <div class="input-group">

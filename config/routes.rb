@@ -1,4 +1,5 @@
 IE2::Application.routes.draw do
+  get "units/user_index"
   resources :news
 
   resources :payments
@@ -17,6 +18,7 @@ IE2::Application.routes.draw do
 
   get "charge/dashboard"
   get "home/index"
+
 
   root 'home#index'
 
