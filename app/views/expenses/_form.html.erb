@@ -39,6 +39,10 @@
     <%= f.label :number,"شماره سریال", :class => 'control-label' %><br>
     <%= f.number_field :number, :class => 'form-control' %>
   </div>
+  <br/>
+  <div>
+  <h3>انتخاب پلان هزینه</h3>
+  </div>
   <% @expense.building.plans.each do |plan| %>
   <div>
   <%= plan.name %>
