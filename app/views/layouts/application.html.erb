@@ -15,7 +15,8 @@
   <%=render :partial => 'layouts/header' %>
 
   <%= yield %>
-
+   <div class="push"></div>
+</div>
   <%=render :partial => 'layouts/footer' %>
 
   <div class="notification"></div>
@@ -25,6 +26,6 @@
   </div>
   <% end %>
   <%= javascript_include_tag "application", 'bootstrap.min' %>
-</div>
+
 </body>
 </html>
