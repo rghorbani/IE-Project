@@ -17,7 +17,7 @@
       <% if user_signed_in? %>
       <% @profile = get_profile %>
       <ul class="nav navbar-nav navbar-left">
-        <li><%= Time.now.in_time_zone('Tehran').strftime("%I:%M-%D") %></li>
+        <li><% Time.now.in_time_zone('Tehran').strftime("%I:%M-%D") %></li>
         <li class="dropdown">
           <a href="" class="dropdown-toggle btn-nav2" data-toggle="dropdown">
             <i class="fa fa-user"></i> <%= current_user.email %>&nbsp;<b class="caret"></b>
