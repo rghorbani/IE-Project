@@ -1,0 +1,7 @@
+def to_jalali(datetime)
+  @jalali = JalaliDate.to_jalali(datetime)
+  @jalali_full_date = "#{@jalali.year}/#{@jalali.month}/#{@jalali.day}"
+  @time = datetime.localtime.strftime("%H:%M")
+  @str = "در تاریخ #{@jalali_full_date} ساعت #{@time} بوقت تهران"
+  return @str
+end

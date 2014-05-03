@@ -44,4 +44,21 @@ module ApplicationHelper
     end
     return d0+10*d1
   end
+
+def to_jalali_date(datetime)
+  @jalali = JalaliDate.to_jalali(datetime)
+  @jalali_full_date = "#{@jalali.year}/#{@jalali.month}/#{@jalali.day}"
+  @time = datetime.localtime.strftime("%H:%M")
+  @str = "#{@jalali_full_date}"
+  return @str
+end
+
+def to_jalali_full(datetime)
+  @jalali = JalaliDate.to_jalali(datetime)
+  @jalali_full_date = "#{@jalali.year}/#{@jalali.month}/#{@jalali.day}"
+  @time = datetime.localtime.strftime("%H:%M")
+  @str = "در تاریخ #{@jalali_full_date} ساعت #{@time} بوقت تهران"
+  return @str
+end
+
 end

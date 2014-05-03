@@ -3,24 +3,9 @@
 
 <div class="container" style="margin-top:30px;">
 
-  <div class="row">
-    <div class="col-md-12">
-      <div class="panel panel-success">
-        <div class="panel-heading clearfix">
-          <h4>وضعیت امروز</h4>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!--START STATS-WIDGET -->
+
+<!--START STATS-WIDGET -->
 
   <div class="row">
     <div class="col-md-7">
@@ -33,43 +18,43 @@
             <div class="col-md-4">
             <li class=" ui-state-default">
               <div class="infoblock shadow">
-                <h1 style="color:#4DB848;">$2565</h1>
-                <p>Todays Earnings</p>
+                <h1 style="color:#4DB848;">25,650</h1>
+                <p>مقدار وصولی این ماه</p>
               </div>
             </li>
             <li class=" ui-state-default">
               <div class="infoblock shadow">
-                <h1 style="color:#0099FF;">10,789</h1>
-                <p>Unique Visitors</p>
+                <h1 style="color:#0099FF;">30,789</h1>
+                <p>مجموع هزینه این ماه</p>
               </div>
             </li>
             </div>
             <div class="col-md-4">
             <li class="ui-state-default">
               <div class="infoblock shadow">
-                <h1 style="color:#ff4056;">500,467</h1>
-                <p>Total Visitors</p>
+                <h1 style="color:#ff4056;">20</h1>
+                <p>تعداد ساکنین</p>
               </div>
             </li>
 
             <li class=" ui-state-default">
               <div class="infoblock shadow">
-                <h1 style="color:#ff9900;">1,486</h1>
-                <p>Registered Users</p>
+                <h1 style="color:#ff9900;">7</h1>
+                <p>تعداد واحدها</p>
               </div>
             </li>
             </div>
             <div class="col-md-4">
             <li class=" ui-state-default">
               <div class="infoblock shadow">
-                <h1 style="color:#FF6320;">564</h1>
-                <p>Published Articles</p>
+                <h1 style="color:#FF6320;">5640</h1>
+                <p>باقیمانده بستانکاری</p>
               </div>
             </li>
             <li class="ui-state-default">
               <div class="infoblock shadow ">
-                <h1 style="color:#6148B3;">4,587</h1>
-                <p>Todays Visitors</p>
+                <h1 style="color:#6148B3;">42,587</h1>
+                <p>مجموع حساب سالانه</p>
               </div>
             </li>
             </div>
@@ -85,15 +70,63 @@
     <div class="col-md-5">
       <div class="panel panel-success">
         <div class="panel-heading clearfix">
-          <h4>پست های اخیر</h4>
+          <h4>آخرین اخبار</h4>
         </div>
         <div class="panel-body">
-          <p>این یک آزمون است</p>
+          <p>...</p>
         </div>
       </div>
     </div>
 
     <!--END -RECENT-POSTS-WIDGET -->
   </div>
+
+
+
+  <% if user_signed_in? and !(current_user.has_role? :resident) %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-success">
+        <div class="panel-heading clearfix">
+          <h4>قبوض وصول نشده ساکنین</h4>
+        </div>
+        <div class="panel-body">
+          <div class="row-fluid">
+          <div class="table-responsive">
+            <table class="table table-success table-condensed table-striped table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th style="width:4%;">ردیف</th>
+                  <th style="width:15%;">توضیحات</th>
+                  <th style="width:10%;">مبلغ</th>
+                  <th style="width:10%;">مهلت پرداخت</th>
+                  <th style="width:15%;">وضعیت</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @bills.each_with_index do |bill,index| %>
+            
+                <tr>
+                  <th><%= index+1 %></th>
+                  <th><%= bill.description %></th>
+                  <th><%= bill.price %></th>
+                  <th><%= to_jalali_date(bill.deadline) %></th>
+                  <th><% if bill.status == false %>
+                  <%= 'پرداخت نشده' %><% else %><%= 'پرداخت شده' %><% end %></th>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <% if user_signed_in? and (current_user.has_role? :resident) %>
+  <% end %>
+
+  
 
 </div>
