@@ -137,6 +137,22 @@ footer ul li {
   display: list-item;
 }
 
+* {
+  margin: 0;
+}
+html {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto;
+  height: 100%;
+  margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+  height: 155px; /* .push must be the same height as .footer */
+}
+
 /* Common classes        */
 
 .ltr {
@@ -449,4 +465,22 @@ footer ul li {
   .dropdown:hover .dropdown-menu {
     display: block;
   }
+}
+
+
+#column-connect {
+  width: 33%;
+  float: left;
+  padding-left: 170px;
+}
+
+#column-product {
+  width: 33%;
+  float: right;
+  padding-right: 170px;
+}
+
+#column-main {
+  width: 33%;
+  padding-top: 95px;
 }

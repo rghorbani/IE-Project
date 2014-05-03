@@ -7,7 +7,10 @@
     <div class="panel-body">
       <br>
 
-      <%= link_to 'ایجاد ساختمان', new_building_path, :class => 'btn btn-success' %>
+      <%= link_to new_building_path,:class => "btn btn-primary" do %>
+      <i class="fa fa-plus-square"></i>&nbsp;
+      <%= 'ایجاد ساختمان جدید' %>
+      <% end %>
     </div>
     <% elsif @buildings.size == 1 %>
     <% building = @buildings.first %>

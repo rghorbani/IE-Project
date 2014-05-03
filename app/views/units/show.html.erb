@@ -4,63 +4,82 @@
     <div class="panel-heading">
 
 
-    <h3><% if @unit.building.name != nil %>
-          واحد <%= @unit.unit_number %> ساختمان <%= @unit.building.name %>
-          <% else %>
-          واحد <%= @unit.unit_number %>
-          <% end %></h3>
-    </div>
-    <div class="panel-body">
-      <p>
-        <strong>مالک:</strong>
-        <%= @unit.user.profile.first_name %> <%= @unit.user.profile.last_name %>
-      </p>
-
-      <p>
-        <strong>نام ساختمان:</strong>
-        <%= @unit.building.name %>
-      </p>
-
-      <p>
-        <strong>شماره واحد:</strong>
-        <%= @unit.unit_number %>
-      </p>
-
-      <p>
-        <strong>طبقه:</strong>
-        <%= @unit.floor_number %>
-      </p>
-
-      <p>
-        <strong>جهت مکانی:</strong>
-        <%= @unit.side %>
-      </p>
-
-      <p>
-        <strong>مساحت:</strong>
-        <%= @unit.area %>
-      </p>
-
-      <p>
-        <strong>شمار سکنه:</strong>
-        <%= @unit.resident_count %>
-      </p>
-
-      <br/>
-      <h3> ‌قبوض: </h3>
-      <br/>
-      <% @unit.bills.each do |bill| %>
-      <div>
-      <%= bill.description %>
-      &nbsp;
-      <%= bill.price %>
+      <h3><% if @unit.building.name != nil %>
+        واحد <%= @unit.unit_number %> ساختمان <%= @unit.building.name %>
+        <% else %>
+        واحد <%= @unit.unit_number %>
+        <% end %></h3>
       </div>
-      <% end %>
+      <div class="panel-body">
+        <p>
+          <strong>مالک:</strong>
+          <%= @unit.user.profile.first_name %> <%= @unit.user.profile.last_name %>
+        </p>
 
-      <%= link_to '/units/user_index',:class => "btn btn-orange" do %>
+        <p>
+          <strong>نام ساختمان:</strong>
+          <%= @unit.building.name %>
+        </p>
+
+        <p>
+          <strong>شماره واحد:</strong>
+          <%= @unit.unit_number %>
+        </p>
+
+        <p>
+          <strong>طبقه:</strong>
+          <%= @unit.floor_number %>
+        </p>
+
+        <p>
+          <strong>جهت مکانی:</strong>
+          <%= @unit.side %>
+        </p>
+
+        <p>
+          <strong>مساحت:</strong>
+          <%= @unit.area %>
+        </p>
+
+        <p>
+          <strong>شمار سکنه:</strong>
+          <%= @unit.resident_count %>
+        </p>
+
+        <br/>
+        <h3>لیست قبوض</h3>
+        <div class="row-fluid">
+          <div class="table-responsive">
+            <table class="table table-success table-condensed table-striped table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th style="width:10%;">ردیف</th>
+                  <th style="width:15%;">توضیحات</th>
+                  <th style="width:10%;">مبلغ</th>
+                  <th style="width:10%;">مهلت پرداخت</th>
+                  <th style="width:15%;">وضعیت</th>
+                </tr>
+              </thead>
+              <tbody>
+              <% @bills = @unit.bills %>
+                <% @bills.each_with_index do |bill,index| %>
+                <tr>
+                  <th><%= index+1 %></th>
+                  <th><%= bill.description %></th>
+                  <th><%= bill.price %></th>
+                  <th><%= bill.deadline %></th>
+                  <th><%= bill.status %></th>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <%= link_to '/units/user_index',:class => "btn btn-orange" do %>
         <i class="fa fa-arrow-circle-o-right"></i>&nbsp;
         <%= t('Back') %>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>

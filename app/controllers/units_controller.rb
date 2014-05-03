@@ -37,16 +37,19 @@ class UnitsController < ApplicationController
     respond_to do |format|
       if @unit.save
         if(params[:email] != nil)
-          u = User.create(:email => params[:email], :password => '1234', :password_confirmation => '1234')
-          u.add_role :resident
-          u.save!(:validate => false)
+          u = User.where(:email => params[:email]).first
+          if(u == nil)
+            u = User.create(:email => params[:email], :password => '1234', :password_confirmation => '1234')
+            u.add_role :resident
+            u.save!(:validate => false)
+          end
           @unit.user_id = u.id
           @unit.save
         end
         format.html { redirect_to building_path(@unit.building_id), notice: 'واحد با موفقیت ایجاد شد.' }
         format.json { render action: 'show', status: :created, location: @unit }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'new', :notice =>  'چرت' }
         format.json { render json: @unit.errors, status: :unprocessable_entity }
       end
     end

@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>سیستم مدیریت شارژ ساختمان</title>
   
-  <%= stylesheet_link_tag 'font-awesome.min', 'bootstrap.min', 'bootstrap-rtl', 'charge', 'font' %>
+  <%= stylesheet_link_tag 'font-awesome.min', 'bootstrap.min', 'bootstrap-rtl', 'charge', 'font', 'error' %>
   
   <%= csrf_meta_tags %>
 
 </head>
 <body>
-
+<div class="wrapper">
   <%=render :partial => 'layouts/header' %>
 
   <%= yield %>
@@ -25,5 +25,6 @@
   </div>
   <% end %>
   <%= javascript_include_tag "application", 'bootstrap.min' %>
+</div>
 </body>
 </html>
