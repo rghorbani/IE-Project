@@ -15,8 +15,6 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if current_user.profile == nil
       new_profile_path
-    elsif current_user.has_role? :resident
-      '/units/user_index'
     else
       request.env['omniauth.origin'] || '/charge/dashboard'
     end

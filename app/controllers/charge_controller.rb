@@ -13,6 +13,14 @@ class ChargeController < ApplicationController
   			end
   		end
   	end
+  	if user_signed_in? and (current_user.has_role? :resident)
+  		@bills = Array.new
+  		current_user.units.each do |unit|
+  				for bill in unit.bills
+  					@bills << bill  			
+  				end
+  		end
+  	end
   end
 
 
