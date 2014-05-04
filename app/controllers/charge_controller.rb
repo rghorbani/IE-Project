@@ -2,6 +2,7 @@ class ChargeController < ApplicationController
 
   before_action :authenticate_user!
   require 'jalali_date'
+
   def dashboard
   	if not current_user.has_role? :resident
   		@bills = Array.new
