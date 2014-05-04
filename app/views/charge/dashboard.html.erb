@@ -73,7 +73,18 @@
           <h4>آخرین اخبار</h4>
         </div>
         <div class="panel-body">
-          <p>...</p>
+          <div id="news-group" class="list-group">
+            <% if @news.count == 0 %>
+              <p>هیچ خبری برای این ساختمان وجود ندارد.</p>
+            <% else %>
+              <% @news.each do |news| %>
+                <%= link_to news, :class => 'list-group-item' do %>
+                  <h4 class="list-group-item-heading"><%= news.title %></h4>
+                  <p class="list-group-item-text"><%= news.content %></p>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
