@@ -64,7 +64,7 @@
                 <tr>
                   <th><%= index+1 %></th>
                   <th><%= bill.description %></th>
-                  <th><%= bill.price %></th>
+                  <th><%= bill.price %> ریال</th>
                   <th><%= to_jalali_date(bill.deadline) %></th>
                   <th><% if bill.status == false %>
                   <%= 'پرداخت نشده' %><% else %><%= 'پرداخت شده' %><% end %></th>

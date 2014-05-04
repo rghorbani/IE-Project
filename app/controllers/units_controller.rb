@@ -1,4 +1,5 @@
 class UnitsController < ApplicationController
+  before_action :ban_resident_area, except: [:user_index, :show]
   before_action :authenticate_user!
   before_action :set_unit, only: [:show, :edit, :update, :destroy]
 
@@ -15,6 +16,9 @@ class UnitsController < ApplicationController
   # GET /units/1
   # GET /units/1.json
   def show
+    if @unit.user != current_user
+      redirect_to '/'
+    end
   end
 
   # GET /units/new
@@ -46,6 +50,7 @@ class UnitsController < ApplicationController
           end
           @unit.user_id = u.id
           @unit.save
+          update_plans(@unit)
         end
         format.html { redirect_to building_path(@unit.building_id), notice: 'واحد با موفقیت ایجاد شد.' }
         format.json { render action: 'show', status: :created, location: @unit }
@@ -61,6 +66,7 @@ class UnitsController < ApplicationController
   def update
     respond_to do |format|
       if @unit.update(unit_params)
+        update_plans_update(@unit)
         format.html { redirect_to building_path(@unit.building_id), notice: 'واحد با موفقیت به روزرسانی شد.' }
         format.json { head :no_content }
       else
@@ -90,5 +96,35 @@ class UnitsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def unit_params
       params.require(:unit).permit(:user_id, :building_id, :floor_number, :side, :unit_number, :area, :resident_count)
+    end
+
+
+    def update_plans(unit)
+      if(unit.building.plans.size == 0)
+        @plan0 = Plan.create(:building_id => unit.building.id, :name => 'پلان همسان', :number => 0)
+        Rate.create(:plan_id => @plan0.id, :unit_id => unit.id, :rate => 1)
+        @plan1 = Plan.create(:building_id => unit.building.id, :name => 'پلان جمعیت', :number => 1)
+        Rate.create(:plan_id => @plan1.id, :unit_id => unit.id, :rate => unit.resident_count)
+        @plan2 = Plan.create(:building_id => unit.building.id, :name => 'پلان مساحت', :number => 2)
+        Rate.create(:plan_id => @plan2.id, :unit_id => unit.id, :rate => unit.area)
+      else
+        @plan0 = Plan.where(:building_id => unit.building.id, :number => 0).first
+        Rate.create(:plan_id => @plan0.id, :unit_id => unit.id, :rate => 1)
+        @plan1 = Plan.where(:building_id => unit.building.id, :number => 1).first
+        Rate.create(:plan_id => @plan1.id, :unit_id => unit.id, :rate => unit.resident_count)
+        @plan2 = Plan.where(:building_id => unit.building.id, :number => 2).first
+        Rate.create(:plan_id => @plan2.id, :unit_id => unit.id, :rate => unit.area)
+      end
+    end
+
+    def update_plans_update(unit)
+        @plan1 = Plan.where(:building_id => unit.building.id, :number => 1).first
+        @rate = Rate.where(:plan_id => @plan1.id, :unit_id => unit.id).first
+        @rate.rate = unit.resident_count
+        @rate.save
+        @plan2 = Plan.where(:building_id => unit.building.id, :number => 2).first
+        @rate = Rate.where(:plan_id => @plan2.id, :unit_id => unit.id).first
+        @rate.rate = unit.area
+        @rate.save
     end
 end
