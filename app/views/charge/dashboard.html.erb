@@ -73,7 +73,18 @@
           <h4>آخرین اخبار</h4>
         </div>
         <div class="panel-body">
-          <p>...</p>
+          <div id="news-group" class="list-group">
+            <% if @news.count == 0 %>
+              <p>هیچ خبری برای این ساختمان وجود ندارد.</p>
+            <% else %>
+              <% @news.each do |news| %>
+                <%= link_to news, :class => 'list-group-item' do %>
+                  <h4 class="list-group-item-heading"><%= news.title %></h4>
+                  <p class="list-group-item-text"><%= news.content %></p>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -118,7 +129,7 @@
                   <% else %>
                   <% end %></th>
                   <th><%= bill.description %></th>
-                  <th><%= bill.price %></th>
+                  <th><%= bill.price %> ریال</th>
                   <th><%= to_jalali_date(bill.deadline) %></th>
                   <th><% if bill.status == false %>
                   <%= 'پرداخت نشده' %><% else %><%= 'پرداخت شده' %><% end %></th>
@@ -148,7 +159,6 @@
                 <tr>
                   <th style="width:4%;">ردیف</th>
                   <th style="width:10%;">ساختمان</th>
-                  <th style="width:15%;">مدیر</th>
                   <th style="width:5%;">واحد</th>
                   <th style="width:15%;">توضیحات</th>
                   <th style="width:10%;">مبلغ</th>
@@ -164,7 +174,7 @@
                   <th><%= bill.unit.building.name %></th>
                   <th><%= bill.unit.unit_number %></th>
                   <th><%= bill.description %></th>
-                  <th><%= bill.price %></th>
+                  <th><%= bill.price %> ریال</th>
                   <th><%= to_jalali_date(bill.deadline) %></th>
                   <th><% if bill.status == false %>
                   <%= 'پرداخت نشده' %><% else %><%= 'پرداخت شده' %><% end %></th>

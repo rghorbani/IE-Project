@@ -270,6 +270,10 @@ html {
   padding-left: 0;
 }
 
+.main-menu {
+  font-size: 125%;
+}
+
 .mainnav {
   background: url("/assets/header_bg.png") repeat-x  #F3F1F8;
   /*position: relative;*/

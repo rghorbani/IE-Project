@@ -30,9 +30,9 @@
             <tr>
               <td><%= index + 1 %></td>
               <td><%= expense.description %></td>
-              <td><%= expense.price %></td>
-              <td><%= expense.release_date %></td>
-              <td><%= expense.deadline %></td>
+              <td><%= expense.price %> ریال</td>
+              <td><%= to_jalali_date(expense.release_date) %></td>
+              <td><%= to_jalali_date(expense.deadline) %></td>
               <td>
                 <%= link_to expense, :class => 'btn btn-success' do %>
                   <i class="fa fa-folder-open-o"></i>&nbsp;
