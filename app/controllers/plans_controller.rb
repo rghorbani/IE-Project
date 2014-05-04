@@ -1,4 +1,6 @@
 class PlansController < ApplicationController
+  before_action :ban_resident_area
+  before_action :authenticate_user!
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
 
   # GET /plans
