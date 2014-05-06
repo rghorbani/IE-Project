@@ -31,15 +31,15 @@
               <td><%= unit.unit_number %></td>
               <td><%= unit.area %></td>
               <td><%= unit.resident_count %></td>
-              <td><%= link_to t('Show'), unit %></td>
-              <td><%= link_to t('Edit'), edit_unit_path(unit) %></td>
-              <td><%= link_to t('Destroy'), unit, method: :delete, data: { confirm: 'آیا مطمئن هستید؟' } %></td>
+              <td><%= link_to t('Show'), unit, :class => 'btn btn-info' %></td>
+              <td><%= link_to t('Edit'), edit_unit_path(unit), :class => 'btn btn-primary' %></td>
+              <td><%= link_to t('Destroy'), unit, method: :delete, data: { confirm: 'آیا مطمئن هستید؟' }, :class => 'btn btn-orange' %></td>
             </tr>
             <% end %>
           </tbody>
         </table>
       </div>
-      <%= link_to 'ایجاد واحد', new_unit_path %>
+      <%= link_to 'ایجاد واحد', new_unit_path, :class => 'btn btn-success' %>
     </div>
   </div>
 </div>

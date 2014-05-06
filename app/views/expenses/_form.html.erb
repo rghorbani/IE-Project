@@ -51,15 +51,34 @@
   <div>
   <h3>انتخاب پلان هزینه</h3>
   </div>
+  <div id="plan-choose">
   <% @expense.building.plans.each do |plan| %>
-  <div>
-  <%= plan.name %>
-  &nbsp;
-  <%= radio_button_tag :plan_id ,plan.id %>
-  </div>
+    <div>
+      <%= radio_button_tag :plan_id, plan.id %>
+      &nbsp;
+      <%= plan.name %>
+    </div>
   <% end %>
+  </div>
+  <%= link_to 'ایجاد پلان جدید', "#", "data-toggle" => "modal", 'data-target' => '#newPlan' %>
   <br/>
-  <div class="actions">
-    <%= f.submit "تائید", :class => 'btn btn-success col-md-4' %>
+  <br/>
+  <div class="form-group">
+    <%= f.submit "تائید", :class => 'btn btn-success col-sm-4' %>
   </div>
 <% end %>
+
+<div class="modal fade" id="newPlan" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        ایجاد پلان
+      </div>
+      <div class="modal-body">
+
+        <%= render '/plans/form_modal' %>
+
+      </div>
+    </div>
+  </div>
+</div>

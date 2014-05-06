@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504090601) do
+ActiveRecord::Schema.define(version: 20140506174534) do
 
   create_table "bills", force: true do |t|
     t.integer  "expense_id"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 20140504090601) do
     t.datetime "release_date"
     t.datetime "deadline"
     t.integer  "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messages", force: true do |t|
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
+    t.text     "content"
+    t.boolean  "seen",        default: false
+    t.integer  "parent_id",   default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

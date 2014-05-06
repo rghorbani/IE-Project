@@ -53,6 +53,7 @@ class PlansController < ApplicationController
         end
         format.html { redirect_to plans_path(:building_id => @plan.building_id), notice: 'پلان هزینه با موفقیت ایجاد شد.' }
         format.json { render action: 'show', status: :created, location: @plan }
+        format.js
       else
         format.html { render action: 'new' }
         format.json { render json: @plan.errors, status: :unprocessable_entity }

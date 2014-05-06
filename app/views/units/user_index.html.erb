@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="panel">
     <% if @units.size == 1 %>
@@ -66,8 +67,13 @@
                   <th><%= bill.description %></th>
                   <th><%= bill.price %> ریال</th>
                   <th><%= to_jalali_date(bill.deadline) %></th>
-                  <th><% if bill.status == false %>
-                  <%= 'پرداخت نشده' %><% else %><%= 'پرداخت شده' %><% end %></th>
+                  <th>
+                    <% if bill.status == false %>
+                      <%= 'پرداخت نشده' %>
+                    <% else %>
+                      <%= 'پرداخت شده' %>
+                    <% end %>
+                  </th>
                 </tr>
                 <% end %>
               </tbody>
@@ -105,8 +111,8 @@
                 <td><%= unit.side %></td>
                 <td>
                   <%= link_to unit,:class => "btn btn-success" do %>
-                  <i class="fa fa-folder-open-o"></i>&nbsp;
-                  <%=t :show_unit_info %>
+                    <i class="fa fa-folder-open-o"></i>&nbsp;
+                    <%=t :show_unit_info %>
                   <% end %>
                 </td>
               </tr>

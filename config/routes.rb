@@ -1,4 +1,6 @@
 IE2::Application.routes.draw do
+  resources :messages
+
   get "units/user_index"
   resources :news
 

@@ -1,0 +1,38 @@
+
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+      <h3><%= @news.title %></h3>
+    </div>
+    <div class="panel-body">
+
+      <p>
+        <strong>Sender:</strong>
+        <%= @message.sender_id %>
+      </p>
+
+      <p>
+        <strong>Receiver:</strong>
+        <%= @message.receiver_id %>
+      </p>
+
+      <p>
+        <strong>Content:</strong>
+        <%= @message.content %>
+      </p>
+
+      <p>
+        <strong>Seen:</strong>
+        <%= @message.seen %>
+      </p>
+
+      <p>
+        <strong>Parent:</strong>
+        <%= @message.parent_id %>
+      </p>
+
+      <%= link_to t('Edit'), edit_message_path(@message), :class => 'btn btn-primary' %>&nbsp;
+      <%= link_to t('Back'), messages_path, :class => 'btn btn-orange' %>
+    </div>
+  </div>
+</div>

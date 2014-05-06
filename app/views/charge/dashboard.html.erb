@@ -8,14 +8,14 @@
 <!--START STATS-WIDGET -->
 
   <div class="row">
-    <div class="col-md-7">
+    <div class="col-sm-7">
       <div class="panel panel-success">
         <div class="panel-heading clearfix">
           <h4>آمار وضعیت</h4>
         </div>
         <div class="panel-body">
           <ul id="sortable" class="unstyled ui-sortable" style="padding-left:20px;">
-            <div class="col-md-4">
+            <div class="col-sm-4">
             <li class=" ui-state-default">
               <div class="infoblock shadow">
                 <h1 style="color:#4DB848;">25,650</h1>
@@ -29,7 +29,7 @@
               </div>
             </li>
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-4">
             <li class="ui-state-default">
               <div class="infoblock shadow">
                 <h1 style="color:#ff4056;">20</h1>
@@ -44,7 +44,7 @@
               </div>
             </li>
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-4">
             <li class=" ui-state-default">
               <div class="infoblock shadow">
                 <h1 style="color:#FF6320;">5640</h1>
@@ -67,7 +67,7 @@
 
     <!--START -RECENT-POSTS-WIDGET -->
 
-    <div class="col-md-5">
+    <div class="col-sm-5">
       <div class="panel panel-success">
         <div class="panel-heading clearfix">
           <h4>آخرین اخبار</h4>
@@ -96,7 +96,7 @@
 
   <% if user_signed_in? and !(current_user.has_role? :resident) %>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-sm-12">
       <div class="panel panel-success">
         <div class="panel-heading clearfix">
           <h4>قبوض وصول نشده ساکنین</h4>
@@ -146,7 +146,7 @@
   <% end %>
   <% if user_signed_in? and (current_user.has_role? :resident) %>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-sm-12">
       <div class="panel panel-success">
         <div class="panel-heading clearfix">
           <h4>قبوض پرداخت نشده</h4>

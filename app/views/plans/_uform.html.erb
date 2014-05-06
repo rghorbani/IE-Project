@@ -27,17 +27,17 @@
   <br/>
   <% @plan.building.units.each do |unit| %>
   <div class="form-group">
-  واحد <%= unit.unit_number %>
-  &nbsp
-  <% if @plan.rates.where(:unit_id => unit.id).first != nil and @plan.rates.where(:unit_id => unit.id).first.rate != nil %>
-  <%= number_field_tag "unit_#{unit.id}", @plan.rates.where(:unit_id => unit.id).first.rate %>
-  <% else %>
-  <%= number_field_tag "unit_#{unit.id}", 1 %>
-  <% end %>
+    واحد <%= unit.unit_number %>
+    &nbsp;
+    <% if @plan.rates.where(:unit_id => unit.id).first != nil and @plan.rates.where(:unit_id => unit.id).first.rate != nil %>
+      <%= number_field_tag "unit_#{unit.id}", @plan.rates.where(:unit_id => unit.id).first.rate %>
+    <% else %>
+      <%= number_field_tag "unit_#{unit.id}", 1 %>
+    <% end %>
   </div>
   <%end%>
-  <div class="actions">
-    <%= f.submit "تائید", :class => 'btn btn-success col-md-4' %>
+  <div class="form-group">
+    <%= f.submit "تائید", :class => 'btn btn-success col-sm-4' %>
   </div>
 <% end %>
 <br/>

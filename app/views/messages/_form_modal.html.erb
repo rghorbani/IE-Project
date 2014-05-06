@@ -1,0 +1,28 @@
+<%= form_for(Message.new, :remote => true) do |f| %>
+
+  <div class="form-group hidden">
+    <%= f.label :sender_id, :class => 'control-label' %>
+    <%= f.number_field :sender_id, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :receiver_id, "گیرنده", :class => 'control-label' %>
+    <%= f.number_field :receiver_id, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, "متن", :class => 'control-label' %>
+    <%= f.text_area :content, :class => 'form-control' %>
+  </div>
+  <div class="checkbox hidden">
+    <%= f.label :seen, :class => 'control-label' %>
+    <%= f.check_box :seen, :class => 'checkbox' %>
+  </div>
+  <div class="form-group hidden">
+    <%= f.label :parent_id, :class => 'control-label' %>
+    <%= f.number_field :parent_id, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "ارسال", :class => 'btn btn-success col-sm-4' %>
+    &nbsp;
+    <button id="cancel" type="button" class="btn btn-default" data-dismiss="modal">انصراف</button>
+  </div>
+<% end %>

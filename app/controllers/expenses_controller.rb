@@ -27,6 +27,8 @@ class ExpensesController < ApplicationController
   def new
     @expense = Expense.new
     @expense.building_id = params[:building_id]
+    @plan = Plan.new
+    @plan.building_id = params[:building_id]
     @building_id = params[:building_id]
     @building = Building.find(@building_id)
     if @building.plans.size == 0

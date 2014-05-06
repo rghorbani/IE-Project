@@ -1,0 +1,7 @@
+$('#newPlan').modal('hide');
+
+$('#plan-choose').append("<%= escape_javascript(render(:partial => 'new_plan_item', :object => @plan)) %>");
+
+$('#newPlan').find('input[type="text"],input[type="email"],textarea,select').val('');
+
+$('.notification').show(500).html("پلان جدید ایجاد گردید.").delay(3000).hide(500);

@@ -2,7 +2,7 @@
 <div class="container">
   <div class="panel">
     <div class="panel-heading">
-        <h1>ویرایش خبر</h1>
+        <h1>ویرایش پیغام</h1>
     </div>
     <div class="panel-body">
       <div class="row">
@@ -10,11 +10,8 @@
 
 					<%= render 'form' %>
 
-					<br>
-					<br>
-
-					<%= link_to t('Show'), @news, :class => 'btn btn-info' %>&nbsp;
-					<%= link_to t('Back'), news_index_path, :class => 'btn btn-orange' %>
+					<%= link_to 'Show', @message, :class => 'btn btn-info' %>&nbsp;
+					<%= link_to 'Back', messages_path, :class => 'btn btn-orange' %>
 				</div>
         <div class="col-sm-7"></div>
       </div>

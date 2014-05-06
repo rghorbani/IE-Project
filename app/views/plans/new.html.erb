@@ -10,17 +10,17 @@
     </div>
     <div class="panel-body">
     	<div class="row">
-    		<div class="col-md-5">
+    		<div class="col-sm-5">
 
 				<%= render 'uform' %>
 				<br/>
         <br/>
-        <%= link_to plans_path(:building_id => @plan.building_id),:class => "btn btn-orange" do %>
+        <%= link_to plans_path(:building_id => @plan.building_id), :class => "btn btn-orange" do %>
           <i class="fa fa-arrow-circle-o-right"></i>&nbsp;
           <%= t('Back') %>
         <% end %>
 			</div>
-    		<div class="col-md-7"></div>
+    		<div class="col-sm-7"></div>
     	</div>
     </div>
   </div>

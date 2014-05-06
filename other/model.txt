@@ -8,3 +8,4 @@ rails g scaffold bill manager_id:integer price:integer description:text deadline
 rails g scaffold payment building_id:integer payer_id:integer trace_id:integer
 rails g scaffold plan building_id:integer formula:integer unit_id:integer rate:integer
 rails g scaffold expense manager_id:integer price:integer description:text deadline:datetime plan:integer
+rails g scaffold message sender_id:integer receiver_id:integer content:text seen:boolean parent_id:integer

@@ -6,22 +6,22 @@
     </div>
     <div class="panel-body">
 
-			&nbsp;
-			<p>
-			  <%= @news.content %>
-			</p>
-			<br>
-			<p>
-				<strong>تاریخ انتشار: </strong>
-				<%= @news.created_at %>
-			</p>
+		&nbsp;
+		<p>
+		  <%= @news.content %>
+		</p>
+		<br>
+		<p>
+			<strong>تاریخ انتشار: </strong>
+			<%= @news.created_at %>
+		</p>
 
-			<%= link_to t('Back'), news_index_path, :class => 'btn btn-orange' %>
-			<%= link_to t('Edit'), edit_news_path(@news), :class => 'btn btn-primary' %>&nbsp;
-			<%= link_to @expense, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn btn-danger" do %>
-	          <i class="fa fa-trash-o"></i>&nbsp;
-	          <%= 'حذف خبر' %>
-	        <% end %>
+		<%= link_to t('Back'), news_index_path, :class => 'btn btn-orange' %>
+		<%= link_to t('Edit'), edit_news_path(@news), :class => 'btn btn-primary' %>&nbsp;
+		<%= link_to @expense, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn btn-danger" do %>
+      <i class="fa fa-trash-o"></i>&nbsp;
+      <%= 'حذف خبر' %>
+    <% end %>
     </div>
   </div>
 </div>

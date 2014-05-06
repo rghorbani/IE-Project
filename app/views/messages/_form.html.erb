@@ -1,0 +1,37 @@
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group hidden">
+    <%= f.label :sender_id, :class => 'control-label' %>
+    <%= f.number_field :sender_id, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :receiver_id, :class => 'control-label' %>
+    <%= f.number_field :receiver_id, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, :class => 'control-label' %>
+    <%= f.text_area :content, :class => 'form-control' %>
+  </div>
+  <div class="checkbox hidden">
+    <%= f.label :seen, :class => 'control-label' %>
+    <%= f.check_box :seen, :class => 'checkbox' %>
+  </div>
+  <div class="form-group hidden">
+    <%= f.label :parent_id, :class => 'control-label' %>
+    <%= f.number_field :parent_id, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "", :class => 'btn btn-success col-sm-4' %>
+  </div>
+<% end %>
