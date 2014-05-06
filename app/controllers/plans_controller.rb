@@ -1,5 +1,6 @@
 class PlansController < ApplicationController
 
+  before_action :ban_resident_area
   before_action :authenticate_user!
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
 
@@ -32,6 +33,9 @@ class PlansController < ApplicationController
 
   # GET /plans/1/edit
   def edit
+    if(@plan.number == 0 or @plan.number == 1 or @plan.number == 2)
+      redirect_to @plan, notice: 'امکان ویرایش این پلان موجود نیست.'
+    end
     @building_id = @plan.building_id
     @building = Building.find(@building_id)
   end

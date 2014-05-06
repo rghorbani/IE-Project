@@ -1,5 +1,6 @@
 class ExpensesController < ApplicationController
 
+  before_action :ban_resident_area
   before_action :authenticate_user!
   before_action :set_expense, only: [:show, :edit, :update, :destroy]
 
@@ -44,6 +45,8 @@ class ExpensesController < ApplicationController
   # POST /expenses.json
   def create
     @expense = Expense.new(expense_params)
+    @expense.release_date = JalaliDate.to_gregorian(params[:ja_rel_yyyy],params[:ja_rel_mm],params[:ja_rel_dd])
+    @expense.deadline = JalaliDate.to_gregorian(params[:ja_ded_yyyy],params[:ja_ded_mm],params[:ja_ded_dd])
     respond_to do |format|
       if @expense.save
         @plan = Plan.find(params[:plan_id])

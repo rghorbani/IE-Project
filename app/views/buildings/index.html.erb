@@ -2,7 +2,7 @@
   <div class="panel">
     <% if @buildings.size == 0 %>
     <div class="panel-heading">
-      <h3>ساختمانی برای حساب کاربری شما یافت نشد</h3>
+      <h3>ساختمانی برای حساب شما موجود نیست</h3>
     </div>
     <div class="panel-body">
       <br>
@@ -73,6 +73,7 @@
             <thead>
               <tr>
                 <th style="width:10%;">شماره واحد</th>
+                <th style="width:15%;">نام مالک</th>
                 <th style="width:10%;">طبقه</th>
                 <th style="width:15%;">جهت مکانی</th>
                 <th style="width:15%;">مساحت</th>
@@ -84,6 +85,9 @@
               <% @units.each do |unit| %>
               <tr>
                 <th><%= unit.unit_number %></th>
+                <th><% if unit.user != nil and unit.user.profile != nil %>
+                    <%= unit.user.profile.first_name %> <%= unit.user.profile.last_name %>
+                    <% end %></th>
                 <th><%= unit.floor_number %></th>
                 <th><%= unit.side %></th>
                 <th><%= unit.area %></th>

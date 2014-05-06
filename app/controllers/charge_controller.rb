@@ -14,6 +14,15 @@ class ChargeController < ApplicationController
   			end
   		end
   	end
+
+  	if (current_user.has_role? :resident)
+  		@bills = Array.new
+  		current_user.units.each do |unit|
+  				for bill in unit.bills
+  					@bills << bill  			
+  				end
+  		end
+  	end
     @news = News.where('system = ?', 0).order("created_at DESC").limit(5)
   end
 

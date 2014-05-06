@@ -28,12 +28,20 @@
     <%= f.text_area :description, :class => 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :release_date,"تاریخ صدور", :class => 'control-label' %><br>
-    <%= f.datetime_select :release_date, :class => 'form-control' %>
+
+
+    <%= f.label :release_date,"تاریخ صدور", :class => 'control-label' %><br/>
+    <% @jalali = JalaliDate.to_jalali(Time.now)%>
+    <%= 'روز'%><%= select_tag  "ja_rel_dd", options_for_select(1..31, @jalali.day) %>/
+    <%= 'ماه'%><%= select_tag "ja_rel_mm", options_for_select(1..12, @jalali.month) %>/
+    <%= 'سال'%><%= select_year(@jalali.year, {:start_year => 1393, :end_year => 1400}, {:name =>"ja_rel_yyyy"}) %>
   </div>
   <div class="form-group">
     <%= f.label :deadline,"زمان پرداخت", :class => 'control-label' %><br>
-    <%= f.datetime_select :deadline, :class => 'form-control' %>
+    <% @jalali = JalaliDate.to_jalali(Time.now)%>
+    <%= 'روز'%><%= select_tag  "ja_ded_dd", options_for_select(1..31, @jalali.day) %>/
+    <%= 'ماه'%><%= select_tag "ja_ded_mm", options_for_select(1..12, @jalali.month) %>/
+    <%= 'سال'%><%= select_year(@jalali.year, {:start_year => 1393, :end_year => 1400}, {:name =>"ja_ded_yyyy"}) %>
   </div>
   <div class="form-group">
     <%= f.label :number,"شماره سریال", :class => 'control-label' %><br>
