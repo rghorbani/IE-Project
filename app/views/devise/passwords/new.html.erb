@@ -1,12 +1,27 @@
-<h2>گذرواژه خود را فراموش کرده اید؟</h2>
+<div class="container">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="panel">
+      <div class="panel-heading">
+      	<h3>گذرواژه خود را فراموش کرده اید؟</h3>
+      </div>
+      <div class="panel-body">
+				<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+				  <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+				  <div class="form-group">
+				  	<%= f.label :email, "ایمیل", :class => 'control-label' %>
+				  	<%= f.email_field :email, autofocus: true, :class => 'form-control ltr' %>
+					</div>
 
-  <div><%= f.label :email, "ایمیل" %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+				  <div><%= f.submit "اطلاعات بازیابی گذرواژه را برایم بفرست", :class => 'btn btn-success' %></div>
+				<% end %>
 
-  <div><%= f.submit "اطلاعات بازیابی گذرواژه را برایم بفرست" %></div>
-<% end %>
+      </div>
+      <div class="panel-footer">
+				<a href="/users/sign_in"><i class="fa fa-arrow-right"></i>&nbsp;ورود</a>
+				<a href="/users/sign_up" class="pull-left">ثبت نام&nbsp;<i class="fa fa-arrow-left"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= render "devise/shared/links" %>

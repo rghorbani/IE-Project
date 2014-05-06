@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140502082035) do
+ActiveRecord::Schema.define(version: 20140504090601) do
 
   create_table "bills", force: true do |t|
     t.integer  "expense_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20140502082035) do
     t.boolean  "system"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "building_id"
   end
 
   add_index "news", ["user_id"], name: "index_news_on_user_id"
