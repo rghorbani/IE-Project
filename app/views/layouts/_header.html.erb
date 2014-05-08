@@ -20,7 +20,7 @@
         <li><% Time.now.in_time_zone('Tehran').strftime("%I:%M-%D") %></li>
         <li class="dropdown">
           <a href="" class="dropdown-toggle btn-nav2" data-toggle="dropdown">
-            <i class="fa fa-user"></i> <%= current_user.email %>&nbsp;<b class="caret"></b>
+            <i class="fa fa-user"></i> <%= current_user.email %>&nbsp;
           </a>
           <ul class="dropdown-menu">
             <li>
@@ -28,7 +28,7 @@
             </li>
             <li class="divider"></li>
             <li>
-              <a href="/users/sign_out" rel="nofollow"><i class="fa fa-power-off"></i> خروج</a>
+              <a href="/users/sign_out" rel="nofollow"><i class="fa fa-power-off"></i>&nbsp; خروج</a>
             </li>
           </ul>
         </li>
@@ -54,63 +54,6 @@
     </div><!--/.nav-collapse -->
   </div>
 </nav>
-
-<% if user_signed_in? %>
-<div class="modal fade" id="userSettingsDialog" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        تنظیمات شخصی حساب
-      </div>
-      <div class="modal-body">
-        <ul id="userSettings" class="nav nav-tabs">
-          <li class="active">
-            <a href="#settings" data-toggle="tab" data-original-title="">پروفایل</a>
-          </li>
-          <li class="">
-            <a href="#password" data-toggle="tab" data-original-title="">رمز عبور</a>
-          </li>
-        </ul>
-        <br>
-        <div id="userSettingsContent" class="tab-content">
-          <div class="tab-pane fade active in" id="settings">
-            <div class="row">
-              <!-- <div class="col-md-1"></div> -->
-              <div class="col-md-8" style="margin-right:10px;">
-                <%= render 'profiles/form_modal' %>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="password">
-            <div class="row">
-              <!-- <div class="col-md-1"></div> -->
-              <div class="col-md-8">
-                <%= render 'devise/passwords/edit_form' %>
-              </div>
-            </div>
-            <!-- <form id="changePassword">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <input type="password" class="form-control" Placeholder="Password">
-              </div>
-              &nbsp;
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <input type="password" class="form-control" Placeholder="Confirm Password">
-              </div>
-              &nbsp;
-              <div class="input-group">
-                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-              </div>
-            </form> -->
-          </div>
-        </div>
-      </div>
-      <!-- <div class="modal-footer"></div> -->
-    </div>
-  </div>
-</div>
-<% end %>
 
 <% if user_signed_in? and !(current_user.has_role? :resident) %>
 <nav class="subnav subnav-fixed navbar" role="navigation">
@@ -194,6 +137,7 @@
             <li><a href="/news">اخبار ساختمان</a></li>
             <li><a href="/news?system=1">اخبار سیستم</a></li>
             <li><a href="/messages">پیغام ها</a></li>
+            <li><%= link_to 'پیغام جدید', "#", "data-toggle" => "modal", 'data-target' => '#newMessage' %></li>
           </ul>
         </li>
         <li class=""><a href="/charge/help"><i class="fa fa-lightbulb-o icon-large"></i>&nbsp;راهنما</a></li>
@@ -259,6 +203,8 @@
           <ul class="dropdown-menu">
             <li><a href="/news">اخبار ساختمان</a></li>
             <li><a href="/news?system=1">اخبار سیستم</a></li>
+            <li><a href="/messages">پیغام ها</a></li>
+            <li><%= link_to 'پیغام جدید', "#", "data-toggle" => "modal", 'data-target' => '#newMessage' %></li>
           </ul>
         </li>
         <li class=""><a href="/charge/help"><i class="fa fa-lightbulb-o icon-large"></i>&nbsp;راهنما</a></li>

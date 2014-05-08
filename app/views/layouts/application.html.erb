@@ -11,12 +11,16 @@
 
 </head>
 <body>
-<div class="wrapper">
-  <%=render :partial => 'layouts/header' %>
+  <div class="wrapper">
+    <%=render :partial => 'layouts/header' %>
 
-  <%= yield %>
-   <div class="push"></div>
-</div>
+    <% if user_signed_in? %>
+      <%=render :partial => 'layouts/modals' %>
+    <% end %>
+
+    <%= yield %>
+    <div class="push"></div>
+  </div>
   <%=render :partial => 'layouts/footer' %>
 
   <div class="notification"></div>

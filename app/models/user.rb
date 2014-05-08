@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 	has_many :units
   has_many :payments
   has_many :news
+  has_and_belongs_to_many :messages
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

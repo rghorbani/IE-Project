@@ -1,0 +1,53 @@
+
+<div class="modal fade" id="userSettingsDialog" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        تنظیمات شخصی حساب
+      </div>
+      <div class="modal-body">
+        <ul id="userSettings" class="nav nav-tabs">
+          <li class="active">
+            <a href="#settings" data-toggle="tab" data-original-title="">پروفایل</a>
+          </li>
+          <li class="">
+            <a href="#password" data-toggle="tab" data-original-title="">رمز عبور</a>
+          </li>
+        </ul>
+        <br>
+        <div id="userSettingsContent" class="tab-content">
+          <div class="tab-pane fade active in" id="settings">
+            <div class="row">
+              <div class="col-md-8" style="margin-right:10px;">
+                <%= render 'profiles/form_modal' %>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="password">
+            <div class="row">
+              <div class="col-md-8">
+                <%= render 'devise/passwords/edit_form' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="modal-footer"></div> -->
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="newMessage" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        ایجاد خبر
+      </div>
+      <div class="modal-body">
+
+        <%= render 'messages/form_modal' %>
+
+      </div>
+    </div>
+  </div>
+</div>
