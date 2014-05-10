@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :ban_resident_area
+  before_action :ban_resident_area, only: [:index]
   before_action :authenticate_user!
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
