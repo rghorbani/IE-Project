@@ -276,7 +276,9 @@ html {
 }
 
 .mainnav {
-  background: url("/assets/header_bg.png") repeat-x  #95a5a6;
+  background: url("/assets/header_bg.png") repeat-x  ;
+  background-size:  70px;
+  size
   /*position: relative;*/
   /*margin-bottom: 0;*/
 }
@@ -506,4 +508,20 @@ margin-bottom:  -10em;
 .footer, .push {
 height: 10em;
 clear: both;
+}
+
+.logopic{
+  width: 190px;
+  height: auto;
+}
+
+.toright{
+  right: 0px;
+  float: right;; 
+}
+.toleft{
+  left: 0px;
+  float: left;
+  padding-left: 0px;
+  margin-top: 13px;
 }
