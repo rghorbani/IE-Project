@@ -342,7 +342,7 @@ html {
   margin-bottom: 0;
 }
 .subnav .nav li {
-  width: auto;
+  width: auto !important;
 }
 .subnav .nav > li > ul {
   /*margin-top: 1px;*/
@@ -362,7 +362,7 @@ html {
 }
 .subnav .nav > li > a {
   margin: 0;
-  width: auto;
+  width: auto !important;
   /*color:#4DB848;*/
   color: #2980b9;
   /*height:32px;*/
