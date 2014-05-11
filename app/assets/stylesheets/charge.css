@@ -184,7 +184,7 @@ html {
 /* Special classes        */
 
 .panel {
-  border:1px solid #4db848;
+  border:1px solid #3498db;
 }
 
 .panel-heading {
@@ -361,7 +361,8 @@ html {
 .subnav .nav > li > a {
   margin: 0;
   width: auto;
-  color:#4DB848;
+  /*color:#4DB848;*/
+  color: #2980b9;
   /*height:32px;*/
   padding-top:    11px;
   font-size:17px;
