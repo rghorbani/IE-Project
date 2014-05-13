@@ -15,6 +15,12 @@ module ApplicationHelper
   	@profile = current_user.profile || Profile.new
   end
 
+  def get_receivers
+    buildings = Unit.select("building_id").where("user_id = ?", current_user.id)
+    users = Unit.select("user_id").where("building_id = (?)", buildings)
+    @receivers = Profile.where("user_id = (?)", users)
+  end
+
   def get_dir(params)
     #buildings 0
     #expenses 1

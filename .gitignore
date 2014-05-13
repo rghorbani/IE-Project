@@ -18,3 +18,5 @@
 #Ignore editor's temporary files
 *.*~
 *.sublime-*
+
+/config/local_env.yml
