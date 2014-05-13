@@ -10,9 +10,9 @@ class ExpensesController < ApplicationController
     @building_id = params[:building_id]
     @building = Building.find(@building_id)
     if(@building_id != nil)
-      @expenses = Expense.all.where(:building_id => @building_id)
+      @expenses = Expense.all.where(:building_id => @building_id).order("deadline DESC")
     else
-      @expenses = Expense.all
+      @expenses = Expense.all.order("deadline DESC")
     end
   end
 
@@ -47,8 +47,8 @@ class ExpensesController < ApplicationController
   # POST /expenses.json
   def create
     @expense = Expense.new(expense_params)
-    @expense.release_date = JalaliDate.to_gregorian(params[:ja_rel_yyyy],params[:ja_rel_mm],params[:ja_rel_dd])
-    @expense.deadline = JalaliDate.to_gregorian(params[:ja_ded_yyyy],params[:ja_ded_mm],params[:ja_ded_dd])
+    # @expense.release_date = JalaliDate.to_gregorian(params[:ja_rel_yyyy],params[:ja_rel_mm],params[:ja_rel_dd])
+    # @expense.deadline = JalaliDate.to_gregorian(params[:ja_ded_yyyy],params[:ja_ded_mm],params[:ja_ded_dd])
     respond_to do |format|
       if @expense.save
         @plan = Plan.find(params[:plan_id])
@@ -74,7 +74,7 @@ class ExpensesController < ApplicationController
   def update
     respond_to do |format|
       if @expense.update(expense_params)
-        format.html { redirect_to expenses_path(:building_id => @expense.building_id), notice: 'Expense was successfully updated.' }
+        format.html { redirect_to expenses_path(:building_id => @expense.building_id), notice: 'هزینه با موفقیت به روزرسانی شد.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

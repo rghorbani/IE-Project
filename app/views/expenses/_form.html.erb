@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="form-group hidden">
-    <%= f.label :building_id, :class => 'control-label' %><br>
+    <%= f.label :building_id, :class => 'control-label' %>
     <%= f.number_field :building_id, :class => 'form-control' %>
   </div>
   <div class="form-group">
@@ -24,32 +24,28 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :description,"توضیحات", :class => 'control-label' %><br>
+    <%= f.label :description,"توضیحات", :class => 'control-label' %>
     <%= f.text_area :description, :class => 'form-control' %>
   </div>
   <div class="form-group">
-
-
-    <%= f.label :release_date,"تاریخ صدور", :class => 'control-label' %><br/>
-    <% @jalali = JalaliDate.to_jalali(Time.now)%>
-    <%= 'روز'%><%= select_tag  "ja_rel_dd", options_for_select(1..31, @jalali.day) %>/
-    <%= 'ماه'%><%= select_tag "ja_rel_mm", options_for_select(1..12, @jalali.month) %>/
-    <%= 'سال'%><%= select_year(@jalali.year, {:start_year => 1393, :end_year => 1400}, {:name =>"ja_rel_yyyy"}) %>
+    <%= f.label :release_date, "تاریخ صدور", :class => 'control-label' %>
+    <div class="input-group">
+      <%= f.text_field :release_date, :class => 'form-control col-xs-5 ltr' %>
+    </div>
   </div>
   <div class="form-group">
-    <%= f.label :deadline,"زمان پرداخت", :class => 'control-label' %><br>
-    <% @jalali = JalaliDate.to_jalali(Time.now)%>
-    <%= 'روز'%><%= select_tag  "ja_ded_dd", options_for_select(1..31, @jalali.day) %>/
-    <%= 'ماه'%><%= select_tag "ja_ded_mm", options_for_select(1..12, @jalali.month) %>/
-    <%= 'سال'%><%= select_year(@jalali.year, {:start_year => 1393, :end_year => 1400}, {:name =>"ja_ded_yyyy"}) %>
+    <%= f.label :deadline, "زمان پرداخت", :class => 'control-label' %>
+    <div class="input-group">
+      <%= f.text_field :deadline, :class => 'form-control col-xs-5 ltr' %>
+    </div>
   </div>
   <div class="form-group">
-    <%= f.label :number,"شماره سریال", :class => 'control-label' %><br>
+    <%= f.label :number,"شماره سریال", :class => 'control-label' %>
     <%= f.number_field :number, :class => 'form-control' %>
   </div>
   <br/>
   <div>
-  <h3>انتخاب پلان هزینه</h3>
+    <h3>انتخاب پلان هزینه</h3>
   </div>
   <div id="plan-choose">
   <% @expense.building.plans.each do |plan| %>
@@ -82,3 +78,18 @@
     </div>
   </div>
 </div>
+
+<%= javascript_include_tag 'persianDatepicker.min' %>
+
+<script type="text/javascript">
+  $(function() {
+      $("#expense_deadline, #expense_release_date").persianDatepicker({
+        theme: 'default',
+        selectedBefore: true,
+        cellWidth: 33,
+        cellHeight: 32,
+        fontSize: 15,
+        showGregorianDate:true,
+      }); 
+  });
+</script>

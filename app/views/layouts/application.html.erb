@@ -6,6 +6,8 @@
   <title>سیستم مدیریت شارژ ساختمان</title>
   
   <%= stylesheet_link_tag 'font-awesome.min', 'bootstrap.min', 'bootstrap-rtl', 'charge', 'font', 'error' %>
+  <%= stylesheet_link_tag 'persianDatepicker-dark', 'persianDatepicker-default', 'persianDatepicker-custom' %>
+  <%= javascript_include_tag "application" %>
   
   <%= csrf_meta_tags %>
 
@@ -29,7 +31,8 @@
     <%= notice %>
   </div>
   <% end %>
-  <%= javascript_include_tag "application", 'bootstrap.min' %>
+
+  <%= javascript_include_tag 'bootstrap.min' %>
 
 </body>
 </html>

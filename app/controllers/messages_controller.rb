@@ -22,6 +22,8 @@ class MessagesController < ApplicationController
   # GET /messages/new
   def new
     @message = Message.new
+    # query = "SELECT * FROM users, profiles WHERE users.id = profiles.user_id AND "
+    # @receivers = User.find_by_sql(query)
   end
 
   # GET /messages/1/edit
@@ -39,7 +41,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
+        format.html { redirect_to @message, notice: 'پیغام با موفقیت ارسال گردید.' }
         format.json { render action: 'show', status: :created, location: @message }
         format.js
       else
