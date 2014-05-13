@@ -276,7 +276,8 @@ html {
 }
 
 .mainnav {
-  background: url("/assets/header_bg.png") repeat-x  ;
+  /*background: url("/assets/header_bg.png") repeat-x  ;*/
+  background-color: #30304a;
   background-size:  70px;
   size
   /*position: relative;*/
