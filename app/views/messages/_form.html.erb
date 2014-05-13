@@ -17,7 +17,11 @@
   </div>
   <div class="form-group">
     <%= f.label :receiver_id, :class => 'control-label' %>
-    <%= f.number_field :receiver_id, :class => 'form-control' %>
+    <div class="input-group">
+      <div class="input-group-addon"><i class="fa fa-user"></i></div>
+      <%= f.collection_select(:receiver_id, @receivers, :user_id, :name_with_initial, {:include_blank => true}, :class => 'form-control') %>
+      <%#= f.number_field :receiver_id, :class => 'form-control' %>
+    </div>
   </div>
   <div class="form-group">
     <%= f.label :content, :class => 'control-label' %>
@@ -32,6 +36,6 @@
     <%= f.number_field :parent_id, :class => 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.submit "", :class => 'btn btn-success col-sm-4' %>
+    <%= f.submit "ارسال", :class => 'btn btn-success col-sm-4' %>
   </div>
 <% end %>

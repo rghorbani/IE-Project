@@ -22,8 +22,9 @@ class MessagesController < ApplicationController
   # GET /messages/new
   def new
     @message = Message.new
-    # query = "SELECT * FROM users, profiles WHERE users.id = profiles.user_id AND "
-    # @receivers = User.find_by_sql(query)
+    @buildings = Unit.select("building_id").where("user_id = ?", current_user.id)
+    @users = Unit.select("user_id").where("building_id = (?)", @buildings)
+    @receivers = Profile.where("user_id = (?)", @users)
   end
 
   # GET /messages/1/edit

@@ -65,6 +65,8 @@ class UnitsController < ApplicationController
   # PATCH/PUT /units/1
   # PATCH/PUT /units/1.json
   def update
+    @unit.user_id = User.select("id").find_by_email(params[:email])
+
     respond_to do |format|
       if @unit.update(unit_params)
         update_plans_update(@unit)
