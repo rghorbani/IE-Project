@@ -21,7 +21,11 @@
       <ul class="nav navbar-nav navbar-left">
         <li class="dropdown">
           <a href="" class="dropdown-toggle btn-nav2" data-toggle="dropdown">
-            <i class="fa fa-user"></i> <%= current_user.email %>&nbsp;
+            <i class="fa fa-user"></i> <% if @profile.first_name == "" and @profile.last_name == "" %>
+            <%= current_user.email %>&nbsp;
+            <% else %>
+            <%= @profile.first_name %>&nbsp<%= @profile.last_name %>&nbsp
+            <% end %>
           </a>
           <ul class="dropdown-menu">
             <li>
