@@ -13,3 +13,5 @@ print view of factor
 highcharts
 
 shared public places in building
+
+add delayed jobs for better response time (done) -> multiple ways(see other/commands.txt)

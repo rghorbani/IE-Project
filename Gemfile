@@ -36,6 +36,12 @@ end
 gem 'devise'
 gem 'cancan'
 
+# Delayed Jobs
+gem 'delayed_job'
+gem 'delayed_job_active_record'
+gem 'daemons'
+gem 'daemon-spawn'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
