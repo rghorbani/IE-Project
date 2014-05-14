@@ -57,6 +57,8 @@ class ProfilesController < ApplicationController
       @profile.user_id = current_user.id
 
       if @profile.update(profile_params)
+        UserMailer.update_profile(current_user, @profile).deliver
+
         format.html { redirect_to '/charge/dashboard', notice: 'پروفایل با موفقیت به روزرسانی شد.' }
         format.json { head :no_content }
         format.js
