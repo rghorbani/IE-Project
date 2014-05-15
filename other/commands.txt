@@ -1,0 +1,29 @@
+
+// run background job with "daemon-spawn"
+
+ruby lib/background_job start
+ruby lib/background_job stop
+ruby lib/background_job restart
+
+// run background job with "daemon"
+
+RAILS_ENV=production script/delayed_job start
+RAILS_ENV=production script/delayed_job stop
+
+# Runs two workers in separate processes.
+RAILS_ENV=production script/delayed_job -n 2 start
+RAILS_ENV=production script/delayed_job stop
+
+# Set the --queue or --queues option to work from a particular queue.
+RAILS_ENV=production script/delayed_job --queue=tracking start
+RAILS_ENV=production script/delayed_job --queues=mailers,tasks start
+
+# Runs all available jobs and then exits
+RAILS_ENV=production script/delayed_job start --exit-on-complete
+# or to run in the foreground
+RAILS_ENV=production script/delayed_job run --exit-on-complete
+
+// run normal
+
+rake jobs:work
+rake jobs:workoff

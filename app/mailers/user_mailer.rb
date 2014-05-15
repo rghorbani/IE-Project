@@ -6,6 +6,7 @@ class UserMailer < ActionMailer::Base
     @url  = 'http://4khuneh.ir/users/sign_in'
     mail(to: @user.email, subject: 'Welcome to 4Khuneh')
   end
+  handle_asynchronously :welcome_email
 
   def update_profile(user, profile)
     @user = user
@@ -18,4 +19,7 @@ class UserMailer < ActionMailer::Base
     @unit = unit
     mail(to: @user.email, subject: 'به چهارخونه خوش آمدید!')
   end
+
+  handle_asynchronously :update_profile
+
 end
