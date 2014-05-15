@@ -2,6 +2,18 @@ class BillsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_bill, only: [:show, :edit, :update, :destroy]
 
+
+
+  def pay
+    @bill = Bill.find(params[:bill_id])
+    if @bill.status == true
+      @bill.status = false
+    else
+      @bill.status = true
+    end
+    @bill.save    
+  end
+  
   # GET /bills
   # GET /bills.json
   def index

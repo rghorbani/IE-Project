@@ -1,0 +1,5 @@
+<% if @bill.status == false %>
+$("#bill_<%= @bill.id %>").html("پرداخت نشده");
+<% else %>
+$("#bill_<%= @bill.id %>").html("پرداخت شده");
+<%end%>

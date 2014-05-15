@@ -13,7 +13,7 @@
       </div>
       <div id="column-main" class="col-md-3 center">
         <div class="copyright">
-            <%= Time.now.in_time_zone('Tehran').strftime("%I:%M-%D") %><br/><br/>
+            <%= to_jalali_date(Time.now.in_time_zone('Tehran')) %><br/><br/>
             <i class="fa fa-pagelines"></i><br/>
             حقوق ایجاد کننده محفوظ است. &copy; ۱۳۹۳
         </div>

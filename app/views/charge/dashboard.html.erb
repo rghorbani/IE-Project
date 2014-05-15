@@ -18,13 +18,13 @@
             <div class="col-sm-4">
             <li class=" ui-state-default">
               <div class="infoblock shadow">
-                <h1 style="color:#4DB848;">25,650</h1>
+                <h3 style="color:#4DB848;"><%= @arrivals %> ریال</h3>
                 <p>مقدار وصولی این ماه</p>
               </div>
             </li>
             <li class=" ui-state-default">
               <div class="infoblock shadow">
-                <h1 style="color:#0099FF;">30,789</h1>
+                <h3 style="color:#0099FF;"><%= @this_month %> ریال</h3>
                 <p>مجموع هزینه این ماه</p>
               </div>
             </li>
@@ -32,14 +32,15 @@
             <div class="col-sm-4">
             <li class="ui-state-default">
               <div class="infoblock shadow">
-                <h1 style="color:#ff4056;">20</h1>
-                <p>تعداد ساکنین</p>
+                <h3 style="color:#ff4056;"><% @receivers = get_receivers %>
+                <%= @receivers.size %></h3>
+                <p>تعداد سکنه تحت مدیریت</p>
               </div>
             </li>
 
             <li class=" ui-state-default">
               <div class="infoblock shadow">
-                <h1 style="color:#ff9900;">7</h1>
+                <h3 style="color:#ff9900;"><%= @unit_count %></h3>
                 <p>تعداد واحدها</p>
               </div>
             </li>
@@ -47,14 +48,14 @@
             <div class="col-sm-4">
             <li class=" ui-state-default">
               <div class="infoblock shadow">
-                <h1 style="color:#FF6320;">5640</h1>
+                <h3 style="color:#FF6320;"><%= @not_arrivals %> ریال</h3>
                 <p>باقیمانده بستانکاری</p>
               </div>
             </li>
             <li class="ui-state-default">
               <div class="infoblock shadow ">
-                <h1 style="color:#6148B3;">42,587</h1>
-                <p>مجموع حساب سالانه</p>
+                <h3 style="color:#6148B3;"><%= @best_pay %></h3>
+                <p>مالک خوش حساب</p>
               </div>
             </li>
             </div>
@@ -149,7 +150,7 @@
     <div class="col-sm-12">
       <div class="panel">
         <div class="panel-heading clearfix">
-          <h4>قبوض پرداخت نشده</h4>
+          <h4>آخرین قبوض</h4>
         </div>
         <div class="panel-body">
           <div class="row-fluid">

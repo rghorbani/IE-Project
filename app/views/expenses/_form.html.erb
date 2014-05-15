@@ -56,7 +56,12 @@
     </div>
   <% end %>
   </div>
-  <%= link_to 'ایجاد پلان جدید', "#", "data-toggle" => "modal", 'data-target' => '#newPlan' %>
+  <%= link_to "#","data-toggle" => "modal", 'data-target' => '#newPlan', :class => "btn btn-primary" do %>
+        <i class="fa fa-plus-square"></i>&nbsp;
+        <%= 'ایجاد پلان جدید' %>
+  <% end %>
+  <br/>
+  <br/>
   <br/>
   <br/>
   <div class="form-group">

@@ -7,12 +7,11 @@ class ExpensesController < ApplicationController
   # GET /expenses
   # GET /expenses.json
   def index
+    redirect_to('/') if params[:building_id] == nil
     @building_id = params[:building_id]
-    @building = Building.find(@building_id)
     if(@building_id != nil)
+      @building = Building.find(@building_id)
       @expenses = Expense.all.where(:building_id => @building_id).order("deadline DESC")
-    else
-      @expenses = Expense.all.order("deadline DESC")
     end
   end
 

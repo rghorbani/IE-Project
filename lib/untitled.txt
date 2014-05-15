@@ -5,3 +5,19 @@ def to_jalali(datetime)
   @str = "در تاریخ #{@jalali_full_date} ساعت #{@time} بوقت تهران"
   return @str
 end
+
+
+view (edit and new):
+
+<% @jalali = JalaliDate.to_jalali(@profile.birthdate)%>
+				<%=t :day%><%= select_tag  "ja_birth_dd", options_for_select(1..31, @jalali.day) %>/
+				<%=t :month%><%= select_tag "ja_birth_mm", options_for_select(1..12, @jalali.month) %>/
+				<%=t :year%><%= select_year(@jalali.year, {:start_year => 1300, :end_year => 1370}, {:name =>"ja_birth_yyyy"}) %>
+
+controller: 
+
+@profile.birthdate = JalaliDate.to_gregorian(params[:ja_birth_yyyy],params[:ja_birth_mm],params[:ja_birth_dd])
+
+view (show):
+				<span>	<% @jalali = JalaliDate.to_jalali(@profile.birthdate)%>
+					<%= @jalali.year%>/<%= @jalali.month%>/<%= @jalali.day%></span>
