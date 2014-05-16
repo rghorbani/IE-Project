@@ -38,6 +38,9 @@ class UnitsController < ApplicationController
   # POST /units
   # POST /units.json
   def create
+    if(params[:email] == nil)
+      redirect_to building_path(@unit.building_id),:message => "ورود مساحت واحد الزامی است."
+    end
     @unit = Unit.new(unit_params)
 
     respond_to do |format|
@@ -48,6 +51,7 @@ class UnitsController < ApplicationController
             u = User.create(:email => params[:email], :password => '1234', :password_confirmation => '1234')
             u.add_role :resident
             u.save!(:validate => false)
+            UserMailer.new_unit(u, @unit).deliver
           end
           @unit.user_id = u.id
           @unit.save

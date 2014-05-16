@@ -7,18 +7,23 @@ class ExpensesController < ApplicationController
   # GET /expenses
   # GET /expenses.json
   def index
+    redirect_to('/') if params[:building_id] == nil
     @building_id = params[:building_id]
-    @building = Building.find(@building_id)
     if(@building_id != nil)
+      @building = Building.find(@building_id)
+      if @building.user != current_user
+        redirect_to '/'
+      end
       @expenses = Expense.all.where(:building_id => @building_id).order("deadline DESC")
-    else
-      @expenses = Expense.all.order("deadline DESC")
     end
   end
 
   # GET /expenses/1
   # GET /expenses/1.json
   def show
+    if @expense.building.user != current_user
+      redirect_to '/'
+    end
     @building_id = @expense.building_id
     @building = Building.find(@building_id)
   end

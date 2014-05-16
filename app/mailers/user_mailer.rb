@@ -13,5 +13,13 @@ class UserMailer < ActionMailer::Base
     @profile = profile
     mail(to: @user.email, subject: '4Khuneh profile updated')
   end
+
+  def new_unit(user,unit)
+    @user = user
+    @unit = unit
+    mail(to: @user.email, subject: 'به چهارخونه خوش آمدید!')
+  end
+
   handle_asynchronously :update_profile
+
 end

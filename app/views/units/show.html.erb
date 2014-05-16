@@ -58,6 +58,7 @@
                   <th style="width:10%;">مبلغ</th>
                   <th style="width:10%;">مهلت پرداخت</th>
                   <th style="width:15%;">وضعیت</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -69,10 +70,18 @@
                   <th><%= bill.price %> ریال</th>
                   <th><%= to_jalali_date(bill.deadline) %></th>
                   <th>
+                    <div id="bill_<%= bill.id %>">
                     <% if bill.status == false %>
                       <%= 'پرداخت نشده' %>
                     <% else %>
                       <%= 'پرداخت شده' %>
+                    <% end %>
+                    </div>
+                  </th>
+                  <th>
+                    <%= link_to "/bills/pay?bill_id=#{bill.id}", :bill_id => bill.id, remote: true,:class => "btn btn-warning" do %>
+                      <i class="fa fa-credit-card"></i>&nbsp;
+                      <%= "پرداخت" %>
                     <% end %>
                   </th>
                 </tr>

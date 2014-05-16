@@ -11,7 +11,8 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all.where("receiver_id = ?", current_user.id).order("created_at DESC")
+    @messages = Message.all
+    #@messages = Message.all.where("receiver_id = ?", current_user.id).order("created_at DESC")
   end
 
   # GET /messages/1

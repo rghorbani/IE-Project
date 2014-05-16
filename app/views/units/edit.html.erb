@@ -2,7 +2,11 @@
 <div class="container">
   <div class="panel">
     <div class="panel-heading">
-      <h1>ویرایش واحد</h1>
+      <h3><% if @unit.building.name != nil %>
+        واحد <%= @unit.unit_number %> ساختمان <%= @unit.building.name %>
+        <% else %>
+        واحد <%= @unit.unit_number %>
+        <% end %></h3>
     </div>
     <div class="panel-body">
       <div class="row">

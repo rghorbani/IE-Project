@@ -1,7 +1,8 @@
 IE2::Application.routes.draw do
+  get "units/user_index"
+  get "bills/pay"
   resources :messages
 
-  get "units/user_index"
   resources :news
 
   resources :payments
