@@ -17,6 +17,9 @@ class BuildingsController < ApplicationController
   # GET /buildings/1
   # GET /buildings/1.json
   def show
+    if @building.user != current_user
+      redirect_to '/'
+    end
   end
 
   # GET /buildings/new

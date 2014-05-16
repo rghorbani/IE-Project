@@ -11,6 +11,9 @@ class ExpensesController < ApplicationController
     @building_id = params[:building_id]
     if(@building_id != nil)
       @building = Building.find(@building_id)
+      if @building.user != current_user
+        redirect_to '/'
+      end
       @expenses = Expense.all.where(:building_id => @building_id).order("deadline DESC")
     end
   end
@@ -18,6 +21,9 @@ class ExpensesController < ApplicationController
   # GET /expenses/1
   # GET /expenses/1.json
   def show
+    if @expense.building.user != current_user
+      redirect_to '/'
+    end
     @building_id = @expense.building_id
     @building = Building.find(@building_id)
   end
