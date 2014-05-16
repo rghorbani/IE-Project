@@ -214,7 +214,7 @@
               <tbody>
                 <% @bills.each_with_index do |bill,index| %>
             
-                <tr>
+                <tr onclick="location.href='<%= unit_path(bill.unit) %>'">
                   <th><%= index+1 %></th>
                   <th><%= bill.unit.building.name %></th>
                   <th><%= bill.unit.unit_number %></th>
