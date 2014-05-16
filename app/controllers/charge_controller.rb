@@ -31,14 +31,53 @@ class ChargeController < ApplicationController
       current_user.units.each do |unit|
         for bill in unit.bills
          @bills << bill  			
-       end
-     end
-   end
+        end
+      end
+
+      @unit_count = current_user.units.size
+      @paid = get_this_month_paid
+      @this_month = get_this_month_bill
+      @not_paid = get_this_month_not_paid
+    end
    @news = News.where('system = ?', 0).order("created_at DESC").limit(5)
  end
 
 
  def help
+ end
+
+ def get_this_month_not_paid
+  cost = 0
+  current_user.units.each do |unit|
+    for bill in unit.bills
+      if(bill.status == false)
+        cost = cost + bill.price
+      end
+    end
+  end
+  cost
+ end
+
+ def get_this_month_bill
+  cost = 0
+  current_user.units.each do |unit|
+    for bill in unit.bills
+      cost = cost + bill.price
+    end
+  end
+  cost
+ end
+
+ def get_this_month_paid
+  paid = 0
+  current_user.units.each do |unit|
+    for bill in unit.bills
+      if(bill.status == true)
+        paid = paid + bill.price
+      end
+    end
+  end
+  paid
  end
 
  def get_unit_count

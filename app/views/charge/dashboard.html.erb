@@ -8,6 +8,8 @@
 <!--START STATS-WIDGET -->
 
   <div class="row">
+
+    <% if not current_user.has_role? :resident %>
     <div class="col-sm-7">
       <div class="panel">
         <div class="panel-heading clearfix">
@@ -41,7 +43,7 @@
             <li class=" ui-state-default">
               <div class="infoblock shadow">
                 <h3 style="color:#ff9900;"><%= @unit_count %></h3>
-                <p>تعداد واحدها</p>
+                <p>تعداد واحدهای تحت مدیریت</p>
               </div>
             </li>
             </div>
@@ -63,12 +65,54 @@
         </div>
       </div>
     </div>
+    <% else %>
+    <div class="col-sm-7">
+      <div class="panel">
+        <div class="panel-heading clearfix">
+          <h4>آمار وضعیت</h4>
+        </div>
+        <div class="panel-body">
+          <ul id="sortable" class="unstyled ui-sortable" style="padding-left:20px;">
+            <div class="col-sm-6">
+              <li class=" ui-state-default">
+                <div class="infoblock shadow">
+                  <h3 style="color:#4DB848;"><%= @paid %> ریال</h3>
+                  <p>مقدار پرداختی این ماه</p>
+                </div>
+              </li>
+              <li class=" ui-state-default">
+                <div class="infoblock shadow">
+                  <h3 style="color:#0099FF;"><%= @this_month %> ریال</h3>
+                  <p>مجموع قبوض این ماه</p>
+                </div>
+              </li>
+            </div>
+            <div class="col-sm-6">
+              <li class=" ui-state-default">
+                <div class="infoblock shadow">
+                  <h3 style="color:#FF6320;"><%= @not_paid %> ریال</h3>
+                  <p>باقیمانده بدهکاری</p>
+                </div>
+              </li>
+
+              <li class=" ui-state-default">
+                <div class="infoblock shadow">
+                  <h3 style="color:#ff9900;"><%= @unit_count %></h3>
+                  <p>تعداد واحدهای تحت اختیار</p>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <% end %>
 
     <!--END STATS-WIDGET -->
 
     <!--START -RECENT-POSTS-WIDGET -->
 
-    <div class="col-sm-5">
+    <div class="col-sm-5 right">
       <div class="panel">
         <div class="panel-heading clearfix">
           <h4>آخرین اخبار</h4>
