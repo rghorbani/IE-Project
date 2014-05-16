@@ -20,3 +20,4 @@
 *.sublime-*
 
 /config/local_env.yml
+Gemfile.lock
