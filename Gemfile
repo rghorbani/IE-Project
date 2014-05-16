@@ -42,6 +42,9 @@ gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'daemon-spawn'
 
+# mysql
+gem 'mysql2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
