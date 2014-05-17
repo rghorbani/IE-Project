@@ -24,6 +24,7 @@ class ChargeController < ApplicationController
       else
         @best_pay = profile.first_name + " " + profile.last_name
       end
+      @news = get_manager_news
     end
 
     if (current_user.has_role? :resident)
@@ -38,12 +39,33 @@ class ChargeController < ApplicationController
       @paid = get_this_month_paid
       @this_month = get_this_month_bill
       @not_paid = get_this_month_not_paid
+      @news = get_resident_news
     end
-   @news = News.where('system = ?', 0).order("created_at DESC").limit(5)
+   #@news = News.where('system = ?', 0).order("created_at DESC").limit(5)
  end
 
 
  def help
+ end
+
+ def get_resident_news
+  allnews = Array.new
+  current_user.units.each do |unit|
+    for news in unit.building.news
+      allnews << news
+    end
+  end
+  allnews
+ end
+
+ def get_manager_news
+  allnews = Array.new
+  current_user.buildings.each do |building|
+    for news in building.news
+      allnews << news
+    end
+  end
+  allnews
  end
 
  def get_this_month_not_paid
