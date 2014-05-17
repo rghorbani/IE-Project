@@ -7,7 +7,6 @@
   
   <%= stylesheet_link_tag 'font-awesome.min', 'bootstrap.min', 'bootstrap-rtl', 'charge', 'font', 'error' %>
   <%= stylesheet_link_tag 'persianDatepicker-dark', 'persianDatepicker-default', 'persianDatepicker-custom' %>
-  <%= javascript_include_tag "application" %>
   
   <%= csrf_meta_tags %>
 
@@ -25,14 +24,8 @@
   </div>
   <%=render :partial => 'layouts/footer' %>
 
-  <div class="notification"></div>
-  <% unless notice.nil? %>
-  <div id="notice" class="notification">
-    <%= notice %>
-  </div>
-  <% end %>
-
   <%= javascript_include_tag 'bootstrap.min' %>
+  <%= javascript_include_tag "application" %>
 
 </body>
 </html>

@@ -11,6 +11,12 @@
         <span class="icon-bar"></span>
       </button>
     </div>
+    <div class="notification"></div>
+    <% unless notice.nil? %>
+    <div id="notice" class="notification">
+      <%= notice %>
+    </div>
+    <% end %>
 
     <div class="main-menu collapse navbar-collapse">
       <% if user_signed_in? %>

@@ -51,7 +51,7 @@ class UnitsController < ApplicationController
             u = User.create(:email => params[:email], :password => '1234', :password_confirmation => '1234')
             u.add_role :resident
             u.save!(:validate => false)
-            UserMailer.new_unit(u, @unit).deliver
+            #UserMailer.new_unit(u, @unit).deliver
           end
           @unit.user_id = u.id
           @unit.save
