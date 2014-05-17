@@ -13,8 +13,13 @@
 		<br>
 		<p>
 			<strong>تاریخ انتشار: </strong>
-			<%= @news.created_at %>
+			<%= to_jalali_date(@news.created_at) %>
 		</p>
+
+		<%= link_to expenses_path(:building_id => @expense.building_id),:class => "btn btn-orange" do %>
+		<i class="fa fa-arrow-circle-o-right"></i>&nbsp;
+		<%= t('Back') %>
+		<% end %>
 
 		<%= link_to t('Back'), news_index_path, :class => 'btn btn-orange' %>
 		<%= link_to t('Edit'), edit_news_path(@news), :class => 'btn btn-primary' %>&nbsp;

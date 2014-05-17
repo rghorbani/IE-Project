@@ -3,15 +3,18 @@
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
-  <body>
+  <body dir="rtl">
     <h1>به چهارخونه خوش آمدید!</h1>
     <p>
-      مدیر ساختمان شما را به عنوان ساکن واحد <%= @unit.unit_number %> از ساختمان <%= @unit.building.name %> معرفی کرده است. برای تکمیل پروفایل با
-      نام کاربری: <%= @user.email %><br>
-      گذرواژه: "1234"<br/>
-      به <a href="http://www.4-khuneh.ir">وبسایت چهارخونه</a> مراجعه فرمایید.
+      مدیر ساختمان شما را به عنوان ساکن
+      واحد <strong><%= @unit.unit_number %></strong>
+      از ساختمان <strong><%= @unit.building.name %></strong>
+      معرفی کرده است. برای تکمیل پروفایل با
+      نام کاربری: <strong><%= @user.email %></strong><br>
+      گذرواژه: <strong>"1234"</strong><br/>
+      به وبسایت<a href="http://www.4-khuneh.ir">چهارخونه</a> مراجعه فرمایید.
     </p>
-    <p>راحتی شما را در استفاد هاز چهارخونه آرزومندیم.</p>
+    <p>راحتی شما را در استفاده از چهارخونه آرزومندیم.</p>
     <p>با تشکر فراوان،</p>
     <p>تیم مدیریتی چهارخونه.</p>
   </body>

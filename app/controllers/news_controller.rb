@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-
+  before_action :ban_resident_area, except: [:show]
   before_action :authenticate_user! 
   before_action :set_news, only: [:show, :edit, :update, :destroy]
 
