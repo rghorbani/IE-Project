@@ -525,3 +525,19 @@ clear: both;
   padding-left: 0px;
   margin-top: 13px;
 }
+
+.rowred{
+  background-color: #FA9191;
+}
+
+.rowred:hover{
+  background-color: #FF2E2E;
+}
+
+.rowgreen{
+  background-color: #A3FFA3;
+}
+
+.rowgreen:hover{
+  background-color: #2DFC2D;
+}

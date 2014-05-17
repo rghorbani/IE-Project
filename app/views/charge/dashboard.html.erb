@@ -149,7 +149,7 @@
         <div class="panel-body">
           <div class="row-fluid">
           <div class="table-responsive">
-            <table class="table table-success table-condensed table-striped table-bordered table-hover">
+            <table class="table table-success table-condensed table-bordered">
               <thead>
                 <tr>
                   <th style="width:4%;">ردیف</th>
@@ -165,7 +165,7 @@
               <tbody>
                 <% @bills.each_with_index do |bill,index| %>
             
-                <tr>
+                <tr onclick="location.href='<%= building_path(bill.unit.building) %>'" class="<% if bill.status == false %><%= 'rowred' %><% else %><%= 'rowgreen' %><% end %>">
                   <th><%= index+1 %></th>
                   <th><%= bill.unit.building.name %></th>
                   <th><%= bill.unit.unit_number %></th>
@@ -176,8 +176,7 @@
                   <th><%= bill.description %></th>
                   <th><%= bill.price %> ریال</th>
                   <th><%= to_jalali_date(bill.deadline) %></th>
-                  <th><% if bill.status == false %>
-                  <%= 'پرداخت نشده' %><% else %><%= 'پرداخت شده' %><% end %></th>
+                  <th><% if bill.status == false %><%= 'پرداخت نشده' %><% else %><%= 'پرداخت شده' %><% end %></th>
                 </tr>
                 <% end %>
               </tbody>
@@ -199,7 +198,7 @@
         <div class="panel-body">
           <div class="row-fluid">
           <div class="table-responsive">
-            <table class="table table-success table-condensed table-striped table-bordered table-hover">
+            <table class="table table-success table-condensed table-bordered">
               <thead>
                 <tr>
                   <th style="width:4%;">ردیف</th>
@@ -214,15 +213,14 @@
               <tbody>
                 <% @bills.each_with_index do |bill,index| %>
             
-                <tr onclick="location.href='<%= unit_path(bill.unit) %>'">
+                <tr onclick="location.href='<%= unit_path(bill.unit) %>'" class="<% if bill.status == false %><%= 'rowred' %><% else %><%= 'rowgreen' %><% end %>">
                   <th><%= index+1 %></th>
                   <th><%= bill.unit.building.name %></th>
                   <th><%= bill.unit.unit_number %></th>
                   <th><%= bill.description %></th>
                   <th><%= bill.price %> ریال</th>
                   <th><%= to_jalali_date(bill.deadline) %></th>
-                  <th><% if bill.status == false %>
-                  <%= 'پرداخت نشده' %><% else %><%= 'پرداخت شده' %><% end %></th>
+                  <th><% if bill.status == false %><%= 'پرداخت نشده' %><% else %><%= 'پرداخت شده' %><% end %></th>
                 </tr>
                 <% end %>
               </tbody>
