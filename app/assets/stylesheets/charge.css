@@ -411,7 +411,7 @@ html {
 @media (min-width: 980px) {
   .subnav-fixed {
     position: fixed;
-    top: 72px;
+    top: 110px;
     left: 0;
     right: 0;
     z-index: 1020; /* 10 less than .navbar-fixed to prevent any overlap */
@@ -500,6 +500,7 @@ html {
 
 /****************************/
 .wrapper {
+  margin-top: 70px;
 min-height: 80%;
 height: auto !important;
 height: 80%;
@@ -511,7 +512,8 @@ clear: both;
 }
 
 .logopic{
-  width: 190px;
+  margin-top: 10px;
+  width: 320px;
   height: auto;
 }
 
@@ -540,4 +542,17 @@ clear: both;
 
 .rowgreen:hover{
   background-color: #2DFC2D;
+}
+
+
+.mainnavbar {
+  min-height: 115px;
+}
+
+.paeen {
+  margin-top: 0px;
+}
+
+.shiftdown {
+  margin-top: 60px;
 }

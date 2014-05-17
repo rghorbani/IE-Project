@@ -1,7 +1,7 @@
 
 <!--START NAVBAR -->
 
-<nav id="main-nav" class="mainnav navbar navbar-fixed-top" role="navigation">
+<nav id="main-nav" class="mainnav navbar navbar-fixed-top mainnavbar" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".main-menu">
@@ -15,7 +15,7 @@
     <div class="main-menu collapse navbar-collapse">
       <% if user_signed_in? %>
       <% @profile = get_profile %>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right shiftdown">
         <li class="dropdown">
           <a href="" class="dropdown-toggle btn-nav2" data-toggle="dropdown">
             <i class="fa fa-user"></i>
@@ -46,7 +46,7 @@
         -->
       </ul>
       <% else %>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right shiftdown">
         <li>
           <div class="btn-group" style="margin-top:15px;">
             <a href="/users/sign_in" class="btn btn-nav" style="text-decoration:none;">ورود</a>
@@ -63,7 +63,7 @@
 </nav>
 
 <% if user_signed_in? and !(current_user.has_role? :resident) %>
-<nav class="subnav subnav-fixed navbar" role="navigation">
+<nav class="subnav subnav-fixed navbar paeen" role="navigation">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -175,7 +175,7 @@
 <% end %>
 
 <% if user_signed_in? and (current_user.has_role? :resident) %>
-<nav class="subnav subnav-fixed navbar" role="navigation">
+<nav class="subnav subnav-fixed navbar paeen" role="navigation">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
