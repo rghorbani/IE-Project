@@ -22,7 +22,7 @@
     src: url('/assets/WebMitra.eot');
     src: url('/assets/WebMitra.eot?#iefix') format('embedded-opentype'),
          url('/assets/WebMitra.woff') format('woff'),
-         url('/assets/WebMitra.ttf') format('truetype'),
+         url('/assets/WebMitra.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     unicode-range: U+0600–06FF;
