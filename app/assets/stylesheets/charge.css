@@ -22,7 +22,7 @@
     src: url('/assets/WebMitra.eot');
     src: url('/assets/WebMitra.eot?#iefix') format('embedded-opentype'),
          url('/assets/WebMitra.woff') format('woff'),
-         url('/assets/WebMitra.ttf') format('truetype'),
+         url('/assets/WebMitra.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     unicode-range: U+0600–06FF;
@@ -155,7 +155,9 @@ footer ul li {
   margin: 0;
 }
 html {
-  height: 100%;
+
+  min-height: 100%;
+  min-width:100%;
 }
 .wrapper {
   min-height: 100%;
@@ -424,7 +426,7 @@ html {
 @media (min-width: 980px) {
   .subnav-fixed {
     position: fixed;
-    top: 110px;
+    top: 113px;
     left: 0;
     right: 0;
     z-index: 1020; /* 10 less than .navbar-fixed to prevent any overlap */
@@ -514,14 +516,14 @@ html {
 /****************************/
 .wrapper {
   margin-top: 70px;
-min-height: 80%;
-height: auto !important;
-height: 80%;
-margin-bottom:  -10em;
+  min-height: 80%;
+  height: auto !important;
+  height: 80%;
+  margin-bottom:  -10em;
 }
 .footer, .push {
-height: 10em;
-clear: both;
+  height: 10em;
+  clear: both;
 }
 
 .logopic{

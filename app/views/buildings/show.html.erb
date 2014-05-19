@@ -79,6 +79,14 @@
       </div>
       <div class="panel-footer">
         <div class="left">
+          <%= link_to new_expense_path(building_id: @building.id),:class => "btn btn-primary" do %>
+            <i class="fa fa-plus-square"></i>&nbsp;
+            <%= 'هزینه جدید برای این ساختمان' %>
+          <% end %>
+          <%= link_to expenses_path(building_id: @building.id),:class => "btn btn-info" do %>
+            <i class="fa fa-tasks"></i>&nbsp;
+            <%= 'مشاهده هزینه ها' %>
+          <% end %>
         </div>
       </div>
     </div>
