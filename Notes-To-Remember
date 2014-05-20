@@ -15,3 +15,5 @@ highcharts
 shared public places in building
 
 add delayed jobs for better response time (done) -> multiple ways(see other/commands.txt)
+
+/charge/dashboard.html.erb -> <% if bill.unit.user != nil and bill.unit.user.profile.first_name != nil %>

@@ -116,7 +116,9 @@ def get_this_month_expense
   cost = 0
   current_user.buildings.each do |building|
     for expense in building.expenses
-      cost = cost + expense.price
+      if expense.blank?
+        cost = cost + expense.price
+      end
     end
   end
   cost
