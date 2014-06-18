@@ -2,7 +2,7 @@ class News < ActiveRecord::Base
   belongs_to :user
   belongs_to :building
 
-	validates :user_id, presence: true
-	validates :title, presence: true, :message => "ورود عنوان خبر الزامی است."
+	validates_presence_of :user_id
+	validates_presence_of :title, :message => "ورود عنوان خبر الزامی است."
 
 end

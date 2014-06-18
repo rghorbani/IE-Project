@@ -2,7 +2,7 @@ class Rate < ActiveRecord::Base
 	belongs_to :plan
 	belongs_to :unit
 
-	validates :plan_id, presence: true
-	validates :unit_id, presence: true
-	validates :rate, presence: true
+	validates_presence_of :plan_id
+	validates_presence_of :unit_id
+	validates_presence_of :rate
 end

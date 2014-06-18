@@ -2,10 +2,10 @@ class Payment < ActiveRecord::Base
 	belongs_to :bill
 	belongs_to :user
 
-	validates :bill_id, presence: true
-	validates :user_id, presence: true
+	validates_presence_of :bill_id
+	validates_presence_of :user_id
 	validates :amount, presence: true, numericality: { only_integer: true }
-	validates :trace_number, presence: true
-	validates :date, presence: true
+	validates_presence_of :trace_number
+	validates_presence_of :date
 
 end
