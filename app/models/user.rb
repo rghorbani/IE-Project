@@ -6,12 +6,19 @@ class User < ActiveRecord::Base
   has_many :payments
   has_many :news
   has_and_belongs_to_many :messages
+  before_destroy :destroy_profile
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def destroy_profile
+    begin
+      
+    rescue
+    end
+  end
   # Include roles at the end
   ROLES = %w[admin control manager resident]
   
