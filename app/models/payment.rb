@@ -4,7 +4,7 @@ class Payment < ActiveRecord::Base
 
 	validates_presence_of :bill_id
 	validates_presence_of :user_id
-	validates :amount, presence: true, numericality: { only_integer: true }
+	validates :amount, presence: {:message => 'وارد کردن قیمت الزامی می باشد'}, numericality: { only_integer: true }
 	validates_presence_of :trace_number
 	validates_presence_of :date
 
